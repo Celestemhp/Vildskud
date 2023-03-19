@@ -22,7 +22,9 @@
 .main-btn:hover {
   @apply bg-pink-400;
 }
-
+.hero-btn {
+  @apply inline-block px-8 py-4 font-bold text-white duration-300 rounded-md bg-pink-400 m-4;
+}
 /* Burger menu */
 :root{
   --menu-speed: 0.75s;
@@ -49,7 +51,7 @@
   border-radius: 2rem;
 } */
 
-/* Linjer på burgermenu */
+/******** Linjer på burgermenu ***************/
 .menu-wrap{
   position: relative;
   z-index: 1;
@@ -113,7 +115,7 @@
 .menu-wrap .toggler:checked:hover + .hamburger > div{
   transform: rotate(225deg);
 }
-/* Show menu */
+/****************** Vis menu ****************/
 .menu-wrap .toggler:checked ~ .menu{
   visibility: visible;
 }
@@ -135,7 +137,7 @@
   justify-content: center;
 }
 .menu-wrap .menu > div{
-  background-color: var(--overlay-color);
+  background-color: blueviolet;
   border-radius: 50%;
   display: flex;
   flex: none;
@@ -174,7 +176,7 @@
   transition: all 0.3s;
 }
 
-/* Baggrund */
+/********************' Baggrund ************************/
 .blob {
   animation: blobby 4s infinite;
 }
