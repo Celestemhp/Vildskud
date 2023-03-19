@@ -2,72 +2,109 @@
 <html lang="en" data-theme="myTheme">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vildskud</title>
   </head>
-  <header>
-    <div class="max-w-2xl mx-auto">
-    
-      <nav class="border-gray-200">
-      <div class="container mx-auto flex flex-wrap items-center justify-between">
+  <header class="showcase">
+      <div class=" flex flex-wrap items-center justify-between mt-5 mx-4 ">
           <a href="index.html" class="flex">
-          <svg class="h-10 mr-3" width="51" height="70">
-          
-          </svg>
-              <span class="self-center text-lg font-semibold whitespace-nowrap text-white">Vildskud</span>
+            <img src="/img/LOGO2x.png" width="" alt="" class="mr-3 w-36">
           </a>
-          <button data-collapse-toggle="mobile-menu" type="button" class="md:hidden ml-3 text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex items-center justify-center" aria-controls="mobile-menu-2" aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-          <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          <div class="flex flex-row gap-4 place-items-center">
+          <!-- Køb billet btn -->
+          <button class="btn main-btn btn-primary hover:scale-110">
+            <p>Køb billet</p>
           </button>
-          <div class="hidden md:block w-full md:w-auto" id="mobile-menu">
-          <ul class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
-              <li>
-              <a href="#" class="bg-blue-700 md:bg-transparent text-white block pl-3 pr-4 py-2 md:text-blue-700 md:p-0 rounded focus:outline-none" aria-current="page">Home</a>
-              </li>
-              <li>
-                  <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0 font-medium flex items-center justify-between w-full md:w-auto">Dropdown 
+          <!-- Nav desktop -->
+          <div class="hidden md:block w-full md:w-auto" id="">
+            <div class="hidden md:block w-full md:w-auto" id="mobile-menu">
+              <ul class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
+                  <li>
+                  <a href="#" class="text-white block pl-3 pr-4 py-2 md:p-0 rounded focus:outline-none md:hover:text-fuchsia-400 hover:scale-110" aria-current="page">Program</a>
+                  </li>
+                  <li>
+                    <a href="#" class="text-white  border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-fuchsia-400 md:p-0 hover:scale-110">Find rundt</a>
+                    </li>
+                  <li>
+                  <a href="#" class="text-white  border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-fuchsia-400 md:p-0 hover:scale-110">FAQ</a>
+                  </li>
+                  <li>
+                  <a href="#" class="text-white  border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-fuchsia-400 md:p-0 hover:scale-110">Frivillig</a>
+                  </li>
+    
+                  <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="text-white border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-fuchsia-400 md:p-0 font-medium flex items-center justify-between w-full md:w-auto hover:scale-110">Info 
                     <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                     </svg>
                   </button>
-                  <!-- Dropdown menu -->
-                  <div id="dropdownNavbar" class="hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow my-4 w-44">
-                      <ul class="py-1" aria-labelledby="dropdownLargeButton">
-                      <li>
-                          <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Dashboard</a>
-                      </li>
-                      <li>
-                          <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Settings</a>
-                      </li>
-                      <li>
-                          <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Earnings</a>
-                      </li>
-                      </ul>
-                      <div class="py-1">
-                      <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Sign out</a>
-                      </div>
-                  </div>
-              </li>
-              <li>
-              <a href="#" class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0">Services</a>
-              </li>
-              <li>
-              <a href="#" class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0">Pricing</a>
-              </li>
-              <li>
-              <a href="#" class="text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-blue-700 md:p-0">Contact</a>
-              </li>
-          </ul>
-          </div>
+              </ul>
+              </div>
+          </div> 
+          <!-- burgermenu -->
+          <div class="menu-wrap md:hidden lg:hidden">
+            <input type="checkbox" class="toggler">
+            <button class="hamburger"><div></div></button>
+            <div class="menu">
+                <div>
+                    <div class=" md:block w-full md:w-auto">
+                        <ul>
+                            <li><a href="#">Program</a></li>
+                            <li><a href="#">Find rundt</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Frivillig</a></li>
+                            <li id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar">
+                            <button>
+                              Info 
+                              <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                              </svg>
+                            </button>
+                            
+                              <!-- Dropdown menu -->
+                              <div id="dropdownNavbar" class="hidden text-base z-10 list-none divide-y  ">
+                                <ul class="py-1" aria-labelledby="dropdownLargeButton">
+                                <li>
+                                    <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Om Vildskud</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Samarbejdspartnere</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Kontakt</a>
+                                </li>
+                                </ul>
+                            </div>
+                          </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
       </div>
-      </nav>
     </div>
-  
+        <div class="container">
+
+    
+    <svg version="1.1" id="svg-left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+       viewBox="0 0 600 400" style="enable-background:new 0 0 600 400;" xml:space="preserve">
+    <g>
+      <path class="blob" d="M220.262,366.814c41.228-14.367,64.978-58.826,96.198-136.802
+        c43.518-108.692,53.929-137.426,67.672-149.92s154.708-58.065,177.821-65.59C576.392,9.802,591.841,5.391,596.66-2H-2v334.452
+        c16.689,8.319,35.468,14.508,56.726,18.745C98.453,359.914,179.034,381.181,220.262,366.814z"/>
+    </g>
+    </svg>
+    <svg version="1.1" id="svg-right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+       viewBox="0 0 600 400" style="enable-background:new 0 0 600 400;" xml:space="preserve">
+    <g>
+      <path  class="blob2" d="M361.076,143.985c9.307,26.708,38.108,42.094,88.622,62.319
+        c70.412,28.192,89.027,34.936,97.12,43.839c8.093,8.903,37.615,100.223,42.49,115.196c3.045,9.354,5.902,19.361,10.691,22.483V0
+        H383.337c-5.389,10.811-9.398,22.976-12.143,36.748C365.547,65.075,351.769,117.277,361.076,143.985z"/>
+    </g>
+    </svg>
+    
+    </div>
   </header>
 
-  <body class="  bg-green-600">
+  <body>
     <h1 class="text-4xl font-bold text-white m-10 drop-shadow-xl text-center">TEAM</h1>
     <h2 class="text-lg text-white text-center">Det er et stort arbejde at planlægge og afvikle en festival. Så giv en hånd til teamet bag årets festival!</h2>
     <section class="mt-20 mb-20">
@@ -115,7 +152,7 @@
           </div>
           <div class="w-full rounded-lg sahdow-lg overflow-hidden flex flex-col justify-center items-center">
             <div class="w-40">
-                <img class="object-center object-cover h-auto w-full " src="/img/emoji5@2x.png" alt="photo">
+                <img class="object-center object-cover h-auto w-full " src="/img/emoji8@2x.png" alt="photo">
             </div>
             <div class="text-center py-8 sm:py-6">
                 <p class="text-xl text-slate-900 font-bold mb-2">Louise Leth Feldthus</p>
@@ -134,34 +171,16 @@
           </div>
       </div>
   </section>
-
-
-
-
-    <!-- <button class="btn btn-primary">Button</button> -->
-<!-- hover knap -->
-<!-- <div class="dropdown dropdown-hover">
-  <label tabindex="0" class="btn m-1">Hover</label>
-  <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-40">
-    <li><a>Item 1</a></li>
-    <li><a>Item 2</a></li>
-  </ul>
-</div> -->
-
-<!-- toggle knap -->
-<label class="btn btn-circle swap swap-rotate">
-  
-  <!-- this hidden checkbox controls the state -->
-  <input type="checkbox" />
-  
-  <!-- hamburger icon -->
-  <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"/></svg>
-  
-  <!-- close icon -->
-  <svg class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"/></svg>
-  
-</label>
-
+  <!-- <div class="alert shadow-lg">
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-info flex-shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      <span>we use cookies for no reason.</span>
+    </div>
+    <div class="flex-none">
+      <button class="btn btn-sm btn-ghost">Deny</button>
+      <button class="btn btn-sm btn-primary">Accept</button>
+    </div>
+  </div> -->
 
 <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
     <script type="module" src="./main.js"></script>
