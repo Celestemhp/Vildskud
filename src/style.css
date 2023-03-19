@@ -118,27 +118,31 @@
 /****************** Vis menu ****************/
 .menu-wrap .toggler:checked ~ .menu{
   visibility: visible;
+  
 }
 .menu-wrap .toggler:checked ~ .menu > div{
   transform: scale(1);
   transition-duration: var(--menu-speed);
+  
 }
 .menu-wrap .toggler:checked ~ .menu > div > div{
   opacity: 1;
   transition: opacity 0.4s ease;
+  
 }
 .menu-wrap .menu{
   position: fixed;
-  height: 80%;
+  height: 50%;
    visibility: hidden; 
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  scale: 110%;
+  
 }
 .menu-wrap .menu > div{
   background-color: blueviolet;
-  border-radius: 50%;
   display: flex;
   flex: none;
   align-items: center;
@@ -152,6 +156,7 @@
   max-height: 100vh;
    opacity: 0; 
   transition: opacity 0.4s ease;
+  
 }
 .menu-wrap .menu > div > div > ul > li {
   list-style: none;
@@ -176,7 +181,7 @@
   transition: all 0.3s;
 }
 
-/********************' Baggrund ************************/
+/******************** Bevægende baggrund ************************/
 .blob {
   animation: blobby 4s infinite;
 }
@@ -217,3 +222,4 @@ svg {
   width: 60%;
   z-index: -10;
 }
+
