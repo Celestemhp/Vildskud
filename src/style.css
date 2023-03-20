@@ -189,48 +189,7 @@
 }
 
 /******************** Bevægende baggrund ************************/
-.blob {
-  animation: blobby 4s infinite;
-}
 
-.blob2 {
-  animation: blobby2 6s infinite;
-}
-
-@keyframes blobby {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.08); }
-  100% { transform: scale(1); }
-}
-
-@keyframes blobby2 {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.18); }
-  100% { transform: scale(1); }
-}
-
-svg {
-  position: absolute;
-  top: 0;
-}
-
-#svg-right {
-  display: block;
-  /* fill: purple; */
-  fill: rgb(97, 41, 238);
-  opacity: 0.9;  
-  right: 0;
-  width: 60%;
-  z-index: -10;
-}
-
-#svg-left {
-  /* fill: pink; */
-  fill: rgb(65, 210, 39);
-  margin: 0;
-  width: 60%;
-  z-index: -10;
-}
 /******************* ord anmation **********/
 
 @keyframes word {
@@ -280,4 +239,44 @@ footer .tilmeld-btn {
 }
 footer .linje {
   border-bottom: 1px solid rgba(255,255,255,.25);
+}
+
+
+
+
+/* ******************tilføjelser *************/
+.scrollDist {
+  position: absolute;
+}
+
+
+
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, rgb(224, 221, 39) 50%, rgb(140, 0, 255) 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:10s;
+}
+
+.bg3 {
+  animation-duration:9s;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
 }
