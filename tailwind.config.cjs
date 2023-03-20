@@ -3,7 +3,9 @@ module.exports = {
   content: ["./src/**/*.{html,vue,js,ts,jsx,tsx}"],
   daisyui: {
     themes: ["light", "dark", "cupcake", "bumblebee", "emerald", "corporate", "synthwave", "retro", "cyberpunk", "valentine", "halloween", "garden", "forest", "aqua", "lofi", "pastel", "fantasy", "wireframe", "black", "luxury", "dracula", "cmyk", "autumn", "business", "acid", "lemonade", "night", "coffee", "winter"],
-    mytheme: {
+  
+    extend: {
+      color: {
       "lilla": "#5856D6",
               
       "rosa": "#cca9f9",
@@ -21,8 +23,8 @@ module.exports = {
       "warning": "#FACD47",
               
       "error": "#306EF9",
+      }
     },
-    extend: {},
   },
   plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms"), require('daisyui')],
 };
