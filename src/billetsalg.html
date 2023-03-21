@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vildskud</title>
+    <title>Billetsalg</title>
+    <link rel="stylesheet" href="style.css">
   </head>
  <!-- Cookies -->
- <div class="left-0 bottom-0 z-40 " x-data="{cookies: true}"  @keydown.window.escape="cookies = false">
+<div class="left-0 bottom-0 z-40 " x-data="{cookies: true}"  @keydown.window.escape="cookies = false">
   <!-- Indhold til cookies -->
   <div x-show="cookies" class="fixed sm:left-4 bottom-20 rounded-lg bg-white shadow-2xl w-full sm:w-1/2 xl:w-1/4 max-w-[450px] overflow-hidden"
        style="display: none;"
@@ -57,7 +58,10 @@
   </button>
 
 
-  <header class="showcase">
+ 
+
+  <body class="bg-slate-700 ">
+    <header class="showcase">
       <div class=" flex md:flex-wrap items-center justify-between mt-5 mx-4 ">
           <a href="index.html" class="flex">
             <img src="/img/LOGO2x.png" width="" alt="" class="mr-3 w-36">
@@ -132,97 +136,79 @@
         </div>
       </div>
     </div>
-        <div class="container">
-
-    
-    <svg version="1.1" id="svg-left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-       viewBox="0 0 600 400" style="enable-background:new 0 0 600 400;" xml:space="preserve">
-    <g>
-      <path class="blob" d="M220.262,366.814c41.228-14.367,64.978-58.826,96.198-136.802
-        c43.518-108.692,53.929-137.426,67.672-149.92s154.708-58.065,177.821-65.59C576.392,9.802,591.841,5.391,596.66-2H-2v334.452
-        c16.689,8.319,35.468,14.508,56.726,18.745C98.453,359.914,179.034,381.181,220.262,366.814z"/>
-    </g>
-    </svg>
-    <svg version="1.1" id="svg-right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-       viewBox="0 0 600 400" style="enable-background:new 0 0 600 400;" xml:space="preserve">
-    <g>
-      <path  class="blob2" d="M361.076,143.985c9.307,26.708,38.108,42.094,88.622,62.319
-        c70.412,28.192,89.027,34.936,97.12,43.839c8.093,8.903,37.615,100.223,42.49,115.196c3.045,9.354,5.902,19.361,10.691,22.483V0
-        H383.337c-5.389,10.811-9.398,22.976-12.143,36.748C365.547,65.075,351.769,117.277,361.076,143.985z"/>
-    </g>
-    </svg>
-    
-    </div>
+       
   </header>
-
-  <body>
     <!-- Hero section -->
-    <section class="flex flex-col justify-center place-items-center">
-      <h2 class="text-3xl text-white font-bold text-center mt-10">2. - 6. august</h2>
-    <img src="/img/LOGO2x.png" alt="logo" class=" lg:max-w-4xl mt-20 ">
-    <h2 class="text-5xl font-bold text-white text-center">Festival</h2>
-
-    <!-- ord animation -->
-    <div class="flex mt-5 items-center justify-centerfont-bold text-white">
-      <div class=" text-center space-y-12">
-          <div class="text-center text-3xl font-bold">
-            fyldt med
-            <div class="relative inline-grid grid-cols-1 grid-rows-1 gap-12 overflow-hidden">
-            <span class="animate-word col-span-full row-span-full">Oplevelser</span>
-            <span class="animate-word-delay-1 col-span-full row-span-full">Kærlighed</span>
-            <span class="animate-word-delay-2 col-span-full row-span-full">Kreativitet</span>
-            <span class="animate-word-delay-3 col-span-full row-span-full">Fællesskab</span>
-            <span class="animate-word-delay-4 col-span-full row-span-full">Scenekunst</span>
-            </div>
+    <main class="m-auto max-w-7xl">
+    <h1 class="text-center">Billetsalg</h1>
+  
+    <section class="my-4 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+     
+        <article class="bg-red-500 flex text-white  m-auto text-center w-96 h-96">
+            <div class="border-2 w-[22rem] h-[22rem] justify-center  m-auto items-center">
+            <p class="opacity-75 pt-4">Vildskud 2023</p>
+            <h2 class="text-3xl py-3 font-bold">Enkel forestilling</h2>
+            <p>Skal du med ind og se <br> forestillingerne i en dag?</p>
+            <p class="underline"><a href="">Mere info</a></p>
+            <h2 class="text-3xl py-6 font-semibold">70 kr.</h2>
+            <p class="text-xs font-semibold">Ekskl. billet- og administrationsgebyr</p>
+            <button class="text-base mt-5 font-semibold text-black py-2 px-12 bg-green-300"><a href="#">Køb billet</a></button>
         </div>
-      </div>
-    </div>
+        </article>
+        
+        <article class="bg-red-500 flex text-white  m-auto text-center w-96 h-96">
+            <div class="border-2 w-[22rem] h-[22rem] justify-center  m-auto items-center">
+            <p class="opacity-75 pt-4">Vildskud 2023</p>
+            <h2 class="text-3xl py-3 font-bold">Endagsbillet</h2>
+            <p>Skal du med ind og se <br>
+                forestillingerne i en dag?</p>
+            <p class="underline"><a href="">Mere info</a></p>
+            <h2 class="text-3xl py-6 font-semibold">120 kr.</h2>
+            <p class="text-xs font-semibold">Ekskl. billet- og administrationsgebyr</p>
+            <button class="text-base mt-5 font-semibold text-black py-2 px-12 bg-green-300"><a href="#">Køb billet</a></button>
+        </div>
+        </article>
 
+        <article class="bg-red-500 flex text-white  m-auto text-center w-96 h-96">
+            <div class="border-2 w-[22rem] h-[22rem] justify-center  m-auto items-center">
+            <p class="opacity-75 pt-4">Vildskud 2023</p>
+            <h2 class="text-3xl py-3 font-bold">Partout billet</h2>
+            <p>Vil du ikke gå glip af noget af festen? <br>
+                Så vær med alle tre dage!</p>
+            <p class="underline"><a href="">Mere info</a></p>
+            <h2 class="text-3xl py-6 font-semibold">295 kr.</h2>
+            <p class="text-xs font-semibold">Ekskl. billet- og administrationsgebyr</p>
+            <button class="text-base mt-5 font-semibold text-black py-2 px-12 bg-green-300"><a href="#">Køb billet</a></button>
+        </div>
+        </article>
 
+        <article class="bg-red-500 flex text-white  m-auto text-center w-96 h-96">
+            <div class="border-2 w-[22rem] h-[22rem] justify-center  m-auto items-center">
+            <p class="opacity-75 pt-4">Vildskud 2023</p>
+            <h2 class="text-3xl py-3 font-bold">Gavekort</h2>
+            <p>Du vælger selv beløbet og hvem du <br>vil give det til.</p>
+            <p class="underline"><a href="">Mere info</a></p>
+            <h2 class="text-3xl py-6 font-semibold">30-900 kr.</h2>
+            <p class="text-xs font-semibold">Ekskl. billet- og administrationsgebyr</p>
+            <button class="text-base mt-5 font-semibold text-black py-2 px-12 bg-green-300"><a href="#">Køb billet</a></button>
+        </div>
+        </article>
 
-    <h2 class="text-3xl text-white text-center"></h2>
-      <!-- knapper -->
-      <div class="hero-btns sm:mt-5 md:mt-10 lg:mt-10">
-      <button class="btn hero-btn btn-primary hover:scale-110 transform hover:rotate-12" >
-        <p>Se program</p>
-      </button>
-        <button class="btn hero-btn btn-primary hover:scale-110">
-          <p>Køb billet</p>
-        </button>
-      </div>
+        <article class="bg-red-500 flex text-white  m-auto text-center w-96 h-96">
+            <div class="border-2 w-[22rem] h-[22rem] justify-center  m-auto items-center">
+            <p class="opacity-75 pt-4">Vildskud 2023</p>
+            <h2 class="text-3xl py-3 font-bold">Be a buddy</h2>
+            <p>En partout billet med adgang til alle <br>dage og en særlig donation til Plant<br>-a-tree på 200 kr.</p>
+            <p class="underline"><a href="">Mere info</a></p>
+            <h2 class="text-3xl py-6 font-semibold">495 kr.</h2>
+            <p class="text-xs font-semibold">Ekskl. billet- og administrationsgebyr</p>
+            <button class="text-base mt-5 font-semibold text-black py-2 px-12 bg-green-300"><a href="#">Køb billet</a></button>
+        </div>
+        </article>
+
+        
     </section>
-    <section class="mt-20 mb-20">
-    
-    <!-- Countdown -->
-      <div class="grid grid-flow-col gap-5 text-center auto-cols-max justify-center">
-        <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-          <span class="countdown font-mono text-5xl">
-            <span style="--value:40;"></span>
-          </span>
-          days
-        </div> 
-        <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-          <span class="countdown font-mono text-5xl">
-            <span style="--value:10;"></span>
-          </span>
-          hours
-        </div> 
-        <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-          <span class="countdown font-mono text-5xl">
-            <span style="--value:24;"></span>
-          </span>
-          min
-        </div> 
-        <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
-          <span class="countdown font-mono text-5xl">
-            <span style="--value:44;"></span>
-          </span>
-          sec
-        </div>
-      </div>
-  </section>
-
-
+  </main>
 
 <footer class="bg-green-900">
   <div class="max-w-screen-xl px-4 py-16 pb-4 mx-auto sm:px-6 lg:px-8">
