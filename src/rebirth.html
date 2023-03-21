@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Billetsalg</title>
+    <title>FAQ</title>
     <link rel="stylesheet" href="style.css">
   </head>
  <!-- Cookies -->
@@ -139,76 +139,66 @@
        
   </header>
     <!-- Hero section -->
-    <main class="m-auto max-w-7xl">
-    <h1 class="text-center">Billetsalg</h1>
-  
-    <section class="my-4 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-     
-        <article class="bg-red-500 flex text-white  m-auto text-center w-96 h-96">
-            <div class="border-2 w-[22rem] h-[22rem] justify-center  m-auto items-center">
-            <p class="opacity-75 pt-4">Vildskud 2023</p>
-            <h2 class="text-3xl py-3 font-bold">Enkel forestilling</h2>
-            <p>Skal du med ind og se <br> forestillingerne i en dag?</p>
-            <p class="underline"><a href="">Mere info</a></p>
-            <h2 class="text-3xl py-6 font-semibold">70 kr.</h2>
-            <p class="text-xs font-semibold">Ekskl. billet- og administrationsgebyr</p>
-            <button class="text-base mt-5 font-semibold text-black py-2 px-12 bg-green-300"><a href="#">Køb billet</a></button>
+   
+   <main class="m-auto grid w-4/5 max-w-7xl text-white">
+    <div class="flex justify-center md:justify-start pt-10 pb-14">
+    <button class=" cursor-pointer bg-purple-500 py-3 px-9 " onclick="history.back()">Tilbage</button>
+  </div>
+  <h1 class="text-center md:text-left text-6xl"> Re-birth</h1>
+    <section class="grid m-auto pt-10 gap-5 lg:grid-cols-2">
+      <article class="flex py-5 md:py-24 lg:p-0 justify-center items-center lg:items-start
+      ">
+      <img class="absolute w-2/4 invisible md:visible  md:w-5/12 lg:w-1/3" src="img/former.svg">
+        <img class="z-10 w-3/6  md:w-2/12 lg:w-1/4 lg:pt-[19%]" src="img/re-birth.png">
+      </article>
+      <article class="grid gap-6 md:grid-cols-2 lg:grid-cols-1">
+        <div class=" flex gap-5 pb-8 flex-col md:flex-row md:justify-between">
+        <div>
+          
+          <div class="flex flex-row md:flex-col justify-center  md:gap-3 gap-5 py-2">
+            
+          <div class="flex flex-col items-center lg:flex-row gap-4 md:items-start">  
+            <div class="bg-purple-800  px-6 py-1">
+            <p class="text-center w-16">Torsdag</p></div>
+          <p>15:00, 18:15, 20:15</p></div>
+         
+         <div class="flex flex-col items-center lg:flex-row gap-4 md:items-start">  
+          <div class="bg-purple-300 px-6 py-1">
+          <p class="text-center w-16">Fredag</p> </div>
+          <p>15:00, 18:15, 20:00</p></div>
         </div>
-        </article>
+          <div>
+          <p class="font-semibold">Varighed: 90 min.</p>
+          <p class="font-semibold">Venue: Downunder</p>
+          <p class="text-xs">Vandkunsten 5. 1467 København
+            </p>
+        </div>
+        </div>
         
-        <article class="bg-red-500 flex text-white  m-auto text-center w-96 h-96">
-            <div class="border-2 w-[22rem] h-[22rem] justify-center  m-auto items-center">
-            <p class="opacity-75 pt-4">Vildskud 2023</p>
-            <h2 class="text-3xl py-3 font-bold">Endagsbillet</h2>
-            <p>Skal du med ind og se <br>
-                forestillingerne i en dag?</p>
-            <p class="underline"><a href="">Mere info</a></p>
-            <h2 class="text-3xl py-6 font-semibold">120 kr.</h2>
-            <p class="text-xs font-semibold">Ekskl. billet- og administrationsgebyr</p>
-            <button class="text-base mt-5 font-semibold text-black py-2 px-12 bg-green-300"><a href="#">Køb billet</a></button>
+        <form class="flex justify-start flex-col">
+        <div class="form-control w-40 max-w-xs">
+          <label class="label text-xs font-semibold text-white">Vil du modtage en sms to timer før så du ikke går glip af et godt show? </label>
+          <input type="number" placeholder="+45" class="input-bordered bg-transparent w-full max-w-xs" />
         </div>
-        </article>
+        <br>
+    <input  class="text-white cursor-pointer w-40 bg-purple-500 py-3 px-9 justify-center"
+    type="submit" value="Påmind mig">
+  </form>
 
-        <article class="bg-red-500 flex text-white  m-auto text-center w-96 h-96">
-            <div class="border-2 w-[22rem] h-[22rem] justify-center  m-auto items-center">
-            <p class="opacity-75 pt-4">Vildskud 2023</p>
-            <h2 class="text-3xl py-3 font-bold">Partout billet</h2>
-            <p>Vil du ikke gå glip af noget af festen? <br>
-                Så vær med alle tre dage!</p>
-            <p class="underline"><a href="">Mere info</a></p>
-            <h2 class="text-3xl py-6 font-semibold">295 kr.</h2>
-            <p class="text-xs font-semibold">Ekskl. billet- og administrationsgebyr</p>
-            <button class="text-base mt-5 font-semibold text-black py-2 px-12 bg-green-300"><a href="#">Køb billet</a></button>
+</div>
+  <div class="md:order-first lg:order-none">
+    <p class="max-w-prose">Forestilling af af Where is the rabbithole Året er 2222, vi er i et underjordisk genfødselskammer - et såkaldt SkaberLab - hvor mennesker bliver skabt og genskabt, for at kunne leve i århundreder. . I forsøget på at løse forplantnings krisen, afskaffede vi den naturlige formering. Nu skabes mennesker af ufejlbart DNA, af en højteknologisk kult. Det perfekte menneske er alt. DNA’et er frit for sygdomme, men miljøet er stadig giftigt, så hvert 12. år genfødes mennesket i en fornyelsesproces kaldet: ’’RE-BIRTH’’. Bemærk: ønsker du at blive en aktiv del af ceremonien, så medbring et hårstrå. Medvirkende: Iben Damkjær, Emil Nygård Konsulent: Julie Mogensen</p>
+  </div>
+      
+        <div class="flex pt-6 gap-6 md:justify-center md:order-1 lg:order-none">
+          <button class="text-white cursor-pointer w-44 bg-purple-500 py-3 px-5 "><a href="billetsalg.html">Køb billet</a></button>
+          <button class="text-white cursor-pointer w-44 bg-purple-500 py-3 px-5 "><a href="#">Reservere plads</a></button>
         </div>
-        </article>
-
-        <article class="bg-red-500 flex text-white  m-auto text-center w-96 h-96">
-            <div class="border-2 w-[22rem] h-[22rem] justify-center  m-auto items-center">
-            <p class="opacity-75 pt-4">Vildskud 2023</p>
-            <h2 class="text-3xl py-3 font-bold">Gavekort</h2>
-            <p>Du vælger selv beløbet og hvem du <br>vil give det til.</p>
-            <p class="underline"><a href="">Mere info</a></p>
-            <h2 class="text-3xl py-6 font-semibold">30-900 kr.</h2>
-            <p class="text-xs font-semibold">Ekskl. billet- og administrationsgebyr</p>
-            <button class="text-base mt-5 font-semibold text-black py-2 px-12 bg-green-300"><a href="#">Køb billet</a></button>
-        </div>
-        </article>
-
-        <article class="bg-red-500 flex text-white  m-auto text-center w-96 h-96">
-            <div class="border-2 w-[22rem] h-[22rem] justify-center  m-auto items-center">
-            <p class="opacity-75 pt-4">Vildskud 2023</p>
-            <h2 class="text-3xl py-3 font-bold">Be a buddy</h2>
-            <p class="px-3">En partout billet med adgang til alle dage og en særlig donation til Plant-a-tree på 200 kr.</p>
-            <p class="underline"><a href="">Mere info</a></p>
-            <h2 class="text-3xl py-6 font-semibold">495 kr.</h2>
-            <p class="text-xs font-semibold">Ekskl. billet- og administrationsgebyr</p>
-            <button class="text-base mt-5 font-semibold text-black py-2 px-12 bg-green-300"><a href="#">Køb billet</a></button>
-        </div>
-        </article>
-
-        
+        <p class=" py-6 text-xs">*For at se forestillinger på Vildskud Festival 2022 SKAL pladsreservationer vises sammen med en Endags- eller Partoutbillet.
+          Du finder links til pladsreservationerne i de enkelte forestillingers begivenheder: https://bit.ly/3xSJ2JUeller ved at søge på ‘VILDSKUD’ inde på YourTickets hjemmeside: https://www.yourticket.dk/arrangementer/</p>
+      </article>
     </section>
-  </main>
+   </main>
 
 <footer class="bg-green-900">
   <div class="max-w-screen-xl px-4 py-16 pb-4 mx-auto sm:px-6 lg:px-8">
