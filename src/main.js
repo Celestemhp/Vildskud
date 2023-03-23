@@ -1,16 +1,102 @@
 import "./style.css";
+import Alpine from 'alpinejs'
+ 
+window.Alpine = Alpine
+Alpine.start()
 
-gsap.set('.main', {position:'fixed', background:'#fff', width:'100%', maxWidth:'1200px', height:'100%', top:0, left:'50%', x:'-50%'})
-gsap.set('.scrollDist', {width:'100%', height:'200%'})
-gsap.timeline({scrollTrigger:{trigger:'.scrollDist', start:'top top', end:'bottom bottom', scrub:1}})
-    .fromTo('.sky', {y:0},{y:-200}, 0)
-    .fromTo('.cloud1', {y:100},{y:-800}, 0)
-    .fromTo('.cloud2', {y:-150},{y:-500}, 0)
-    .fromTo('.cloud3', {y:-50},{y:-650}, 0)
-    .fromTo('.mountBg', {y:-10},{y:-100}, 0)
-    .fromTo('.mountMg', {y:-30},{y:-250}, 0)
-    .fromTo('.mountFg', {y:-50},{y:-600}, 0)
 
-$('#arrowBtn').on('mouseenter', (e)=>{ gsap.to('.arrow', {y:10, duration:0.8, ease:'back.inOut(3)', overwrite:'auto'}); })
-$('#arrowBtn').on('mouseleave', (e)=>{ gsap.to('.arrow', {y:0, duration:0.5, ease:'power3.out', overwrite:'auto'}); })
-$('#arrowBtn').on('click', (e)=>{ gsap.to(window, {scrollTo:innerHeight, duration:1.5, ease:'power1.inOut'}); }) // scrollTo requires the ScrollTo plugin (not to be confused w/ ScrollTrigger)
+// Alpine.js filtrering
+function filters() {
+  return {
+    filterCounter: 0,
+    reset: false,
+    resetCounter: false,
+    open() {
+      this.show = true;
+    },
+    close() {
+      this.show = false;
+    },
+
+    isOpen() {
+      return this.show === true;
+    },
+
+    count() {
+      this.show = false;
+      this.checked = !this.checked;
+      if (this.checked) {
+        this.counter = this.counter + 1;
+        this.filterCounter = this.filterCounter + 1;
+      } else if (!this.checked) {
+        this.counter = this.counter - 1;
+        this.filterCounter = this.filterCounter - 1;
+      }
+    },
+  };
+}
+
+// function dropdown() {
+//   return {
+//       options: [],
+//       selected: [],
+//       show: false,
+//       open() { this.show = true },
+//       close() { this.show = false },
+//       isOpen() { return this.show === true },
+//       select(index, event) {
+
+//           if (!this.options[index].selected) {
+
+//               this.options[index].selected = true;
+//               this.options[index].element = event.target;
+//               this.selected.push(index);
+
+//           } else {
+//               this.selected.splice(this.selected.lastIndexOf(index), 1);
+//               this.options[index].selected = false
+//           }
+//       },
+//       remove(index, option) {
+//           this.options[option].selected = false;
+//           this.selected.splice(index, 1);
+
+
+//       },
+//       loadOptions() {
+//           const options = document.getElementById('select').options;
+//           for (let i = 0; i < options.length; i++) {
+//               this.options.push({
+//                   value: options[i].value,
+//                   text: options[i].innerText,
+//                   selected: options[i].getAttribute('selected') != null ? options[i].getAttribute('selected') : false
+//               });
+//           }
+
+
+//       },
+//       selectedValues(){
+//           return this.selected.map((option)=>{
+//               return this.options[option].value;
+//           })
+//       }
+//   }
+// }
+
+// scroll snap
+const gra = function(min, max) {
+  return Math.random() * (max - min) + min;
+}
+const init = function(){
+let items = document.querySelectorAll('section');
+for (let i = 0; i < items.length; i++){
+  items[i].style.background = randomColor({luminosity: 'light'});
+}
+cssScrollSnapPolyfill()
+}
+init();
+
+
+
+// test program
+

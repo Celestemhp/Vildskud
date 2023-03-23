@@ -15,6 +15,10 @@
   h1, h2, h3, h4 p {
     color: white;
   }
+  section {
+    scroll-snap-align: start;
+    position: relative;
+  }
 /************** Buttons ************/
 .main-btn {
   @apply inline-block px-1 py-1 font-bold text-white duration-300 rounded-md bg-primary;
@@ -43,7 +47,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 100%;
+
 }
 
 /* .btn{
@@ -139,13 +143,13 @@
 }
 .menu-wrap .menu{
   position: fixed;
-  height: 50%;
+  height: 100%;
    visibility: hidden; 
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  scale: 110%;
+  scale: 100%;
   
 }
 .menu-wrap .menu > div{
@@ -169,6 +173,8 @@
   list-style: none;
   color: #fff;
   font-size: 2rem;
+  margin: 0;
+  padding: 0;
 }
 
 .menu-wrap .menu >div > div > ul > li > a{
@@ -182,13 +188,13 @@
   color: white;
   font-size: 3.5em;
   position: absolute;
-  top: 160px;
-  left: 160px;
+  top: 70px;
+  left: 0px;
   z-index: 100;
   transition: all 0.3s;
+  margin: 0;
+padding: 0;
 }
-
-/******************** Bevægende baggrund ************************/
 
 /******************* ord anmation **********/
 
@@ -244,16 +250,10 @@ footer .linje {
 
 
 
-/* ******************tilføjelser *************/
-.scrollDist {
-  position: absolute;
-}
-
-
-
+/* ****************** baggrund animation *************/
 .bg {
   animation:slide 3s ease-in-out infinite alternate;
-  background-image: linear-gradient(-60deg, rgb(224, 221, 39) 50%, rgb(140, 0, 255) 50%);
+  background-image: linear-gradient(-60deg, rgb(43, 43, 43) 50%, rgb(140, 0, 255) 50%);
   bottom:0;
   left:-50%;
   opacity:.5;
@@ -279,4 +279,57 @@ footer .linje {
   100% {
     transform:translateX(25%);
   }
+}
+
+
+/* bølge */
+.box {
+  --size: 50px;
+  --p: 25px;
+  --R: 55.9px /*sqrt(var(--size)*var(--size) + var(--p)*var(--p))*/;
+  height: 200px;
+  -webkit-mask:
+    radial-gradient(var(--R) at 50% calc(100% - (var(--size) + var(--p))),blue 99%,#0000 101%) calc(50% - 2*var(--size)) 0/calc(4*var(--size)) 100%,
+    radial-gradient(var(--R) at 50% calc(100% + var(--p)),#0000 99%,red 101%) 50% calc(100% - var(--size))/calc(4*var(--size)) 100% repeat-x;
+  background: #009A5B;  
+  border: none;
+}
+
+/* scroll snap */
+.scroll_snap {
+  scroll-snap-type: y proximity;
+  
+}
+
+.child {
+  scroll-snap-align: start;
+}
+
+
+/* kontakt spin */
+.kontakt {
+  animation: spin 2.5s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(90deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }

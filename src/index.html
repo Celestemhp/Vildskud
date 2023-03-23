@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="myTheme" class="bg-base-100">
-  <html lang="en" data-theme="myTheme">
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,8 +7,8 @@
     </head>
     <body>
       <div class="bg"></div>
-<div class="bg bg2"></div>
-<div class="bg bg3"></div>
+      <div class="bg bg2"></div>
+      <div class="bg bg3"></div>
     <!-- Cookies -->
     <!-- <div class="fixed left-0 bottom-0 z-40 " x-data="{cookies: true}"  @keydown.window.escape="cookies = false"> -->
     <!-- Indhold til cookies -->
@@ -31,7 +30,7 @@
           </div>
         </div>
       </div>
-      <!-- Boutons -->
+      <!-- Buttons -->
       <div class="flex w-full items-center justify-center border-t border-solid border-gray-200">
         <button class="flex-1 border-r border-gray-200 px-4 py-3 text-gray-500 duration-150 hover:bg-red-400 hover:text-white" @click="cookies = false">Afvis</button>
         <button class="flex-1 px-4 py-3 text-gray-500 duration-150 hover:bg-green-400 hover:text-white" @click="cookies = false">Fint med mig</button>
@@ -40,14 +39,16 @@
     <!-- BTN -->
     <button class="fixed left-4 bottom-2 rounded-full bg-gray-900 px-4 py-3 text-sm uppercase text-white" @click="cookies = !cookies">Cookies</button>
 
+
     <header class="showcase">
-      <div class="mx-4 mt-5 flex items-center justify-between md:flex-wrap">
+      <img class="w-24 sm:w-48 ml-0 absolute top-0" src="/img/mindre_streg@2x.png" alt="">
+      <div class="mx-4 flex items-center justify-between md:flex-wrap mt-5">
         <a href="index.html" class="flex">
-          <img src="/img/LOGO2x.png" width="" alt="" class="mr-3 w-36" />
+          <!-- <img src="/img/LOGO2x.png" width="" alt="" class="mr-3 w-36" /> -->
         </a>
         <div class="flex flex-row place-items-center gap-4">
           <!-- Køb billet btn -->
-          <button class="main-btn btn-primary btn hover:scale-110">
+          <button href="billetsalg.hml" class="main-btn btn-primary btn hover:scale-110">
             <p>Køb billet</p>
           </button>
           <!-- Nav desktop -->
@@ -55,10 +56,10 @@
             <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
               <ul class="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
                 <li>
-                  <a href="#" class="block rounded py-2 pl-3 pr-4 text-white hover:scale-110 focus:outline-none md:p-0 md:hover:text-fuchsia-400" aria-current="page">Program</a>
+                  <a href="program.html" class="block rounded py-2 pl-3 pr-4 text-white hover:scale-110 focus:outline-none md:p-0 md:hover:text-fuchsia-400" aria-current="page">Program</a>
                 </li>
                 <li>
-                  <a href="#" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Find rundt</a>
+                  <a href="findrundt.html" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Find rundt</a>
                 </li>
                 <li>
                   <a href="#" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">FAQ</a>
@@ -66,11 +67,30 @@
                 <li>
                   <a href="#" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Frivillig</a>
                 </li>
+                <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="text-white  hover:bg-slate-800 focus:outline-none  font-medium rounded-lg text-sm  text-center inline-flex items-center dark:hover:bg-slate-700" type="button">
+                  Info 
+                  <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+                <!-- Dropdown menu -->
+                <div id="dropdownHover" class="z-10 hidden divide-y divide-gray-100 rounded-lg bg-slate-500">
+                    <ul class="py-2 text-sm  dark:text-gray-200" aria-labelledby="dropdownHoverButton">
+                      <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Om Vildskud</a>
+                      </li>
+                      <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Team</a>
+                      </li>
+                      <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Samarbejdspartnere</a>
+                      </li>
+                      <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Kontakt</a>
+                      </li>
+                    </ul>
+                </div>
+            
 
-                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex w-full items-center justify-between border-b border-gray-100 py-2 pl-3 pr-4 font-medium text-white hover:scale-110 md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">
-                  Info
-                  <svg class="ml-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                </button>
+
+
               </ul>
             </div>
           </div>
@@ -82,67 +102,52 @@
               <div>
                 <div class="w-full md:block md:w-auto">
                   <ul>
-                    <li><a href="#">Program</a></li>
-                    <li><a href="#">Find rundt</a></li>
+                    <li><a href="program.html">Program</a></li>
+                    <li><a href="findrundt.html">Find rundt</a></li>
                     <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Frivillig</a></li>
-                    <li data-dropdown-toggle="dropdownNavbar">
+                    <li><a href="frivillig.html">Frivillig</a></li>
+                    <li data-dropdown-toggle="dropdownBurger">
                       <button>
                         Info
-                        <svg class="ml-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        <!-- pil -->
+                        <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                       </button>
-                      <!-- Dropdown menu -->
-                      <div id="dropdownNavbar" class="z-10 mt-10 hidden list-none text-base">
-                        <ul class="py-1">
-                          <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Om Vildskud</a>
-                          </li>
-                          <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Samarbejdspartnere</a>
-                          </li>
-                          <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Kontakt</a>
-                          </li>
-                        </ul>
-                      </div>
+
                     </li>
                   </ul>
                 </div>
+                        <!-- Dropdown menu -->
+                        <div id="dropdownBurger" class="z-10 h-screen divide-y divide-gray-100">
+                          <ul class="py-2  dark:text-gray-200" aria-labelledby="dropdownBurgerButton">
+                            <li>
+                              <a href="omVildskud.html" class="block px-4 py-2 hover:bg-gray-100">Om Vildskud</a>
+                            </li>
+                            <li>
+                              <a href="team.html" class="block px-4 py-2 hover:bg-gray-100  ">Team</a>
+                            </li>
+                            <li>
+                              <a href="samarbejdspartnere.html" class="block px-4 py-2 hover:bg-gray-100  ">Samarbejdspartnere</a>
+                            </li>
+                            <li>
+                              <a href="kontakt.html" class="block px-4 py-2 hover:bg-gray-100">Kontakt</a>
+                            </li>
+                          </ul>
+                        </div>
               </div>
+              
             </div>
           </div>
         </div>
       </div>
-      <!-- Baggrund animationer -->
-      <!-- <div class="container">
-        <svg version="1.1" id="svg-left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 600 400" style="enable-background: new 0 0 600 400" xml:space="preserve">
-          <g>
-            <path
-              class="blob"
-              d="M220.262,366.814c41.228-14.367,64.978-58.826,96.198-136.802
-        c43.518-108.692,53.929-137.426,67.672-149.92s154.708-58.065,177.821-65.59C576.392,9.802,591.841,5.391,596.66-2H-2v334.452
-        c16.689,8.319,35.468,14.508,56.726,18.745C98.453,359.914,179.034,381.181,220.262,366.814z"
-            />
-          </g>
-        </svg>
-        <svg version="1.1" id="svg-right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 600 400" style="enable-background: new 0 0 600 400" xml:space="preserve">
-          <g>
-            <path
-              class="blob2"
-              d="M361.076,143.985c9.307,26.708,38.108,42.094,88.622,62.319
-        c70.412,28.192,89.027,34.936,97.12,43.839c8.093,8.903,37.615,100.223,42.49,115.196c3.045,9.354,5.902,19.361,10.691,22.483V0
-        H383.337c-5.389,10.811-9.398,22.976-12.143,36.748C365.547,65.075,351.769,117.277,361.076,143.985z"
-            />
-          </g>
-        </svg>
-      </div> -->
     </header>
 
 
       <!-- Hero section -->
-      <section class="flex flex-col place-items-center justify-center">
-        <h2 class="mt-10 text-center text-3xl font-bold text-white">2. - 6. august</h2>
-        <img src="/img/LOGO2x.png" alt="logo" class="mt-20 lg:max-w-4xl" />
+      <section class="flex flex-col place-items-center justify-center mb-16 scroll-snap proximity">
+        <h2 class="mt-20 lg:mt-10 text-center text-3xl font-bold text-white">2. - 6. august 2023</h2>
+        <h2 class="mt-4 text-center text-3xl font-bold text-white">København</h2>
+
+        <img src="/img/LOGO2x.png" alt="logo" class="mt-10 lg:max-w-4xl" />
         <h2 class="text-center text-5xl font-bold text-white">Festival</h2>
 
         <!-- ord animation -->
@@ -163,65 +168,88 @@
 
         <h2 class="text-center text-3xl text-white"></h2>
         <!-- knapper -->
-        <div class="hero-btns sm:mt-5 md:mt-10 lg:mt-10">
-          <button class="hero-btn btn-primary btn transform hover:rotate-12 hover:scale-110">
-            <p>Se program</p>
-          </button>
-          <button class="hero-btn btn-primary btn hover:scale-110">
-            <p>Køb billet</p>
-          </button>
+        <div class="hero-btns mt-8 sm:mt-5 md:mt-10 lg:mt-10">
+            <a href="program.html" class="hero-btn btn-primary btn transform hover:rotate-12 hover:scale-110">Se program</a>
+            <a href="program.html" class="hero-btn btn-primary btn hover:scale-110">Køb billet</a>
         </div>
       </section>
+      <main class="snap-start">
+        <div class="box"></div>
+  
+  <!-- tekst -->
+<section class=" flex flex-col snap-center  mt-44 child {
+  scroll-snap-align: start;
+}">
+  <h3 class="text-center text-3xl font-bold mx-10 max-w-lg place-self-center snap-start">KOM MED til årets festival for uafhængig scenekunst og oplev scenekunsten helt tæt på!</h3>
+  <div class=" w-56 -m-5 lg:w-80 rotate-12  transform hover:rotate-12 hover:scale-110">
+    <img src="/img/regnbue@2x.png" alt="regnbue">
+  </div>
+</section>
+<!-- Forestillinger -->
+<section class="flex flex-col gap-6 justify-center h-screen child {
+  scroll-snap-align: start;
+}">
+  <h2 class="text-center text-3xl font-bold child">Forestillinger</h2>
+  <div class="flex flex-row justify-center gap-2 flex-wrap">
+    <img class="w-24 sm:w-32 hover:scale-110" src="/img/Billede1-2.webp" alt="forestilling">
+    <img class="w-24 sm:w-32 hover:scale-110" src="/img/Billede1.webp" alt="forestilling">
+    <img class="w-24 sm:w-32 hover:scale-110" src="/img/Image-from-iOS.webp" alt="forestilling">
+    <img class="w-24 sm:w-32 hover:scale-110" src="/img/9BEF0B3D-169C-4CB1-82BF-C3ED7BC468D8.webp" alt="forestilling">
+  </div>
+  <div class=" sm:mt-5 md:mt-10 lg:mt-10 text-center">
+  <a href="program.html" class="hero-btn btn-primary btn transform hover:rotate-12 hover:scale-110">Se program</a>
+  </div>
+</section>
+<!-- om -->
+<section class="flex flex-col gap-5 justify-center mt-24 lg:10 ">
+  <img class="w-60 lg:w-72 flex justify-center m-auto mb-0 lg:mb-10" src="/img/fest@2x.png" alt="">
+  <h3 class="text-center text-3xl font-bold">Hvad er Vildskud?</h3>
+  <p class=" text-white text-lg lg:text-xl mx-10 max-w-lg place-self-center">Vildskud er Københavns festival for uafhængig scenekunst. Vær med, se med. Vildskud er for alle der er interesserede i at dyrke og støtte spirende og uafhængige scenekunstnere.Vildskud er Københavns festival for uafhængig scenekunst. Vær med, se med. Vildskud er for alle der er interesserede i at dyrke og støtte spirende og uafhængige scenekunstnere.</p>
+</section>
+<!-- tid -->
+<section class="flex flex-col gap-5 justify-center mt-60">
+  <div class="bg-purple-400 rounded-full w-fit place-self-center flex flex-col gap-5 p-6">
+  <h3 class="text-center text-3xl font-bold ">Tid og sted</h3>
+  <p class=" text-white text-lg lg:text-xl mx-10 max-w-lg place-self-center">2. aug. kl. 15:00 - 6. aug. kl.03:00</p>
+  <p class=" text-white text-lg lg:text-xl mx-10 max-w-lg place-self-center">Forestillingerne foregår rundt i København. Du finder information om de forskellige steder under forestillinger.</p>
+  <p class=" text-white text-center text-lg lg:text-xl mx-10 max-w-lg place-self-center">Se også vores forslag til hvordan du kan planlægge din festival rute.</p>
+  </div>
+</section>
 
-      <section class="mt-20 mb-20">
-        <!-- Countdown -->
-        <div class="grid auto-cols-max grid-flow-col justify-center gap-5 text-center">
-          <div class="rounded-box flex flex-col bg-neutral p-2 text-neutral-content">
-            <span class="countdown font-mono text-5xl">
+      <!-- Countdown -->
+      <section class="my-64 snap-start">
+        <div class="grid auto-cols-max grid-flow-col justify-center gap-1 sm:gap-5 text-center">
+          <div class="rounded-box flex flex-col bg-neutral p-2 sm:p-6 md:p-6 lg:p-6 text-neutral-content">
+            <span class="countdown font-mono text-5xl sm:text-5xl">
               <span style="--value: 40"></span>
             </span>
             days
           </div>
-          <div class="rounded-box flex flex-col bg-neutral p-2 text-neutral-content">
+          <div class="rounded-box flex flex-col bg-neutral p-2 sm:p-6 text-neutral-content place-content-center">
             <span class="countdown font-mono text-5xl">
               <span style="--value: 10"></span>
             </span>
             hours
           </div>
-          <div class="rounded-box flex flex-col bg-neutral p-2 text-neutral-content">
+          <div class="rounded-box flex flex-col bg-neutral text-neutral-content place-content-center p-2 sm:p-6">
             <span class="countdown font-mono text-5xl">
               <span style="--value: 24"></span>
             </span>
             min
           </div>
-          <div class="rounded-box flex flex-col bg-neutral p-2 text-neutral-content">
+          <div class="rounded-box flex flex-col bg-neutral p-2 sm:p-6 text-neutral-content place-content-center">
             <span class="countdown font-mono text-5xl">
               <span style="--value: 44"></span>
             </span>
             sec
           </div>
         </div>
+        <h2 class="text-center text-2xl  text-slate-300 mt-5 font-bold">Nedtælling til Vildskud festival!</h2>
       </section>
-
-<main>
-<!-- skyer -->
-  <div class="scrollDist"></div>
-<div class="main">
-  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
-    <mask id="m">
-      <g class="cloud1">
-        <rect fill="#fff" width="100%" height="801" y="799" />
-      </g>
-    </mask>
-         <image class="cloud2" xlink:href="https://assets.codepen.io/721952/cloud2.png" width="1200" height="800"/>    
-    <image class="cloud1" xlink:href="https://assets.codepen.io/721952/cloud1.png" width="1200" height="800"/>
-    <image class="cloud3" xlink:href="https://assets.codepen.io/721952/cloud3.png" width="1200" height="800"/>    
-  </svg>
-</div>
 
 </main>
 
-      <footer class="bg-green-900">
+      <footer class="bg-slate-900">
         <div class="mx-auto max-w-screen-xl px-4 py-16 pb-4 sm:px-6 lg:px-8">
           <div class="grid grid-cols-1 place-content-end lg:grid-cols-2 lg:gap-8">
             <div>
@@ -250,19 +278,20 @@
               <div>
                 <p class="font-medium text-white">Genveje</p>
                 <nav class="mt-4 flex flex-col space-y-2 text-sm">
-                  <a class="hover:opacity-75" href> Program </a>
-                  <a class="hover:opacity-75" href> Find rundt</a>
-                  <a class="hover:opacity-75" href> FAQ </a>
-                  <a class="hover:opacity-75" href> Frivilige </a>
-                  <a class="hover:opacity-75" href> Om Vildskud </a>
+                  <a class="hover:opacity-75" href="program.html"> Program </a>
+                  <a class="hover:opacity-75" href="findrundt.html"> Find rundt</a>
+                  <a class="hover:opacity-75" href="faq.html"> FAQ </a>
+                  <a class="hover:opacity-75" href="frivillige.html"> Frivilige </a>
+                  <a class="hover:opacity-75" href="omVildskud.html"> Om Vildskud </a>
                 </nav>
               </div>
               <div>
                 <nav class="mt-4 flex flex-col space-y-2 text-sm">
-                  <a class="hover:opacity-75" href> Samarbejdspartnere </a>
-                  <a class="hover:opacity-75" href> Kontakt</a>
-                  <a class="hover:opacity-75" href> Cookiepolitik </a>
-                  <a class="hover:opacity-75" href> Privatlivspolitik </a>
+                  <a class="hover:opacity-75" href="team.html"> Team </a>
+                  <a class="hover:opacity-75" href="samarbejdspartnere.html"> Samarbejdspartnere </a>
+                  <a class="hover:opacity-75" href="kontakt.html"> Kontakt</a>
+                  <a class="hover:opacity-75" href="index.html"> Cookiepolitik </a>
+                  <a class="hover:opacity-75" href="index.html"> Privatlivspolitik </a>
                 </nav>
               </div>
             </div>
@@ -288,4 +317,3 @@
       <script type="module" src="./main.js"></script>
     </body>
   </html>
-</html>

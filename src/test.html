@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Select</title>
+
+    <!-- Tailwind CSS & its Custom Forms plugin -->
+    <link rel="stylesheet" href="style.css"/>
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+
+
+    
+    <body class="p-20">
+    
+        
+        
+   <!-- kategorier knap -->
+ <div x-data="{ selectedOption: 'Alle', 
+ kategorier: [ 
+    'Alle',
+    'Forestillinger', 
+    'Events'
+ ]}">
+
+<div class="w-1/2 inline-block relative">
+<select name="my_option" x-model="selectedOption" class="">
+    <template x-for="option in kategorier" :key="option">
+        <option :value="option" x-text="option"></option>
+    </template>
+</select>
+
+</div>
+ <span x-text="selectedOption"></span>
+</div>
+
+       <!-- Program -->
+       <section  x-text="selectedOption" :value="Forestillinger" x-text="Forestillinger">
+
+
+        <div class="content grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+
+          <div class="alle w-auto bg-gray-400 rounded-lg sahdow-lg overflow-hidden flex flex-row justify-center items-center hover:bg-indigo-500 hover:ring-indigo-500 m-4 gap-4">
+            <div class=" w-32 m-4">
+
+                  <img class="object-center object-cover h-auto w-full " src="/img/Billede1.webp" alt="photo">
+              </div>
+              <div class="py-8 sm:py-6">
+
+                  <p class="text-2xl text-gray-700 font-bold mb-2">RE-BIRTH</p>
+                  <p class="text-base text-white font-normal">Venue: DOWNUNDER</p>
+                  <p class="text-base text-white font-normal">Genre:  gyser, thriller</p>
+                  <p class="text-base text-white font-normal">Varighed: 90 min.</p>
+                  <div class="flex flex-row gap-2">
+                  <p class="text-base text-white font-normal">Vises: </p>
+                    <p class="text-base text-white font-normal bg-purple-500 px-2">Mandag</p>
+                    <p class="text-base text-white font-normal bg-green-700 px-2">Torsdag</p>
+                  </div>
+              </div>
+          </div>
+  
+          <div class="alle w-auto bg-gray-400 rounded-lg sahdow-lg overflow-hidden flex flex-row justify-center items-center hover:bg-indigo-500 hover:ring-indigo-500 m-4 gap-4">
+            <div class=" w-32 m-4">
+                <img class="object-center object-cover h-auto w-full " src="/img/9BEF0B3D-169C-4CB1-82BF-C3ED7BC468D8.webp" alt="photo">
+            </div>
+            <div class="py-8 sm:py-6">
+                <p class="text-2xl text-gray-700 font-bold mb-2">Det levende rum</p>
+                <p class="text-base text-white font-normal">Venue: DOWNUNDER</p>
+                <p class="text-base text-white font-normal">Genre:  gyser, thriller</p>
+                <p class="text-base text-white font-normal">Varighed: 90 min.</p>
+                <div class="flex flex-row gap-2">
+                <p class="text-base text-white font-normal">Vises: </p>
+                  <p class="text-base text-white font-normal bg-blue-500 px-2">Tirsdag</p>
+                  <p class="text-base text-white font-normal bg-green-700 px-2">Torsdag</p>
+                </div>
+            </div>
+        </div>        
+        <div class="alle w-auto bg-gray-400 rounded-lg sahdow-lg overflow-hidden flex flex-row justify-center items-center hover:bg-indigo-500 hover:ring-indigo-500 m-4 gap-4">
+              <div class=" w-32 m-4">
+                  <img class="object-center object-cover h-auto w-full " src="/img/Billede1-2.webp" alt="photo">
+              </div>
+              <div class="py-8 sm:py-6">
+                  <p class="text-2xl text-gray-700 font-bold mb-2 w-52">Mand ligger som mand har redt</p>
+                  <p class="text-base text-white font-normal">Venue: DOWNUNDER</p>
+                  <p class="text-base text-white font-normal">Genre:  gyser, thriller</p>
+                  <p class="text-base text-white font-normal">Varighed: 90 min.</p>
+                  <div class="flex flex-row gap-2">
+                  <p class="text-base text-white font-normal">Vises: </p>
+                    <p class="text-base text-white font-normal bg-purple-500 px-2">Mandag</p>
+                    <p class="text-base text-white font-normal bg-yellow-500 px-2">Lørdag</p>
+                  </div>
+              </div>
+          </div>
+        <div class="alle w-auto bg-gray-400 rounded-lg sahdow-lg overflow-hidden flex flex-row justify-center items-center hover:bg-indigo-500 hover:ring-indigo-500 m-4 gap-4">
+          <div class=" w-32 m-4">
+              <img class="object-center object-cover h-auto w-full " src="/img/WFTWT_instagram.webp" alt="photo">
+          </div>
+          <div class="py-8 sm:py-6">
+              <p class="text-2xl text-gray-700 font-bold mb-2 ">What fires together wires together</p>
+              <p class="text-base text-white font-normal">Venue: DOWNUNDER</p>
+              <p class="text-base text-white font-normal">Genre:  gyser, thriller</p>
+              <p class="text-base text-white font-normal">Varighed: 90 min.</p>
+              <div class="flex flex-row gap-2">
+              <p class="text-base text-white font-normal">Vises: </p>
+                <p class="text-base text-white font-normal bg-blue-500 px-2">Tirsdag</p>
+                <p class="text-base text-white font-normal bg-rose-400 px-2">Onsdag</p>
+              </div>
+          </div>
+      </div>
+      <div class="alle w-auto bg-gray-400 rounded-lg sahdow-lg overflow-hidden flex flex-row justify-center items-center hover:bg-indigo-500 hover:ring-indigo-500 m-4 gap-4">
+        <div class=" w-32 m-4">
+            <img class="object-center object-cover h-auto w-full " src="/img/Image-from-iOS.webp" alt="photo">
+        </div>
+        <div class="py-8 sm:py-6">
+            <p class="text-2xl text-gray-700 font-bold mb-2">GOGO YO-YOKU</p>
+            <p class="text-base text-white font-normal">Venue: DOWNUNDER</p>
+            <p class="text-base text-white font-normal">Genre:  gyser, thriller</p>
+            <p class="text-base text-white font-normal">Varighed: 90 min.</p>
+            <div class="flex flex-row gap-2">
+            <p class="text-base text-white font-normal">Vises: </p>
+              <p class="text-base text-white font-normal bg-purple-500 px-2">Mandag</p>
+              <p class="text-base text-white font-normal bg-yellow-500 px-2">Lørdag</p>
+            </div>
+        </div>
+    </div>
+        </div>
+  
+        </section>
+        <script>
+            function select(config) {
+                return {
+                    data: config.data,
+
+                    emptyOptionsMessage: config.emptyOptionsMessage ?? 'No results match your search.',
+
+                    focusedOptionIndex: null,
+
+                    name: config.name,
+
+                    open: false,
+
+                    options: {},
+
+                    placeholder: config.placeholder ?? 'Select an option',
+
+                    search: '',
+
+                    value: config.value,
+
+                    closeListbox: function () {
+                        this.open = false
+
+                        this.focusedOptionIndex = null
+
+                        this.search = ''
+                    },
+
+                    focusNextOption: function () {
+                        if (this.focusedOptionIndex === null) return this.focusedOptionIndex = Object.keys(this.options).length - 1
+
+                        if (this.focusedOptionIndex + 1 >= Object.keys(this.options).length) return
+
+                        this.focusedOptionIndex++
+
+                        this.$refs.listbox.children[this.focusedOptionIndex].scrollIntoView({
+                            block: "center",
+                        })
+                    },
+
+                    focusPreviousOption: function () {
+                        if (this.focusedOptionIndex === null) return this.focusedOptionIndex = 0
+
+                        if (this.focusedOptionIndex <= 0) return
+
+                        this.focusedOptionIndex--
+
+                        this.$refs.listbox.children[this.focusedOptionIndex].scrollIntoView({
+                            block: "center",
+                        })
+                    },
+
+                    init: function () {
+                        this.options = this.data
+
+                        if (!(this.value in this.options)) this.value = null
+
+                        this.$watch('search', ((value) => {
+                            if (!this.open || !value) return this.options = this.data
+
+                            this.options = Object.keys(this.data)
+                                .filter((key) => this.data[key].toLowerCase().includes(value.toLowerCase()))
+                                .reduce((options, key) => {
+                                    options[key] = this.data[key]
+                                    return options
+                                }, {})
+                        }))
+                    },
+
+                    selectOption: function () {
+                        if (!this.open) return this.toggleListboxVisibility()
+
+                        this.value = Object.keys(this.options)[this.focusedOptionIndex]
+
+                        this.closeListbox()
+                    },
+
+                    toggleListboxVisibility: function () {
+                        if (this.open) return this.closeListbox()
+
+                        this.focusedOptionIndex = Object.keys(this.options).indexOf(this.value)
+
+                        if (this.focusedOptionIndex < 0) this.focusedOptionIndex = 0
+
+                        this.open = true
+
+                        this.$nextTick(() => {
+                            this.$refs.search.focus()
+
+                            this.$refs.listbox.children[this.focusedOptionIndex].scrollIntoView({
+                                block: "center"
+                            })
+                        })
+                    },
+                }
+            }
+        </script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"></script>
+<script src="https://unpkg.com/alpinejs" defer=""></script>
+<script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
+</body>
+</html>
