@@ -26,6 +26,7 @@ export default defineConfig({
         what_fires_together: resolve(__dirname, "src/what_fires_together.html"),
         vild_med_dig: resolve(__dirname, "src/vild_med_dig.html"),
         det_levende_rum: resolve(__dirname, "src/det_levende_rum.html"),
+        find_rundt: resolve(__dirname, "src/find_rundt.html"),
         // about: resolve(__dirname, "src/about.html"),
       },
     },
