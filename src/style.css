@@ -3,31 +3,47 @@
 @tailwind utilities;
 
 @layer base {
-    html {
-      font-family: Proxima Nova, poppins, sans-serif;
-    }
-  }
-  body {
-    /* background: linear-gradient(to top, purple, pink); */
-    margin: 0;
-    height: 100%;
-  }
-  h1, h2, h3, h4 p {
+  h1 {
+    font-family: "Imbue", serif;
     color: white;
+    font-size: 70px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    padding-block: 20px;
   }
-  section {
-    scroll-snap-align: start;
-    position: relative;
+  h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
   }
+  p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+  }
+}
+body {
+  /* background: linear-gradient(to top, purple, pink); */
+  margin: 0;
+  height: 100%;
+}
+h1,
+h2,
+h3,
+h4 p {
+  color: white;
+}
+section {
+  scroll-snap-align: start;
+  position: relative;
+}
 /************** Buttons ************/
 .main-btn {
-  @apply inline-block px-1 py-1 font-bold text-white duration-300 rounded-md bg-primary;
+  @apply inline-block rounded-md bg-primary px-1 py-1 font-bold text-white duration-300;
 }
 .main-btn:hover {
   @apply bg-pink-400;
 }
 .hero-btn {
-  @apply inline-block px-8 py-4 font-bold text-white duration-300 rounded-md bg-pink-400 m-4;
+  @apply m-4 inline-block rounded-md bg-pink-400 px-8 py-4 font-bold text-white duration-300;
 }
 @media (max-width: 365px) {
   .hero-btns {
@@ -37,17 +53,16 @@
   }
 }
 /* Burger menu */
-:root{
+:root {
   --menu-speed: 0.75s;
 }
 /* Header */
-.showcase .showcase-inner{
+.showcase .showcase-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-
 }
 
 /* .btn{
@@ -63,11 +78,11 @@
 } */
 
 /******** Linjer på burgermenu ***************/
-.menu-wrap{
+.menu-wrap {
   position: relative;
   z-index: 1;
 }
-.menu-wrap .toggler{
+.menu-wrap .toggler {
   position: absolute;
   top: 0;
   left: 0;
@@ -77,7 +92,7 @@
   height: 50px;
   opacity: 0;
 }
-.menu-wrap .hamburger{
+.menu-wrap .hamburger {
   z-index: 1;
   width: 56px;
   height: 53px;
@@ -87,7 +102,7 @@
   justify-content: center;
 }
 /* Hamburger line */
-.menu-wrap .hamburger >div {
+.menu-wrap .hamburger > div {
   position: relative;
   width: 100%;
   height: 2px;
@@ -99,8 +114,8 @@
 }
 /* Top and bottom lines */
 .menu-wrap .hamburger > div:before,
-.menu-wrap .hamburger > div:after{
-  content: '';
+.menu-wrap .hamburger > div:after {
+  content: "";
   position: absolute;
   z-index: 1;
   top: -10px;
@@ -109,65 +124,60 @@
   background: inherit;
 }
 /* Moves line down */
-.menu-wrap .hamburger > div:after{
+.menu-wrap .hamburger > div:after {
   top: 10px;
 }
 /* Toggler animate */
-.menu-wrap .toggler:checked + .hamburger > div{
+.menu-wrap .toggler:checked + .hamburger > div {
   transform: rotate(135deg);
 }
 /* Turn Lines into X */
 .menu-wrap .toggler:checked + .hamburger > div:before,
-.menu-wrap .toggler:checked + .hamburger > div:after{
+.menu-wrap .toggler:checked + .hamburger > div:after {
   top: 0;
   transform: rotate(90deg);
 }
 /* Rotate on hover when checked */
-.menu-wrap .toggler:checked:hover + .hamburger > div{
+.menu-wrap .toggler:checked:hover + .hamburger > div {
   transform: rotate(225deg);
 }
 /*************************************** Vis menu ***************************************/
-.menu-wrap .toggler:checked ~ .menu{
+.menu-wrap .toggler:checked ~ .menu {
   visibility: visible;
-  
 }
-.menu-wrap .toggler:checked ~ .menu > div{
+.menu-wrap .toggler:checked ~ .menu > div {
   transform: scale(1);
   transition-duration: var(--menu-speed);
-  
 }
-.menu-wrap .toggler:checked ~ .menu > div > div{
+.menu-wrap .toggler:checked ~ .menu > div > div {
   opacity: 1;
   transition: opacity 0.4s ease;
-  
 }
-.menu-wrap .menu{
+.menu-wrap .menu {
   position: fixed;
   height: 100%;
-   visibility: hidden; 
+  visibility: hidden;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   scale: 100%;
-  
 }
-.menu-wrap .menu > div{
+.menu-wrap .menu > div {
   background-color: blueviolet;
   display: flex;
   flex: none;
   align-items: center;
   justify-content: center;
-   transform: scale(0); 
+  transform: scale(0);
   transition: all 0.4s ease;
 }
-.menu-wrap .menu > div >div{
+.menu-wrap .menu > div > div {
   text-align: center;
   width: 300vw;
   max-height: 100vh;
-   opacity: 0; 
+  opacity: 0;
   transition: opacity 0.4s ease;
-  
 }
 .menu-wrap .menu > div > div > ul > li {
   list-style: none;
@@ -177,7 +187,7 @@
   padding: 0;
 }
 
-.menu-wrap .menu >div > div > ul > li > a{
+.menu-wrap .menu > div > div > ul > li > a {
   color: inherit;
   text-decoration: none;
   transition: color 0.4s ease;
@@ -193,7 +203,7 @@
   z-index: 100;
   transition: all 0.3s;
   margin: 0;
-padding: 0;
+  padding: 0;
 }
 
 /******************* ord anmation **********/
@@ -237,50 +247,45 @@ padding: 0;
   animation-delay: -5.6s;
 }
 
-
 /* Footer streg */
 footer .tilmeld-btn {
   height: 41px;
   place-self: center;
 }
 footer .linje {
-  border-bottom: 1px solid rgba(255,255,255,.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
-
-
-
 
 /* ****************** baggrund animation *************/
 .bg {
-  animation:slide 3s ease-in-out infinite alternate;
+  animation: slide 3s ease-in-out infinite alternate;
   background-image: linear-gradient(-60deg, rgb(43, 43, 43) 50%, rgb(140, 0, 255) 50%);
-  bottom:0;
-  left:-50%;
-  opacity:.5;
-  position:fixed;
-  right:-50%;
-  top:0;
-  z-index:-1;
+  bottom: 0;
+  left: -50%;
+  opacity: 0.5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
 }
 
 .bg2 {
-  animation-direction:alternate-reverse;
-  animation-duration:10s;
+  animation-direction: alternate-reverse;
+  animation-duration: 10s;
 }
 
 .bg3 {
-  animation-duration:9s;
+  animation-duration: 9s;
 }
 
 @keyframes slide {
   0% {
-    transform:translateX(-25%);
+    transform: translateX(-25%);
   }
   100% {
-    transform:translateX(25%);
+    transform: translateX(25%);
   }
 }
-
 
 /* bølge */
 .box {
@@ -288,23 +293,19 @@ footer .linje {
   --p: 25px;
   --R: 55.9px /*sqrt(var(--size)*var(--size) + var(--p)*var(--p))*/;
   height: 200px;
-  -webkit-mask:
-    radial-gradient(var(--R) at 50% calc(100% - (var(--size) + var(--p))),blue 99%,#0000 101%) calc(50% - 2*var(--size)) 0/calc(4*var(--size)) 100%,
-    radial-gradient(var(--R) at 50% calc(100% + var(--p)),#0000 99%,red 101%) 50% calc(100% - var(--size))/calc(4*var(--size)) 100% repeat-x;
-  background: #009A5B;  
+  -webkit-mask: radial-gradient(var(--R) at 50% calc(100% - (var(--size) + var(--p))), blue 99%, #0000 101%) calc(50% - 2 * var(--size)) 0 / calc(4 * var(--size)) 100%, radial-gradient(var(--R) at 50% calc(100% + var(--p)), #0000 99%, red 101%) 50% calc(100% - var(--size)) / calc(4 * var(--size)) 100% repeat-x;
+  background: #009a5b;
   border: none;
 }
 
 /* scroll snap */
 .scroll_snap {
   scroll-snap-type: y proximity;
-  
 }
 
 .child {
   scroll-snap-align: start;
 }
-
 
 /* kontakt spin */
 .kontakt {

@@ -1,167 +1,155 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="myTheme">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <!-- alpine style -->
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <title>Findrundt</title>
-</head>
-<body>
-
-  <header class="showcase">
-    <div class="mx-4 mt-5 flex items-center justify-between md:flex-wrap">
-      <a href="index.html" class="flex flex-col">       
-        <img src="/img/LOGO2x.png" alt="logo" class="mr-3 w-36" />
-        <p class="text-center"> 2.-6. aug.</p>
-      </a>
-      <div class="flex flex-row place-items-center gap-4">
-        <!-- Køb billet btn -->
-        <button class="main-btn btn-primary btn hover:scale-110">
-          Køb billet
-        </button>
-        <!-- Nav desktop -->
-        <div class="hidden w-full md:block md:w-auto">
-          <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
-            <ul class="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
-              <li>
-                <a href="program.html" class="block rounded py-2 pl-3 pr-4 text-white hover:scale-110 focus:outline-none md:p-0 md:hover:text-fuchsia-400" aria-current="page">Program</a>
-              </li>
-              <li>
-                <a href="findrundt.html" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Find rundt</a>
-              </li>
-              <li>
-                <a href="#" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">FAQ</a>
-              </li>
-              <li>
-                <a href="#" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Frivillig</a>
-              </li>
-              <li>
-              <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex w-full items-center justify-between border-b border-gray-100 py-2 pl-3 pr-4 font-medium text-white hover:scale-110 md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">
-                Info
-              <!-- pil -->
-              <i
-              class="fas fa-angle-down pl-3 text-stone-700 dark:text-stone-300"
-            ></i>                
-            </button>
-          </li>
-            </ul>
-          </div>
-        </div>
-        <!-- burgermenu -->
-        <div class="menu-wrap md:hidden lg:hidden">
-          <input type="checkbox" class="toggler" />
-          <div class="hamburger"><div></div></div>
-          <div class="menu">
-            <div>
-              <div class="w-full md:block md:w-auto">
-                <ul>
-                  <li><a href="program.html">Program</a></li>
-                  <li><a href="findrundt.html">Find rundt</a></li>
-                  <li><a href="#">FAQ</a></li>
-                  <li><a href="#">Frivillig</a></li>
-                  <li data-dropdown-toggle="dropdownNavbar">
-                    <button>
-                      Info
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- alpine style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Imbue:wght@900&family=Inter:wght@400;700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    k>
+    <title>Find rundt</title>
+  </head>
+  <body>
+    <header class="showcase">
+      <div class="mx-4 mt-5 flex items-center justify-between md:flex-wrap">
+        <a href="index.html" class="flex flex-col">
+          <img src="/img/LOGO2x.png" alt="logo" class="mr-3 w-36" />
+          <p class="text-center">2.-6. aug.</p>
+        </a>
+        <div class="flex flex-row place-items-center gap-4">
+          <!-- Køb billet btn -->
+          <button class="main-btn btn-primary btn hover:scale-110">Køb billet</button>
+          <!-- Nav desktop -->
+          <div class="hidden w-full md:block md:w-auto">
+            <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
+              <ul class="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
+                <li>
+                  <a href="program.html" class="block rounded py-2 pl-3 pr-4 text-white hover:scale-110 focus:outline-none md:p-0 md:hover:text-fuchsia-400" aria-current="page">Program</a>
+                </li>
+                <li>
+                  <a href="findrundt.html" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Find rundt</a>
+                </li>
+                <li>
+                  <a href="#" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">FAQ</a>
+                </li>
+                <li>
+                  <a href="#" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Frivillig</a>
+                </li>
+                <li>
+                  <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex w-full items-center justify-between border-b border-gray-100 py-2 pl-3 pr-4 font-medium text-white hover:scale-110 md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">
+                    Info
                     <!-- pil -->
-                    <i
-                    class="fas fa-angle-down pl-3 text-stone-700 dark:text-stone-300"
-                  ></i>                      </button>
-                    <!-- Dropdown menu -->
-                    <div id="dropdownNavbar" class="z-10 mt-10 hidden list-none text-base">
-                      <ul class="py-1">
-                        <li>
-                          <a href="om.html" class="block px-4 py-2 hover:bg-gray-100">Om Vildskud</a>
-                        </li>
-                        <li>
-                          <a href="samarbejdspartnere.html" class="block px-4 py-2 hover:bg-gray-100">Samarbejdspartnere</a>
-                        </li>
-                        <li>
-                          <a href="kontakt.html" class="block px-4 py-2 hover:bg-gray-100">Kontakt</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
+                    <i class="fas fa-angle-down pl-3 text-stone-700 dark:text-stone-300"></i>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- burgermenu -->
+          <div class="menu-wrap md:hidden lg:hidden">
+            <input type="checkbox" class="toggler" />
+            <div class="hamburger"><div></div></div>
+            <div class="menu">
+              <div>
+                <div class="w-full md:block md:w-auto">
+                  <ul>
+                    <li><a href="program.html">Program</a></li>
+                    <li><a href="findrundt.html">Find rundt</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Frivillig</a></li>
+                    <li data-dropdown-toggle="dropdownNavbar">
+                      <button>
+                        Info
+                        <!-- pil -->
+                        <i class="fas fa-angle-down pl-3 text-stone-700 dark:text-stone-300"></i>
+                      </button>
+                      <!-- Dropdown menu -->
+                      <div id="dropdownNavbar" class="z-10 mt-10 hidden list-none text-base">
+                        <ul class="py-1">
+                          <li>
+                            <a href="om.html" class="block px-4 py-2 hover:bg-gray-100">Om Vildskud</a>
+                          </li>
+                          <li>
+                            <a href="samarbejdspartnere.html" class="block px-4 py-2 hover:bg-gray-100">Samarbejdspartnere</a>
+                          </li>
+                          <li>
+                            <a href="kontakt.html" class="block px-4 py-2 hover:bg-gray-100">Kontakt</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </header>
-
-    
+    </header>
 
     <main>
-        <section class="flex flex-col place-items-center justify-center">
-            <h2 class="mt-10 text-center text-5xl font-bold text-white">Find rundt</h2>
-            <h2 class="text-center text-2xl font-bold text-white">Oversigt over spillestedernes lokationer i København</h2>
-        </section>
-        
-        <!-- toggle -->
-        <section class="flex flex-col justify-center">
-              <label for="Toggle3" class="inline-flex items-center p-2 rounded-md cursor-pointer dark:text-gray-800 justify-center">
-                <input id="Toggle3" type="checkbox" class="hidden peer">
-                <span onclick="myFunction1()" class=" px-4 py-2 rounded-l-md dark:bg-violet-400 peer-checked:dark:bg-gray-300">Liste
-                </span>
-                <span onclick="myFunction2()" class="px-4 py-2 rounded-r-md dark:bg-gray-300 peer-checked:dark:bg-violet-400">Kort
-                </span>
-                
-            </label>
+      <section class="flex flex-col place-items-center justify-center">
+        <h2 class="mt-10 text-center text-5xl font-bold text-white">Find rundt</h2>
+        <h2 class="text-center text-2xl font-bold text-white">Oversigt over spillestedernes lokationer i København</h2>
+      </section>
 
+      <!-- toggle -->
+      <section class="flex flex-col justify-center">
+        <label for="Toggle3" class="inline-flex cursor-pointer items-center justify-center rounded-md p-2 dark:text-gray-800">
+          <input id="Toggle3" type="checkbox" class="peer hidden" />
+          <span onclick="myFunction1()" class="rounded-l-md px-4 py-2 dark:bg-violet-400 peer-checked:dark:bg-gray-300">Liste </span>
+          <span onclick="myFunction2()" class="rounded-r-md px-4 py-2 dark:bg-gray-300 peer-checked:dark:bg-violet-400">Kort </span>
+        </label>
 
-            <!-- dropdowns -->
-        <div id="liste" class=" gap-3 z-10 mt-10 justify-center">
-            <ul class="mx-5 list-none text-base">
-                <li>
-                    <p>Vesterbrogade</p>
-                </li>
-                <li>
-                    <p>Vesterbrogade</p>
-                </li>
-                <li>
-                    <p>Vesterbrogade</p>
-                </li>
-                <li>
-                    <p>Vesterbrogade</p>
-                </li>
-            </ul>
+        <!-- dropdowns -->
+        <div id="liste" class="z-10 mt-10 justify-center gap-3">
+          <ul class="mx-5 list-none text-base">
+            <li>
+              <p>Vesterbrogade</p>
+            </li>
+            <li>
+              <p>Vesterbrogade</p>
+            </li>
+            <li>
+              <p>Vesterbrogade</p>
+            </li>
+            <li>
+              <p>Vesterbrogade</p>
+            </li>
+          </ul>
         </div>
 
-        <div id="kort" class=" justify-center">
-            <img class="w-3/6" src="/img/kort_kbh_1@2x.png" alt="kort">
+        <div id="kort" class="justify-center">
+          <img class="w-3/6" src="/img/kort_kbh_1@2x.png" alt="kort" />
         </div>
-    </section>
+      </section>
+    </main>
 
-
-     </main>
-
-     <script>
-function myFunction1() {
-   var element = document.getElementById("liste");
-   if (x.style.display === "none") {
-            x.style.display = "block";
-          } else {
-            x.style.display = "none";
-          }
+    <script>
+      function myFunction1() {
+        var element = document.getElementById("liste");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
         }
+      }
 
-        function myFunction2() {
-          var x = document.getElementById("kort");
-          if (x.style.display === "none") {
-            x.style.display = "block";
-          } else {
-            x.style.display = "none";
-          }
+      function myFunction2() {
+        var x = document.getElementById("kort");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
         }
-        </script>
+      }
+    </script>
 
-
-        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"></script>
-        <script src="https://unpkg.com/alpinejs" defer=""></script>
-        <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
-        <script type="module" src="./main.js"></script>
-</body>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/alpinejs" defer=""></script>
+    <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
+    <script type="module" src="./main.js"></script>
+  </body>
 </html>

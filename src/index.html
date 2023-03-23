@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="myTheme" class="bg-base-100">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Vildskud</title>
-    </head>
-    <body>
-      <div class="bg"></div>
-      <div class="bg bg2"></div>
-      <div class="bg bg3"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Imbue:wght@900&family=Inter:wght@400;700;900&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+    <title>Vildskud</title>
+  </head>
+  <body>
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
     <!-- Cookies -->
     <!-- <div class="fixed left-0 bottom-0 z-40 " x-data="{cookies: true}"  @keydown.window.escape="cookies = false"> -->
     <!-- Indhold til cookies -->
@@ -39,10 +42,9 @@
     <!-- BTN -->
     <button class="fixed left-4 bottom-2 rounded-full bg-gray-900 px-4 py-3 text-sm uppercase text-white" @click="cookies = !cookies">Cookies</button>
 
-
     <header class="showcase">
-      <img class="w-24 sm:w-48 ml-0 absolute top-0" src="/img/mindre_streg@2x.png" alt="">
-      <div class="mx-4 flex items-center justify-between md:flex-wrap mt-5">
+      <img class="absolute top-0 ml-0 w-24 sm:w-48" src="/img/mindre_streg@2x.png" alt="" />
+      <div class="mx-4 mt-5 flex items-center justify-between md:flex-wrap">
         <a href="index.html" class="flex">
           <!-- <img src="/img/LOGO2x.png" width="" alt="" class="mr-3 w-36" /> -->
         </a>
@@ -67,30 +69,27 @@
                 <li>
                   <a href="#" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Frivillig</a>
                 </li>
-                <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="text-white  hover:bg-slate-800 focus:outline-none  font-medium rounded-lg text-sm  text-center inline-flex items-center dark:hover:bg-slate-700" type="button">
-                  Info 
-                  <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+                <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="inline-flex items-center rounded-lg text-center text-sm font-medium text-white hover:bg-slate-800 focus:outline-none dark:hover:bg-slate-700" type="button">
+                  Info
+                  <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
                 <!-- Dropdown menu -->
                 <div id="dropdownHover" class="z-10 hidden divide-y divide-gray-100 rounded-lg bg-slate-500">
-                    <ul class="py-2 text-sm  dark:text-gray-200" aria-labelledby="dropdownHoverButton">
-                      <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Om Vildskud</a>
-                      </li>
-                      <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Team</a>
-                      </li>
-                      <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Samarbejdspartnere</a>
-                      </li>
-                      <li>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Kontakt</a>
-                      </li>
-                    </ul>
+                  <ul class="py-2 text-sm dark:text-gray-200" aria-labelledby="dropdownHoverButton">
+                    <li>
+                      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Om Vildskud</a>
+                    </li>
+                    <li>
+                      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Team</a>
+                    </li>
+                    <li>
+                      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Samarbejdspartnere</a>
+                    </li>
+                    <li>
+                      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Kontakt</a>
+                    </li>
+                  </ul>
                 </div>
-            
-
-
-
               </ul>
             </div>
           </div>
@@ -110,210 +109,202 @@
                       <button>
                         Info
                         <!-- pil -->
-                        <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                       </button>
-
                     </li>
                   </ul>
                 </div>
-                        <!-- Dropdown menu -->
-                        <div id="dropdownBurger" class="z-10 h-screen divide-y divide-gray-100">
-                          <ul class="py-2  dark:text-gray-200" aria-labelledby="dropdownBurgerButton">
-                            <li>
-                              <a href="omVildskud.html" class="block px-4 py-2 hover:bg-gray-100">Om Vildskud</a>
-                            </li>
-                            <li>
-                              <a href="team.html" class="block px-4 py-2 hover:bg-gray-100  ">Team</a>
-                            </li>
-                            <li>
-                              <a href="samarbejdspartnere.html" class="block px-4 py-2 hover:bg-gray-100  ">Samarbejdspartnere</a>
-                            </li>
-                            <li>
-                              <a href="kontakt.html" class="block px-4 py-2 hover:bg-gray-100">Kontakt</a>
-                            </li>
-                          </ul>
-                        </div>
+                <!-- Dropdown menu -->
+                <div id="dropdownBurger" class="z-10 h-screen divide-y divide-gray-100">
+                  <ul class="py-2 dark:text-gray-200" aria-labelledby="dropdownBurgerButton">
+                    <li>
+                      <a href="omVildskud.html" class="block px-4 py-2 hover:bg-gray-100">Om Vildskud</a>
+                    </li>
+                    <li>
+                      <a href="team.html" class="block px-4 py-2 hover:bg-gray-100">Team</a>
+                    </li>
+                    <li>
+                      <a href="samarbejdspartnere.html" class="block px-4 py-2 hover:bg-gray-100">Samarbejdspartnere</a>
+                    </li>
+                    <li>
+                      <a href="kontakt.html" class="block px-4 py-2 hover:bg-gray-100">Kontakt</a>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              
             </div>
           </div>
         </div>
       </div>
     </header>
 
+    <!-- Hero section -->
+    <section class="scroll-snap proximity mb-16 flex flex-col place-items-center justify-center">
+      <h2 class="mt-20 text-center text-3xl font-bold text-white lg:mt-10">2. - 6. august 2023</h2>
+      <h2 class="mt-4 text-center text-3xl font-bold text-white">København</h2>
 
-      <!-- Hero section -->
-      <section class="flex flex-col place-items-center justify-center mb-16 scroll-snap proximity">
-        <h2 class="mt-20 lg:mt-10 text-center text-3xl font-bold text-white">2. - 6. august 2023</h2>
-        <h2 class="mt-4 text-center text-3xl font-bold text-white">København</h2>
+      <img src="/img/LOGO2x.png" alt="logo" class="mt-10 lg:max-w-4xl" />
+      <h2 class="text-center text-5xl font-bold text-white">Festival</h2>
 
-        <img src="/img/LOGO2x.png" alt="logo" class="mt-10 lg:max-w-4xl" />
-        <h2 class="text-center text-5xl font-bold text-white">Festival</h2>
-
-        <!-- ord animation -->
-        <div class="justify-centerfont-bold mt-5 flex items-center text-white">
-          <div class="space-y-12 text-center">
-            <div class="text-center text-3xl font-bold">
-              fyldt med
-              <div class="relative inline-grid grid-cols-1 grid-rows-1 gap-12 overflow-hidden">
-                <span class="animate-word col-span-full row-span-full">Oplevelser</span>
-                <span class="animate-word-delay-1 col-span-full row-span-full">Kærlighed</span>
-                <span class="animate-word-delay-2 col-span-full row-span-full">Kreativitet</span>
-                <span class="animate-word-delay-3 col-span-full row-span-full">Fællesskab</span>
-                <span class="animate-word-delay-4 col-span-full row-span-full">Scenekunst</span>
-              </div>
+      <!-- ord animation -->
+      <div class="justify-centerfont-bold mt-5 flex items-center text-white">
+        <div class="space-y-12 text-center">
+          <div class="text-center text-3xl font-bold">
+            fyldt med
+            <div class="relative inline-grid grid-cols-1 grid-rows-1 gap-12 overflow-hidden">
+              <span class="animate-word col-span-full row-span-full">Oplevelser</span>
+              <span class="animate-word-delay-1 col-span-full row-span-full">Kærlighed</span>
+              <span class="animate-word-delay-2 col-span-full row-span-full">Kreativitet</span>
+              <span class="animate-word-delay-3 col-span-full row-span-full">Fællesskab</span>
+              <span class="animate-word-delay-4 col-span-full row-span-full">Scenekunst</span>
             </div>
           </div>
         </div>
+      </div>
 
-        <h2 class="text-center text-3xl text-white"></h2>
-        <!-- knapper -->
-        <div class="hero-btns mt-8 sm:mt-5 md:mt-10 lg:mt-10">
-            <a href="program.html" class="hero-btn btn-primary btn transform hover:rotate-12 hover:scale-110">Se program</a>
-            <a href="program.html" class="hero-btn btn-primary btn hover:scale-110">Køb billet</a>
+      <h2 class="text-center text-3xl text-white"></h2>
+      <!-- knapper -->
+      <div class="hero-btns mt-8 sm:mt-5 md:mt-10 lg:mt-10">
+        <a href="program.html" class="hero-btn btn-primary btn transform hover:rotate-12 hover:scale-110">Se program</a>
+        <a href="program.html" class="hero-btn btn-primary btn hover:scale-110">Køb billet</a>
+      </div>
+    </section>
+    <main class="snap-start">
+      <div class="box"></div>
+
+      <!-- tekst -->
+      <section class="child { scroll-snap-align: start; } mt-44 flex snap-center flex-col">
+        <h3 class="mx-10 max-w-lg snap-start place-self-center text-center text-3xl font-bold">KOM MED til årets festival for uafhængig scenekunst og oplev scenekunsten helt tæt på!</h3>
+        <div class="-m-5 w-56 rotate-12 transform hover:rotate-12 hover:scale-110 lg:w-80">
+          <img src="/img/regnbue@2x.png" alt="regnbue" />
         </div>
       </section>
-      <main class="snap-start">
-        <div class="box"></div>
-  
-  <!-- tekst -->
-<section class=" flex flex-col snap-center  mt-44 child {
-  scroll-snap-align: start;
-}">
-  <h3 class="text-center text-3xl font-bold mx-10 max-w-lg place-self-center snap-start">KOM MED til årets festival for uafhængig scenekunst og oplev scenekunsten helt tæt på!</h3>
-  <div class=" w-56 -m-5 lg:w-80 rotate-12  transform hover:rotate-12 hover:scale-110">
-    <img src="/img/regnbue@2x.png" alt="regnbue">
-  </div>
-</section>
-<!-- Forestillinger -->
-<section class="flex flex-col gap-6 justify-center h-screen child {
-  scroll-snap-align: start;
-}">
-  <h2 class="text-center text-3xl font-bold child">Forestillinger</h2>
-  <div class="flex flex-row justify-center gap-2 flex-wrap">
-    <img class="w-24 sm:w-32 hover:scale-110" src="/img/Billede1-2.webp" alt="forestilling">
-    <img class="w-24 sm:w-32 hover:scale-110" src="/img/Billede1.webp" alt="forestilling">
-    <img class="w-24 sm:w-32 hover:scale-110" src="/img/Image-from-iOS.webp" alt="forestilling">
-    <img class="w-24 sm:w-32 hover:scale-110" src="/img/9BEF0B3D-169C-4CB1-82BF-C3ED7BC468D8.webp" alt="forestilling">
-  </div>
-  <div class=" sm:mt-5 md:mt-10 lg:mt-10 text-center">
-  <a href="program.html" class="hero-btn btn-primary btn transform hover:rotate-12 hover:scale-110">Se program</a>
-  </div>
-</section>
-<!-- om -->
-<section class="flex flex-col gap-5 justify-center mt-24 lg:10 ">
-  <img class="w-60 lg:w-72 flex justify-center m-auto mb-0 lg:mb-10" src="/img/fest@2x.png" alt="">
-  <h3 class="text-center text-3xl font-bold">Hvad er Vildskud?</h3>
-  <p class=" text-white text-lg lg:text-xl mx-10 max-w-lg place-self-center">Vildskud er Københavns festival for uafhængig scenekunst. Vær med, se med. Vildskud er for alle der er interesserede i at dyrke og støtte spirende og uafhængige scenekunstnere.Vildskud er Københavns festival for uafhængig scenekunst. Vær med, se med. Vildskud er for alle der er interesserede i at dyrke og støtte spirende og uafhængige scenekunstnere.</p>
-</section>
-<!-- tid -->
-<section class="flex flex-col gap-5 justify-center mt-60">
-  <div class="bg-purple-400 rounded-full w-fit place-self-center flex flex-col gap-5 p-6">
-  <h3 class="text-center text-3xl font-bold ">Tid og sted</h3>
-  <p class=" text-white text-lg lg:text-xl mx-10 max-w-lg place-self-center">2. aug. kl. 15:00 - 6. aug. kl.03:00</p>
-  <p class=" text-white text-lg lg:text-xl mx-10 max-w-lg place-self-center">Forestillingerne foregår rundt i København. Du finder information om de forskellige steder under forestillinger.</p>
-  <p class=" text-white text-center text-lg lg:text-xl mx-10 max-w-lg place-self-center">Se også vores forslag til hvordan du kan planlægge din festival rute.</p>
-  </div>
-</section>
+      <!-- Forestillinger -->
+      <section class="child { scroll-snap-align: start; } flex h-screen flex-col justify-center gap-6">
+        <h2 class="child text-center text-3xl font-bold">Forestillinger</h2>
+        <div class="flex flex-row flex-wrap justify-center gap-2">
+          <img class="w-24 hover:scale-110 sm:w-32" src="/img/Billede1-2.webp" alt="forestilling" />
+          <img class="w-24 hover:scale-110 sm:w-32" src="/img/Billede1.webp" alt="forestilling" />
+          <img class="w-24 hover:scale-110 sm:w-32" src="/img/Image-from-iOS.webp" alt="forestilling" />
+          <img class="w-24 hover:scale-110 sm:w-32" src="/img/9BEF0B3D-169C-4CB1-82BF-C3ED7BC468D8.webp" alt="forestilling" />
+        </div>
+        <div class="text-center sm:mt-5 md:mt-10 lg:mt-10">
+          <a href="program.html" class="hero-btn btn-primary btn transform hover:rotate-12 hover:scale-110">Se program</a>
+        </div>
+      </section>
+      <!-- om -->
+      <section class="lg:10 mt-24 flex flex-col justify-center gap-5">
+        <img class="m-auto mb-0 flex w-60 justify-center lg:mb-10 lg:w-72" src="/img/fest@2x.png" alt="" />
+        <h3 class="text-center text-3xl font-bold">Hvad er Vildskud?</h3>
+        <p class="mx-10 max-w-lg place-self-center text-lg text-white lg:text-xl">Vildskud er Københavns festival for uafhængig scenekunst. Vær med, se med. Vildskud er for alle der er interesserede i at dyrke og støtte spirende og uafhængige scenekunstnere.Vildskud er Københavns festival for uafhængig scenekunst. Vær med, se med. Vildskud er for alle der er interesserede i at dyrke og støtte spirende og uafhængige scenekunstnere.</p>
+      </section>
+      <!-- tid -->
+      <section class="mt-60 flex flex-col justify-center gap-5">
+        <div class="flex w-fit flex-col gap-5 place-self-center rounded-full bg-purple-400 p-6">
+          <h3 class="text-center text-3xl font-bold">Tid og sted</h3>
+          <p class="mx-10 max-w-lg place-self-center text-lg text-white lg:text-xl">2. aug. kl. 15:00 - 6. aug. kl.03:00</p>
+          <p class="mx-10 max-w-lg place-self-center text-lg text-white lg:text-xl">Forestillingerne foregår rundt i København. Du finder information om de forskellige steder under forestillinger.</p>
+          <p class="mx-10 max-w-lg place-self-center text-center text-lg text-white lg:text-xl">Se også vores forslag til hvordan du kan planlægge din festival rute.</p>
+        </div>
+      </section>
 
       <!-- Countdown -->
       <section class="my-64 snap-start">
-        <div class="grid auto-cols-max grid-flow-col justify-center gap-1 sm:gap-5 text-center">
-          <div class="rounded-box flex flex-col bg-neutral p-2 sm:p-6 md:p-6 lg:p-6 text-neutral-content">
+        <div class="grid auto-cols-max grid-flow-col justify-center gap-1 text-center sm:gap-5">
+          <div class="rounded-box flex flex-col bg-neutral p-2 text-neutral-content sm:p-6 md:p-6 lg:p-6">
             <span class="countdown font-mono text-5xl sm:text-5xl">
               <span style="--value: 40"></span>
             </span>
             days
           </div>
-          <div class="rounded-box flex flex-col bg-neutral p-2 sm:p-6 text-neutral-content place-content-center">
+          <div class="rounded-box flex flex-col place-content-center bg-neutral p-2 text-neutral-content sm:p-6">
             <span class="countdown font-mono text-5xl">
               <span style="--value: 10"></span>
             </span>
             hours
           </div>
-          <div class="rounded-box flex flex-col bg-neutral text-neutral-content place-content-center p-2 sm:p-6">
+          <div class="rounded-box flex flex-col place-content-center bg-neutral p-2 text-neutral-content sm:p-6">
             <span class="countdown font-mono text-5xl">
               <span style="--value: 24"></span>
             </span>
             min
           </div>
-          <div class="rounded-box flex flex-col bg-neutral p-2 sm:p-6 text-neutral-content place-content-center">
+          <div class="rounded-box flex flex-col place-content-center bg-neutral p-2 text-neutral-content sm:p-6">
             <span class="countdown font-mono text-5xl">
               <span style="--value: 44"></span>
             </span>
             sec
           </div>
         </div>
-        <h2 class="text-center text-2xl  text-slate-300 mt-5 font-bold">Nedtælling til Vildskud festival!</h2>
+        <h2 class="mt-5 text-center text-2xl font-bold text-slate-300">Nedtælling til Vildskud festival!</h2>
       </section>
+    </main>
 
-</main>
+    <footer class="bg-slate-900">
+      <div class="mx-auto max-w-screen-xl px-4 py-16 pb-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 place-content-end lg:grid-cols-2 lg:gap-8">
+          <div>
+            <img src="/img/LOGO2x.png" class="mr-5 h-10 sm:h-9" alt="logo" />
 
-      <footer class="bg-slate-900">
-        <div class="mx-auto max-w-screen-xl px-4 py-16 pb-4 sm:px-6 lg:px-8">
-          <div class="grid grid-cols-1 place-content-end lg:grid-cols-2 lg:gap-8">
-            <div>
-              <img src="/img/LOGO2x.png" class="mr-5 h-10 sm:h-9" alt="logo" />
-
-              <div class="mb-8 mt-2 ml-2 flex space-x-6 text-white">
-                <a class="hover:opacity-75" href target="_blank" rel="noreferrer">
-                  <span class=""></span>
-                  <svg class="relative h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
-                  </svg>
-                </a>
-                <a class="hover:opacity-75" href target="_blank" rel="noreferrer">
-                  <span class=""></span>
-                  <svg class="relative h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      fillRule="evenodd"
-                      d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <div class="mx-6 grid grid-cols-2 gap-8 sm:grid-cols-2">
-              <div>
-                <p class="font-medium text-white">Genveje</p>
-                <nav class="mt-4 flex flex-col space-y-2 text-sm">
-                  <a class="hover:opacity-75" href="program.html"> Program </a>
-                  <a class="hover:opacity-75" href="findrundt.html"> Find rundt</a>
-                  <a class="hover:opacity-75" href="faq.html"> FAQ </a>
-                  <a class="hover:opacity-75" href="frivillige.html"> Frivilige </a>
-                  <a class="hover:opacity-75" href="omVildskud.html"> Om Vildskud </a>
-                </nav>
-              </div>
-              <div>
-                <nav class="mt-4 flex flex-col space-y-2 text-sm">
-                  <a class="hover:opacity-75" href="team.html"> Team </a>
-                  <a class="hover:opacity-75" href="samarbejdspartnere.html"> Samarbejdspartnere </a>
-                  <a class="hover:opacity-75" href="kontakt.html"> Kontakt</a>
-                  <a class="hover:opacity-75" href="index.html"> Cookiepolitik </a>
-                  <a class="hover:opacity-75" href="index.html"> Privatlivspolitik </a>
-                </nav>
-              </div>
+            <div class="mb-8 mt-2 ml-2 flex space-x-6 text-white">
+              <a class="hover:opacity-75" href target="_blank" rel="noreferrer">
+                <span class=""></span>
+                <svg class="relative h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+                </svg>
+              </a>
+              <a class="hover:opacity-75" href target="_blank" rel="noreferrer">
+                <span class=""></span>
+                <svg class="relative h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fillRule="evenodd"
+                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </a>
             </div>
           </div>
-
-          <!-- Nyhedsbrev -->
-          <div class="relative flex flex-col justify-center overflow-hidden py-6 antialiased sm:py-12">
-            <div class="flex flex-col flex-wrap content-center justify-center p-10 py-20">
-              <div class="m-0 p-0 text-center text-3xl text-white antialiased">Vil du heller ikke gå glip af noget?</div>
-              <div class="m-0 p-0 text-center text-xl text-white antialiased">Så bliv opdateret om fremtidige events</div>
-              <div class="mt-3 flex flex-row flex-wrap">
-                <input type="text" class="w-2/3 rounded-l-lg p-2 text-gray-600" placeholder="navn@email.com" />
-                <button class="w-1/3 rounded-r-lg bg-indigo-400 p-2 text-white hover:bg-indigo-300" type="button">Tilmeld</button>
-              </div>
+          <div class="mx-6 grid grid-cols-2 gap-8 sm:grid-cols-2">
+            <div>
+              <p class="font-medium text-white">Genveje</p>
+              <nav class="mt-4 flex flex-col space-y-2 text-sm">
+                <a class="hover:opacity-75" href="program.html"> Program </a>
+                <a class="hover:opacity-75" href="findrundt.html"> Find rundt</a>
+                <a class="hover:opacity-75" href="faq.html"> FAQ </a>
+                <a class="hover:opacity-75" href="frivillige.html"> Frivilige </a>
+                <a class="hover:opacity-75" href="omVildskud.html"> Om Vildskud </a>
+              </nav>
             </div>
-            <div class="linje"></div>
-            <p class="mt-8 text-center text-xs">© 2023 Vildskud</p>
+            <div>
+              <nav class="mt-4 flex flex-col space-y-2 text-sm">
+                <a class="hover:opacity-75" href="team.html"> Team </a>
+                <a class="hover:opacity-75" href="samarbejdspartnere.html"> Samarbejdspartnere </a>
+                <a class="hover:opacity-75" href="kontakt.html"> Kontakt</a>
+                <a class="hover:opacity-75" href="index.html"> Cookiepolitik </a>
+                <a class="hover:opacity-75" href="index.html"> Privatlivspolitik </a>
+              </nav>
+            </div>
           </div>
         </div>
-      </footer>
-      <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-      <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
-      <script type="module" src="./main.js"></script>
-    </body>
-  </html>
+
+        <!-- Nyhedsbrev -->
+        <div class="relative flex flex-col justify-center overflow-hidden py-6 antialiased sm:py-12">
+          <div class="flex flex-col flex-wrap content-center justify-center p-10 py-20">
+            <div class="m-0 p-0 text-center text-3xl text-white antialiased">Vil du heller ikke gå glip af noget?</div>
+            <div class="m-0 p-0 text-center text-xl text-white antialiased">Så bliv opdateret om fremtidige events</div>
+            <div class="mt-3 flex flex-row flex-wrap">
+              <input type="text" class="w-2/3 rounded-l-lg p-2 text-gray-600" placeholder="navn@email.com" />
+              <button class="w-1/3 rounded-r-lg bg-indigo-400 p-2 text-white hover:bg-indigo-300" type="button">Tilmeld</button>
+            </div>
+          </div>
+          <div class="linje"></div>
+          <p class="mt-8 text-center text-xs">© 2023 Vildskud</p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
