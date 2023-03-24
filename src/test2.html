@@ -8,9 +8,61 @@
 </head>
 <body>
   
-<header>
-  
-</header>
+
+  <!-- Navigation virker -->
+  <header x-data="{mainmenuopen: false}">
+    <!-- Nav knap -->
+    <div for="check" class="fixed right-5 top-5 z-50 md:hidden lg:hidden">
+      <label x-on:click="mainmenuopen = ! mainmenuopen"> 
+          <input type="checkbox" id="check" x-on:click="mainmenuopen = ! mainmenuopen"/> 
+          <span></span>
+          <span></span>
+          <span></span>
+      </label>
+    </div>
+
+    <!-- Burger foldet ud -->
+    <nav class="fixed top-0 bottom-0 left-0 right-0 z-40 bg-indigo-400" x-show="mainmenuopen">
+      <img src="img/chat.svg" />
+      <ul class="primaer flex flex-col pt-28">
+        <li class="place-self-center p-5">
+          <a href="program.html">Program</a>
+        </li>
+        <li class="place-self-center p-5">
+          <a href="findrundt.html" class="">Find rundt</a>
+        </li>
+        <li class="place-self-center p-5">
+          <a href="#" class="">FAQ</a>
+        </li>
+        <li class="place-self-center p-5">
+          <a href="#" class="">Frivillig</a>
+        </li>
+        <div x-data="{submenuopen: false}" class="primaer flex flex-col">
+          <li class="place-self-center p-5">
+            <button href="#" class="" x-on:click="submenuopen = ! submenuopen">Info (pil ned)</button>
+          </li>
+          <ul class="primaer flex flex-col" x-show="submenuopen">
+            <li class="place-self-center p-5">
+              <a href="omVildskud.html" class="">Om Vildskud</a>
+            </li>
+            <li class="place-self-center p-5">
+              <a href="team.html" class="">Team</a>
+            </li>
+            <li class="place-self-center p-5">
+              <a href="opencall.html" class="text-lg text-yellow-400">Open call</a>
+            </li>
+            <li class="place-self-center p-5">
+              <a href="samarbejdspartnere.html" class="text-lg text-yellow-400">Samarbejdspartnere</a>
+            </li>
+            <li class="place-self-center p-5">
+              <a href="kontakt.html" class="text-lg text-yellow-400">Kontakt</a>
+            </li>
+          </ul>
+        </div>
+      </ul>
+      <img src="img/chat.svg" class="fixed bottom-0 right-0" />
+    </nav>
+  </header>
 
 </body>
 </html>

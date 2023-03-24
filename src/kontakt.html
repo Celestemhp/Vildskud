@@ -4,30 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kontakt</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Imbue:wght@900&family=Inter:wght@400;700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <header x-data="{mainmenuopen: false}">
-      <div for="check" class="fixed right-5 top-5 z-50">
-        <label x-on:click="mainmenuopen = ! mainmenuopen"> 
-            <input type="checkbox" id="check"/> 
+    <header>
+      <!-- nav mobile -->
+      <div class="fixed z-50 mx-4 mt-5 flex items-center justify-between md:flex-wrap md:hidden lg:hidden" x-data="{mainmenuopen: false}">
+      <!-- Logo -->
+      <a href="index.html" class="flex flex-col fixed top-7 left-4">       
+        <img src="/img/LOGO2x.png" alt="logo" class="mr-3 w-36" />
+        <p class="text-center -ml-4"> 2.-6. aug.</p>
+      </a>
+      <!-- Køb billet btn -->
+    <button class="btn main-btn btn-primary hover:scale-110 fixed right-32 top-7">
+      <p>Køb billet</p>
+    </button>
+
+        
+      <!-- Nav knap -->
+      <div for="check" class="fixed right-5 top-5 z-50 md:hidden lg:hidden hover:scale-110">
+        <label> 
+            <input type="checkbox" id="check" x-on:click="mainmenuopen = ! mainmenuopen"/> 
             <span></span>
             <span></span>
             <span></span>
         </label>
       </div>
-
+      <!-- Burger foldet ud -->
       <nav class="fixed top-0 bottom-0 left-0 right-0 z-40 bg-indigo-400" x-show="mainmenuopen">
         <img src="img/chat.svg" />
-        <ul class="primaer flex flex-col pt-28">
+
+        <ul class="primaer flex flex-col pt-6 text-white text-3xl">
+
+          <a href="index.html" class="flex flex-col">       
+            <img src="/img/LOGO2x.png" alt="logo" class="mr-3 w-52 place-self-center" />
+          </a>
+
           <li class="place-self-center p-5">
             <a href="program.html">Program</a>
           </li>
-          <li class="place-self-center p-5">
+          <li class="place-self-center p-5 ">
             <a href="findrundt.html" class="">Find rundt</a>
           </li>
-          <li class="place-self-center p-5">
+          <li class="place-self-center p-5 ">
             <a href="#" class="">FAQ</a>
           </li>
           <li class="place-self-center p-5">
@@ -35,34 +55,104 @@
           </li>
           <div x-data="{submenuopen: false}" class="primaer flex flex-col">
             <li class="place-self-center p-5">
-              <button href="#" class="" x-on:click="submenuopen = ! submenuopen">Info (pil ned)</button>
+              <button href="#" class="flex flex-row items-center" x-on:click="submenuopen = ! submenuopen">
+                Info
+                 <!-- pil -->
+                 <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>    
+              </button>
+
             </li>
-            <ul class="primaer flex flex-col" x-show="submenuopen">
-              <li class="place-self-center p-5">
+            <ul class="primaer flex flex-col text-2xl" x-show="submenuopen">
+              <li class="place-self-center p-3">
                 <a href="omVildskud.html" class="">Om Vildskud</a>
               </li>
-              <li class="place-self-center p-5">
+              <li class="place-self-center p-3">
                 <a href="team.html" class="">Team</a>
               </li>
-              <li class="place-self-center p-5">
-                <a href="opencall.html" class="text-lg text-yellow-400">Open call</a>
+              <li class="place-self-center p-3">
+                <a href="opencall.html">Open call</a>
               </li>
               <li class="place-self-center p-5">
-                <a href="samarbejdspartnere.html" class="text-lg text-yellow-400">Samarbejdspartnere</a>
+                <a href="samarbejdspartnere.html">Samarbejdspartnere</a>
               </li>
-              <li class="place-self-center p-5">
-                <a href="kontakt.html" class="text-lg text-yellow-400">Kontakt</a>
+              <li class="place-self-center p-3">
+                <a href="kontakt.html">Kontakt</a>
               </li>
             </ul>
           </div>
         </ul>
         <img src="img/chat.svg" class="fixed bottom-0 right-0" />
       </nav>
+    </div>
+
+
+        <!-- Nav desktop -->
+        <div class="hidden w-full md:block md:w-auto">
+          <div class="mx-4 mt-5 flex justify-between md:flex-wrap">
+          <!-- Logo -->
+          <a href="index.html" class="flex flex-col">       
+            <img src="/img/LOGO2x.png" alt="logo" class="mr-3 w-36" />
+            <p class="text-center -ml-4"> 2.-6. aug.</p>
+          </a>
+      <div class="flex flex-row gap-5">
+          <!-- Køb billet btn -->
+        <button class="btn main-btn btn-primary hover:scale-110">
+          <p class="font-bold">Køb billet</p>
+        </button>
+
+          <div class="hidden w-full md:block md:w-auto mt-3">
+            <ul class="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
+              <li>
+                <a href="program.html" class="block rounded py-2 pl-3 pr-4 hover:scale-110 focus:outline-none md:p-0 md:hover:text-fuchsia-400" aria-current="page">Program</a>
+              </li>
+              <li>
+                <a href="findrundt.html" class="block border-b border-gray-100 py-2 pl-3 pr-4 hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Find rundt</a>
+              </li>
+              <li>
+                <a href="faq.html" class="block border-b border-gray-100 py-2 pl-3 pr-4 hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">FAQ</a>
+              </li>
+              <li>
+                <a href="frivillig.html" class="block border-b border-gray-100 py-2 pl-3 pr-4  hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Frivillig</a>
+              </li>
+
+              <div x-data="{deskSubmenuopen: true}" class="primaer flex flex-col">
+                <button href="#" class="flex flex-row items-center" x-on:click="deskSubmenuopen = ! deskSubmenuopen">
+                  Info
+                   <!-- pil -->
+                   <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>    
+                </button>
+
+                    <ul class="py-1" x-show="deskSubmenuopen">
+                      <li>
+                        <a href="omVildskud.html" class="block px-4 py-2 hover:bg-gray-100">Om Vildskud</a>
+                      </li>
+                      <li>
+                        <a href="team.html" class="block px-4 py-2 hover:bg-gray-100">Team</a>
+                      </li>
+                      <li>
+                        <a href="opencall.html" class="block px-4 py-2 hover:bg-gray-100">Open Call</a>
+                      </li>
+                      <li>
+                        <a href="samarbejdspartnere.html" class="block px-4 py-2 hover:bg-gray-100">Samarbejde</a>
+                      </li>
+                      <li>
+                        <a href="kontakt.html" class="block px-4 py-2 hover:bg-gray-100">Kontakt</a>
+                      </li>
+                    </ul>
+              </div>
+            </ul>
+        </div>
+      </div>
+      </div>
+    </div>
+
+
     </header>
+
 
     <!-- Hero section -->
 
-    <main class="m-auto w-4/5 max-w-7xl">
+    <main class="m-auto w-4/5 mt-16 max-w-7xl">
       <h1 class="text-center">kontakt</h1>
       <!-- <img class="m-auto my-9 spin kontakt" src="img/chat.svg" alt="chat"> -->
       <section class="my-9 grid gap-10 lg:grid-cols-2 lg:gap-5">
@@ -86,9 +176,8 @@
               <input type="text" class="input-bordered w-full max-w-xs" />
             </div>
             <label class="label text-white">Skriv her </label>
-            <textarea id="freeform" name="freeform" rows="4" cols="40" placeholder="Type here" class=""> </textarea>
-            <br /><br />
-            <input class="bg-lilla btn-primary w-40 cursor-pointer py-3 px-9 text-white" type="submit" value="Send" />
+            <textarea id="freeform" name="freeform" rows="4" cols="40" placeholder="Type here"> </textarea>
+            <input class="bg-lilla btn-primary w-40 cursor-pointer py-3 px-9 text-white mt-10" type="submit" value="Send" />
           </form>
         </article>
       </section>
@@ -157,9 +246,6 @@
         </div>
       </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
     <script type="module" src="./main.js"></script>
   </body>
 </html>
