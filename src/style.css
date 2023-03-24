@@ -8,16 +8,27 @@
     color: white;
     font-size: 70px;
     text-transform: uppercase;
-    letter-spacing: 5px;
+    letter-spacing: 7px;
     padding-block: 20px;
   }
   h2 {
     font-family: "Poppins", sans-serif;
     font-size: 24px;
+    padding-bottom: 15px;
+    font-weight: 600;
   }
+  h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    padding-bottom: 15px;
+    font-weight: 600;
+  }
+
   p {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
   }
 }
 body {
@@ -28,7 +39,8 @@ body {
 h1,
 h2,
 h3,
-h4 p {
+h4,
+p {
   color: white;
 }
 section {
@@ -36,6 +48,7 @@ section {
   position: relative;
 }
 /************** Buttons ************/
+
 .main-btn {
   @apply inline-block rounded-md bg-primary px-1 py-1 font-bold text-white duration-300;
 }
@@ -333,4 +346,33 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+}
+
+/* Info text */
+
+details > summary {
+  list-style: none;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: " +";
+}
+details[open] summary:after {
+  content: " -";
+}
+/* kontakt spin */
+.kontakt {
+  animation: spin 2.5s linear infinite;
+}
+
+.skewed {
+  transform: skewY(-6deg);
+  transform-origin: top left;
+}
+
+.text {
+  transform: skewY(6deg);
 }

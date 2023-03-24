@@ -25,7 +25,7 @@ export default defineConfig({
         opencall: resolve(__dirname, "src/opencall.html"),
         rebirth: resolve(__dirname, "src/rebirth.html"),
         gogoyo: resolve(__dirname, "src/gogoyo.html"),
-        mand_ligger_som: resolve(__dirname, "src/mand_ligger_som.html"),
+        mand_ligger: resolve(__dirname, "src/mand_ligger.html"),
         frygten_for_ikke: resolve(__dirname, "src/frygten_for_ikke.html"),
         what_fires_together: resolve(__dirname, "src/what_fires_together.html"),
         vild_med_dig: resolve(__dirname, "src/vild_med_dig.html"),
