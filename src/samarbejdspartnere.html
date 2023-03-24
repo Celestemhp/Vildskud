@@ -5,62 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sanarbejdspartnere</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Imbue:wght@900&family=Inter:wght@400;700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
- <!-- Cookies -->
-<div class="left-0 bottom-0 z-40 " x-data="{cookies: true}"  @keydown.window.escape="cookies = false">
-  <!-- Indhold til cookies -->
-  <div x-show="cookies" class="fixed sm:left-4 bottom-20 rounded-lg bg-white shadow-2xl w-full sm:w-1/2 xl:w-1/4 max-w-[450px] overflow-hidden"
-       style="display: none;"
-       x-transition:enter="transition ease-in duration-200"
-       x-transition:enter-start="opacity-0 transform -translate-x-40"
-       x-transition:enter-end="opacity-100 transform translate-x-0"
-       x-transition:leave="transition ease-in duration-200"
-       x-transition:leave-start="opacity-100 transform translate-x-0"
-       x-transition:leave-end="opacity-0 transform -translate-x-40">
+  <body>
+      <!-- Cookies -->
+   <div class="relative left-0 bottom-0 z-40" x-data="{cookies: false}"  @keydown.window.escape="cookies = false">
+    <!-- Indhold til cookies -->
+    <div x-show="cookies" class="fixed sm:left-4 bottom-20 rounded-lg bg-white shadow-2xl w-full sm:w-1/2 xl:w-1/4 max-w-[450px] overflow-hidden z-50"
+         style="display: none;"
+         x-transition:enter="transition ease-in duration-200"
+         x-transition:enter-start="opacity-0 transform -translate-x-40"
+         x-transition:enter-end="opacity-100 transform translate-x-0"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100 transform translate-x-0"
+         x-transition:leave-end="opacity-0 transform -translate-x-40">
+  
+        <!-- Text -->
+        <div class="overflow-hidden">
+            <div class="relative overflow-hidden px-8 pt-8">
+                <div width="80" height="77" class="absolute -top-10 -right-10 text-yellow-500">
+                    <svg width="120" height="119" viewBox="0 0 120 119" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.3"
+                              d="M6.38128 49.1539C3.20326 32.893 13.809 17.1346 30.0699 13.9566L70.3846 6.07751C86.6455 2.89948 102.404 13.5052 105.582 29.7661L113.461 70.0808C116.639 86.3417 106.033 102.1 89.7724 105.278L49.4577 113.157C33.1968 116.335 17.4384 105.729 14.2604 89.4686L6.38128 49.1539Z"
+                              fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="text-2xl flex flex-col pb-4">
+                    <small>Cookies</small>
+                    <span class="text-3xl font-bold">Velkommen til Vildskud!</span>
+                </div>
+                <div class="pb-4">
+                    <p>Når du besøger vores hjemmeside, sætter vi cookies på din enhed. Det gør vi for at give dig den bedste oplevelse. 
+                      Ved at trykke ’Acceptér alle’ giver du samtykke til brugen af alle cookies. 
+                      Vælger du ’Kun nødvendige’, vil der være funktioner på hjemmesiden, der ikke virker. 
+                    </p>
+                </div>
+            </div>
+  
+        </div>
+        <!-- Boutons -->
+        <div class="w-full flex justify-center items-center border-t border-solid border-gray-200">
+            <button class="border-r border-gray-200 flex-1 px-4 py-3 text-gray-500 hover:text-white hover:bg-red-400 duration-150" @click="cookies = false">
+                Afvis
+            </button>
+            <button class="flex-1 px-4 py-3 text-gray-500 hover:text-white hover:bg-green-400 duration-150" @click="cookies = false">
+                Fint med mig
+            </button>
+        </div>
+    </div>
+    <!-- Cookie BTN -->
+    <button class="fixed left-4 bottom-2 uppercase text-sm px-4 py-3 bg-gray-900 text-white rounded-full z-20"
+            @click="cookies = !cookies">
+        Cookies
+    </button>
+  
 
-      <!-- Text -->
-      <div class="">
-          <div class="relative overflow-hidden px-8 pt-8">
-              <div width="80" height="77" class="absolute -top-10 -right-10 text-yellow-500">
-                  <svg width="120" height="119" viewBox="0 0 120 119" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path opacity="0.3"
-                            d="M6.38128 49.1539C3.20326 32.893 13.809 17.1346 30.0699 13.9566L70.3846 6.07751C86.6455 2.89948 102.404 13.5052 105.582 29.7661L113.461 70.0808C116.639 86.3417 106.033 102.1 89.7724 105.278L49.4577 113.157C33.1968 116.335 17.4384 105.729 14.2604 89.4686L6.38128 49.1539Z"
-                            fill="currentColor"/>
-                  </svg>
-              </div>
-              <div class="text-2xl flex flex-col pb-4">
-                  <small>Cookies</small>
-                  <span class="text-3xl font-bold">Velkommen til Vildskud!</span>
-              </div>
-              <div class="pb-4">
-                  <p>Når du besøger vores hjemmeside, sætter vi cookies på din enhed. Det gør vi for at give dig den bedste oplevelse. 
-                    Ved at trykke ’Acceptér alle’ giver du samtykke til brugen af alle cookies. 
-                    Vælger du ’Kun nødvendige’, vil der være funktioner på hjemmesiden, der ikke virker. 
-                  </p>
-              </div>
-          </div>
-
-      </div>
-      <!-- Boutons -->
-      <div class="w-full flex justify-center items-center border-t border-solid border-gray-200">
-          <button class="border-r border-gray-200 flex-1 px-4 py-3 text-gray-500 hover:text-white hover:bg-red-400 duration-150" @click="cookies = false">
-              Afvis
-          </button>
-          <button class="flex-1 px-4 py-3 text-gray-500 hover:text-white hover:bg-green-400 duration-150" @click="cookies = false">
-              Fint med mig
-          </button>
-      </div>
-  </div>
-  <!-- BTN -->
-  <button class="fixed left-4 bottom-2 uppercase text-sm px-4 py-3 bg-gray-900 text-white rounded-full"
-          @click="cookies = !cookies">
-      Cookies
-  </button>
 
 
- 
-
-  <body class="bg-slate-700 ">
     <header class="showcase">
       <div class=" flex md:flex-wrap items-center justify-between mt-5 mx-4 ">
           <a href="index.html" class="flex">
@@ -76,16 +77,16 @@
             <div class="hidden md:block w-full md:w-auto" id="mobile-menu">
               <ul class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
                   <li>
-                  <a href="#" class="text-white block pl-3 pr-4 py-2 md:p-0 rounded focus:outline-none md:hover:text-fuchsia-400 hover:scale-110" aria-current="page">Program</a>
+                  <a href="program.html" class="text-white block pl-3 pr-4 py-2 md:p-0 rounded focus:outline-none md:hover:text-fuchsia-400 hover:scale-110" aria-current="page">Program</a>
                   </li>
                   <li>
-                    <a href="#" class="text-white  border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-fuchsia-400 md:p-0 hover:scale-110">Find rundt</a>
+                    <a href="findrundt.html" class="text-white  border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-fuchsia-400 md:p-0 hover:scale-110">Find rundt</a>
                     </li>
                   <li>
                   <a href="faq.html" class="text-white  border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-fuchsia-400 md:p-0 hover:scale-110">FAQ</a>
                   </li>
                   <li>
-                  <a href="#" class="text-white  border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-fuchsia-400 md:p-0 hover:scale-110">Frivillig</a>
+                  <a href="frivillig.html" class="text-white  border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-fuchsia-400 md:p-0 hover:scale-110">Frivillig</a>
                   </li>
     
                   <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="text-white border-b border-gray-100 md:hover:bg-transparent md:border-0 pl-3 pr-4 py-2 md:hover:text-fuchsia-400 md:p-0 font-medium flex items-center justify-between w-full md:w-auto hover:scale-110">Info 
@@ -106,7 +107,7 @@
                             <li><a href="#">Program</a></li>
                             <li><a href="#">Find rundt</a></li>
                             <li><a href="/src/faq.html">FAQ</a></li>
-                            <li><a href="#">Frivillig</a></li>
+                            <li><a href="frivillig.html">Frivillig</a></li>
                             <li data-dropdown-toggle="dropdownNavbar">
                             <button>
                               Info 
@@ -117,13 +118,16 @@
                               <div id="dropdownNavbar" class="hidden text-base z-10 list-none mt-10">
                                 <ul class="py-1" >
                                 <li>
-                                    <a href="#" class=" hover:bg-gray-100  block px-4 py-2">Om Vildskud</a>
+                                    <a href="omVildskud.html" class=" hover:bg-gray-100  block px-4 py-2">Om Vildskud</a>
                                 </li>
                                 <li>
-                                    <a href="#" class=" hover:bg-gray-100  block px-4 py-2">Samarbejdspartnere</a>
+                                  <a href="opencall.html" class=" hover:bg-gray-100  block px-4 py-2">Open call</a>
                                 </li>
                                 <li>
-                                    <a href="#" class=" hover:bg-gray-100  block px-4 py-2">Kontakt</a>
+                                    <a href="samarbejdspartnere.html" class=" hover:bg-gray-100  block px-4 py-2">Samarbejdspartnere</a>
+                                </li>
+                                <li>
+                                    <a href="kontakt.html" class=" hover:bg-gray-100  block px-4 py-2">Kontakt</a>
                                 </li>
                                 </ul>
                             </div>
@@ -144,10 +148,10 @@
     <h1 class="text-center">samarbejds<br>partnere</h1>
     <p class="text-white text-center max-w-prose m-auto pb-16">Vildskud 2022 ville ikke have eksisteret uden hjælp fra vores mange samarbejdspartnere. Tak!</p>
   
-<section class="grid gap-20 m-auto lg:grid-cols-2 ">
+<section class="grid gap-20 m-auto pb-20  lg:grid-cols-2 ">
     <article class="grid" >
         <div class="border-b-2 w-fit border-yellow-400 m-auto pb-1 mb-10">
-            <h2 class="text-center text-2xl font-semibold 
+            <h2 class="text-center text-3xl font-semibold 
             ">Venues</h2> </div>
             <div class="flex my-4 flex-row flex-wrap justify-center gap-x-8 gap-y-3 lg:gap-x-16">
                 <img src="img/cph-stage.svg" alt="cph stage">
@@ -162,8 +166,8 @@
 </article>
 <article class="grid">
     <div class="border-b-2 w-fit border-yellow-400 m-auto pb-1 mb-10 ">
-        <h2 class="text-center text-2xl font-semibold 
-        ">Sponsorer</h2> </div>
+      <h2 class="text-center ">Sponsorer</h2> </div>
+    </div>
         <div class="flex my-4 flex-row flex-wrap justify-center gap-x-8 gap-y-3 lg:gap-x-16">
             <img src="img/vestervovvov.svg" alt="vestervovvov">
             <img src="img/cristianhavns_beboerhus.svg" alt="cristianhavns_beboerhus">
@@ -178,68 +182,71 @@
 </section>
   </main>
 
-<footer class="bg-green-900">
-  <div class="max-w-screen-xl px-4 py-16 pb-4 mx-auto sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:gap-8 lg:grid-cols-2 place-content-end">
-      <div>
-      <img src="/img/LOGO2x.png" class="mr-5 h-10 sm:h-9" alt="logo" />
 
-        <div class="flex mb-8 mt-2 space-x-6 text-white ml-2">
-          <a class="hover:opacity-75" href target="_blank" rel="noreferrer">
-            <span class=""></span>
-            <svg class="w-6 h-6 relative" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
-            </svg>
-          </a>
-          <a class="hover:opacity-75" href target="_blank" rel="noreferrer">
-            <span class=""></span>
-            <svg class="w-6 h-6 relative" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd" />
-            </svg>
-          </a>
-        </div> 
+  <footer class="bg-slate-900">
+    <div class="mx-auto max-w-screen-xl px-4 py-16 pb-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 place-content-end lg:grid-cols-2 lg:gap-8">
+        <div>
+          <img src="/img/LOGO2x.png" class="mr-5 h-10 sm:h-9" alt="logo" />
+
+          <div class="mb-8 mt-2 ml-2 flex space-x-6 text-white">
+            <a class="hover:opacity-75" href target="_blank" rel="noreferrer">
+              <span class=""></span>
+              <svg class="relative h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+              </svg>
+            </a>
+            <a class="hover:opacity-75" href target="_blank" rel="noreferrer">
+              <span class=""></span>
+              <svg class="relative h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  fillRule="evenodd"
+                  d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="mx-6 grid grid-cols-2 gap-8 sm:grid-cols-2">
+          <div>
+            <p class="font-medium text-white">Genveje</p>
+            <nav class="mt-4 flex flex-col space-y-2 text-sm">
+              <a class="hover:opacity-75" href="program.html"> Program </a>
+              <a class="hover:opacity-75" href="findrundt.html"> Find rundt</a>
+              <a class="hover:opacity-75" href="faq.html"> FAQ </a>
+              <a class="hover:opacity-75" href="frivillige.html"> Frivilige </a>
+              <a class="hover:opacity-75" href="omVildskud.html"> Om Vildskud </a>
+            </nav>
+          </div>
+          <div>
+            <nav class="mt-4 flex flex-col space-y-2 text-sm">
+              <a class="hover:opacity-75" href="team.html"> Team </a>
+              <a class="hover:opacity-75" href="samarbejdspartnere.html"> Samarbejdspartnere </a>
+              <a class="hover:opacity-75" href="kontakt.html"> Kontakt</a>
+              <a class="hover:opacity-75" href="index.html"> Cookiepolitik </a>
+              <a class="hover:opacity-75" href="index.html"> Privatlivspolitik </a>
+            </nav>
+          </div>
+        </div>
       </div>
-      <div class="grid grid-cols-2 gap-8 mx-6 sm:grid-cols-2">
-        <div>
-          <p class="font-medium text-white">
-            Genveje
-          </p>
-          <nav class="flex flex-col mt-4 space-y-2 text-sm ">
-            <a class="hover:opacity-75" href="#"> Program </a>
-            <a class="hover:opacity-75" href="#"> Find rundt</a>
-            <a class="hover:opacity-75" href="faq.html"> FAQ </a>
-            <a class="hover:opacity-75" href="#"> Frivilige </a>
-            <a class="hover:opacity-75" href="#"> Om Vildskud </a>
-          </nav>
+
+      <!-- Nyhedsbrev -->
+      <div class="relative flex flex-col justify-center overflow-hidden py-6 antialiased sm:py-12">
+        <div class="flex flex-col flex-wrap content-center justify-center p-10 py-20">
+          <div class="m-0 p-0 text-center text-3xl text-white antialiased">Vil du heller ikke gå glip af noget?</div>
+          <div class="m-0 p-0 text-center text-xl text-white antialiased">Så bliv opdateret om fremtidige events</div>
+          <div class="mt-3 flex flex-row flex-wrap">
+            <input type="text" class="w-2/3 rounded-l-lg p-2 text-gray-600" placeholder="navn@email.com" />
+            <button class="w-1/3 rounded-r-lg bg-indigo-400 p-2 text-white hover:bg-indigo-300" type="button">Tilmeld</button>
+          </div>
         </div>
-        <div>
-          <nav class="flex flex-col mt-4 space-y-2 text-sm ">
-            <a class="hover:opacity-75" href="#"> Samarbejdspartnere </a>
-            <a class="hover:opacity-75" href="#"> Kontakt</a>
-            <a class="hover:opacity-75" href="#"> Cookiepolitik </a>
-            <a class="hover:opacity-75" href="#"> Privatlivspolitik </a>
-          </nav>
-        </div>
+        <div class="linje"></div>
+        <p class="mt-8 text-center text-xs">© 2023 Vildskud</p>
       </div>
     </div>
+  </footer>
 
-    <!-- Nyhedsbrev -->
-<div class="relative flex  antialiased flex-col justify-center overflow-hidden  py-6 sm:py-12">
-  <div class=" p-10  py-20  flex  flex-col  flex-wrap  justify-center  content-center">
-    <div class=" m-0  p-0  text-3xl  text-white  antialiased  text-center">Vil du heller ikke gå glip af noget?</div>
-    <div class=" m-0  p-0  text-xl  text-white  antialiased  text-center">Så bliv opdateret om fremtidige events</div>
-    <div class=" mt-3  flex  flex-row  flex-wrap">
-      <input type="text" class=" text-gray-600  w-2/3  p-2  rounded-l-lg" placeholder="navn@email.com"/>
-      <button class=" p-2  w-1/3  bg-indigo-400  rounded-r-lg  text-white hover:bg-indigo-300" type="button">Tilmeld</button>
-    </div>
-  </div>
-<div class="linje"></div>
-    <p class="mt-8 text-xs text-center">
-      © 2023 Vildskud
-    </p>
-  </div>
-  </div>
-</footer>
   
   
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>

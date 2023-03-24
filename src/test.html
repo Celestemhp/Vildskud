@@ -1,234 +1,391 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
 
     <title>Select</title>
 
     <!-- Tailwind CSS & its Custom Forms plugin -->
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="style.css" />
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-</head>
+  </head>
+  <style>
+    /******** Linjer på burgermenu ***************/
+    .menu-wrap2 {
+      position: relative;
+      z-index: 1;
+    }
+    .menu-wrap2 .toggler2 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+      opacity: 0;
+    }
+    .menu-wrap2 .cheeseburger {
+      z-index: 1;
+      width: 56px;
+      height: 53px;
+      padding: 1rem;
+      /* display: flex; */
+      align-items: center;
+      justify-content: center;
+    }
+    /* cheeseburger linje */
+    .menu-wrap2 .cheeseburger > div {
+      /* position: relative; */
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+      /* display: flex; */
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s ease;
+    }
+    /* Top and bottom lines */
+    .menu-wrap2 .cheeseburger > div:before,
+    .menu-wrap2 .cheeseburger > div:after {
+      content: "";
+      /* position: absolute; */
+      z-index: 1;
+      top: -10px;
+      width: 100%;
+      height: 2px;
+      background: inherit;
+    }
+    /* Moves line down */
+    .menu-wrap2 .cheeseburger > div:after {
+      top: 10px;
+    }
+    /* toggler2 animate */
+    .menu-wrap2 .toggler2:checked + .cheeseburger > div {
+      transform: rotate(135deg);
+    }
+    /* Turn Lines into X */
+    .menu-wrap2 .toggler2:checked + .cheeseburger > div:before,
+    .menu-wrap2 .toggler2:checked + .cheeseburger > div:after {
+      top: 0;
+      transform: rotate(90deg);
+    }
+    /* Rotate on hover when checked */
+    .menu-wrap2 .toggler2:checked:hover + .cheeseburger > div {
+      transform: rotate(225deg);
+    }
 
+    /********************* cheeseburger */
 
-    
-    <body class="p-20">
-    
-        
-        
-   <!-- kategorier knap -->
- <div x-data="{ selectedOption: 'Alle', 
- kategorier: [ 
-    'Alle',
-    'Forestillinger', 
-    'Events'
- ]}">
+    .cheeseburger {
+      /* position: relative; */
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+      /* display: flex; */
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s ease;
 
-<div class="w-1/2 inline-block relative">
-<select name="my_option" x-model="selectedOption" class="">
-    <template x-for="option in kategorier" :key="option">
-        <option :value="option" x-text="option"></option>
-    </template>
-</select>
+      z-index: 1;
+      width: 56px;
+      height: 53px;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cheeseburger div {
+      content: "";
+      /* position: absolute; */
+      z-index: 3;
+      top: -10px;
+      width: 100%;
+      height: 2px;
+      background: inherit;
+    }
 
-</div>
- <span x-text="selectedOption"></span>
-</div>
+    /*************************************** Vis menu ***************************************/
+    .menu-wrap2 .toggler2:checked ~ .menu {
+      visibility: visible;
+    }
+    .menu-wrap2 .toggler2:checked ~ .menu > div {
+      transform: scale(1);
+      transition-duration: var(--menu-speed);
+    }
+    .menu-wrap2 .toggler2:checked ~ .menu > div > div {
+      opacity: 1;
+      transition: opacity 0.4s ease;
+    }
+    .menu-wrap2 .menu {
+      position: fixed;
+      height: 100%;
+      visibility: hidden;
+      overflow: hidden;
+      display: flex;
+      scale: 100%;
 
-       <!-- Program -->
-       <section  x-text="selectedOption" :value="Forestillinger" x-text="Forestillinger">
-
-
-        <div class="content grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-
-          <div class="alle w-auto bg-gray-400 rounded-lg sahdow-lg overflow-hidden flex flex-row justify-center items-center hover:bg-indigo-500 hover:ring-indigo-500 m-4 gap-4">
-            <div class=" w-32 m-4">
-
-                  <img class="object-center object-cover h-auto w-full " src="/img/Billede1.webp" alt="photo">
-              </div>
-              <div class="py-8 sm:py-6">
-
-                  <p class="text-2xl text-gray-700 font-bold mb-2">RE-BIRTH</p>
-                  <p class="text-base text-white font-normal">Venue: DOWNUNDER</p>
-                  <p class="text-base text-white font-normal">Genre:  gyser, thriller</p>
-                  <p class="text-base text-white font-normal">Varighed: 90 min.</p>
-                  <div class="flex flex-row gap-2">
-                  <p class="text-base text-white font-normal">Vises: </p>
-                    <p class="text-base text-white font-normal bg-purple-500 px-2">Mandag</p>
-                    <p class="text-base text-white font-normal bg-green-700 px-2">Torsdag</p>
-                  </div>
-              </div>
-          </div>
+      left: 0px;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+    }
+    /* .menu-wrap2 .menu > div{
+  background-color: rgba(59, 59, 59, 0.9);
+  display: flex;
+  flex: none;
+   transform: scale(0); 
+  transition: all 0.4s ease;
+} */
+    /* .menu-wrap2 .menu > div >div{
+  text-align: center;
+  width: 300vw;
+  max-height: 100vh;
+   opacity: 0; 
+  transition: opacity 0.4s ease;
   
-          <div class="alle w-auto bg-gray-400 rounded-lg sahdow-lg overflow-hidden flex flex-row justify-center items-center hover:bg-indigo-500 hover:ring-indigo-500 m-4 gap-4">
-            <div class=" w-32 m-4">
-                <img class="object-center object-cover h-auto w-full " src="/img/9BEF0B3D-169C-4CB1-82BF-C3ED7BC468D8.webp" alt="photo">
-            </div>
-            <div class="py-8 sm:py-6">
-                <p class="text-2xl text-gray-700 font-bold mb-2">Det levende rum</p>
-                <p class="text-base text-white font-normal">Venue: DOWNUNDER</p>
-                <p class="text-base text-white font-normal">Genre:  gyser, thriller</p>
-                <p class="text-base text-white font-normal">Varighed: 90 min.</p>
-                <div class="flex flex-row gap-2">
-                <p class="text-base text-white font-normal">Vises: </p>
-                  <p class="text-base text-white font-normal bg-blue-500 px-2">Tirsdag</p>
-                  <p class="text-base text-white font-normal bg-green-700 px-2">Torsdag</p>
+} */
+
+    /* burgermenu vis*/
+    .menu {
+      transition: all 0.3s;
+    }
+
+    .lightbulb {
+      margin-top: 100px;
+      position: relative;
+      left: 35%;
+    }
+
+    .lightbulb img {
+      width: 400px;
+    }
+
+    .light {
+      border: 1px solid red;
+      margin: 0 auto;
+      text-align: center;
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      margin-top: -200px;
+      margin-left: -200px;
+      left: 0;
+      top: 0;
+
+      -webkit-animation-name: flicker;
+      animation-name: flicker;
+      -webkit-animation-duration: 8s;
+      animation-duration: 8s;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+    }
+
+    .light {
+      position: absolute;
+
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0.3+0,0+50 */
+      background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4dffffff', endColorstr='#00ffffff',GradientType=1 );
+    }
+
+    @keyframes flicker {
+      from {
+        opacity: 0.5;
+      }
+      4% {
+        opacity: 0.7;
+      }
+      8% {
+        opacity: 0.45;
+      }
+      12% {
+        opacity: 0.65;
+      }
+      16% {
+        opacity: 0.3;
+      }
+      20% {
+        opacity: 0.5;
+      }
+      24% {
+        opacity: 0.6;
+      }
+      28% {
+        opacity: 0.25;
+      }
+      32% {
+        opacity: 0.3;
+      }
+      36% {
+        opacity: 0.55;
+      }
+      40% {
+        opacity: 0.4;
+      }
+      44% {
+        opacity: 0.6;
+      }
+      48% {
+        opacity: 0.35;
+      }
+      52% {
+        opacity: 0.2;
+      }
+      56% {
+        opacity: 0.7;
+      }
+      60% {
+        opacity: 0.5;
+      }
+      64% {
+        opacity: 0.65;
+      }
+      68% {
+        opacity: 0.35;
+      }
+      72% {
+        opacity: 0.5;
+      }
+      76% {
+        opacity: 0.4;
+      }
+      80% {
+        opacity: 0.65;
+      }
+      84% {
+        opacity: 0.4;
+      }
+      88% {
+        opacity: 0.35;
+      }
+      92% {
+        opacity: 0.6;
+      }
+      96% {
+        opacity: 0.3;
+      }
+      to {
+        opacity: 0.5;
+      }
+    }
+  </style>
+
+  <body class="p-20">
+    <!-- <button class="whopper fixed right-5 top-5" style=""><div>test</div></button> -->
+
+    <header class="showcase">
+      <img class="absolute top-0 ml-0 w-24 sm:w-48" src="/img/mindre_streg@2x.png" alt="" />
+      <div class="mx-4 mt-5 flex items-center justify-between md:flex-wrap">
+        <a href="index.html" class="flex">
+          <!-- <img src="/img/LOGO2x.png" width="" alt="" class="mr-3 w-36" /> -->
+        </a>
+        <div class="flex flex-row place-items-center gap-4" style="margin-top: -64px">
+          <!-- Køb billet btn -->
+          <a href="billetsalg.html" class="z-50">
+            <button class="main-btn btn-primary btn hover:scale-110">
+              <p>Køb billet</p>
+            </button>
+          </a>
+
+          <!-- Nav desktop -->
+          <div class="hidden w-full md:block md:w-auto" id="">
+            <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
+              <ul class="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
+                <li>
+                  <a href="program.html" class="block rounded py-2 pl-3 pr-4 text-white hover:scale-110 focus:outline-none md:p-0 md:hover:text-fuchsia-400" aria-current="page">Program</a>
+                </li>
+                <li>
+                  <a href="findrundt.html" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Find rundt</a>
+                </li>
+                <li>
+                  <a href="#" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">FAQ</a>
+                </li>
+                <li>
+                  <a href="#" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Frivillig</a>
+                </li>
+                <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="inline-flex items-center rounded-lg text-center text-sm font-medium text-white hover:bg-slate-800 focus:outline-none dark:hover:bg-slate-700" type="button">
+                  Info
+                  <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <!-- Dropdown menu -->
+                <div id="dropdownHover" class="z-10 hidden divide-y divide-gray-100 rounded-lg bg-slate-500">
+                  <ul class="py-2 text-sm dark:text-gray-200" aria-labelledby="dropdownHoverButton">
+                    <li>
+                      <a href="omVildskud.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Om Vildskud</a>
+                    </li>
+                    <li>
+                      <a href="team.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Team</a>
+                    </li>
+                    <li>
+                      <a href="opencall.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Open call</a>
+                    </li>
+                    <li>
+                      <a href="samarbejdspartnere.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Samarbejdspartnere</a>
+                    </li>
+                    <li>
+                      <a href="kontakt.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Kontakt</a>
+                    </li>
+                  </ul>
                 </div>
+              </ul>
             </div>
-        </div>        
-        <div class="alle w-auto bg-gray-400 rounded-lg sahdow-lg overflow-hidden flex flex-row justify-center items-center hover:bg-indigo-500 hover:ring-indigo-500 m-4 gap-4">
-              <div class=" w-32 m-4">
-                  <img class="object-center object-cover h-auto w-full " src="/img/Billede1-2.webp" alt="photo">
-              </div>
-              <div class="py-8 sm:py-6">
-                  <p class="text-2xl text-gray-700 font-bold mb-2 w-52">Mand ligger som mand har redt</p>
-                  <p class="text-base text-white font-normal">Venue: DOWNUNDER</p>
-                  <p class="text-base text-white font-normal">Genre:  gyser, thriller</p>
-                  <p class="text-base text-white font-normal">Varighed: 90 min.</p>
-                  <div class="flex flex-row gap-2">
-                  <p class="text-base text-white font-normal">Vises: </p>
-                    <p class="text-base text-white font-normal bg-purple-500 px-2">Mandag</p>
-                    <p class="text-base text-white font-normal bg-yellow-500 px-2">Lørdag</p>
-                  </div>
-              </div>
           </div>
-        <div class="alle w-auto bg-gray-400 rounded-lg sahdow-lg overflow-hidden flex flex-row justify-center items-center hover:bg-indigo-500 hover:ring-indigo-500 m-4 gap-4">
-          <div class=" w-32 m-4">
-              <img class="object-center object-cover h-auto w-full " src="/img/WFTWT_instagram.webp" alt="photo">
-          </div>
-          <div class="py-8 sm:py-6">
-              <p class="text-2xl text-gray-700 font-bold mb-2 ">What fires together wires together</p>
-              <p class="text-base text-white font-normal">Venue: DOWNUNDER</p>
-              <p class="text-base text-white font-normal">Genre:  gyser, thriller</p>
-              <p class="text-base text-white font-normal">Varighed: 90 min.</p>
-              <div class="flex flex-row gap-2">
-              <p class="text-base text-white font-normal">Vises: </p>
-                <p class="text-base text-white font-normal bg-blue-500 px-2">Tirsdag</p>
-                <p class="text-base text-white font-normal bg-rose-400 px-2">Onsdag</p>
+          <!-- burgermenu -->
+          <div class="menu-wrap2 menutoggler2 z-50 md:hidden lg:hidden">
+            <input type="checkbox" class="toggler2 z-50" />
+            <button class="cheeseburger z-50"><div>test</div></button>
+            <div class="menu z-40 m-0 p-0">
+              <div>
+                <!-- nye -->
+                <button class=""><div></div></button>
+                <div class="w-full md:block md:w-auto">
+                  <ul>
+                    <li><a href="program.html">Program</a></li>
+                    <li><a href="findrundt.html">Find rundt</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="frivillig.html">Frivillig</a></li>
+                    <li x-data="{submenuopen: false}">
+                      <button x-on:click="submenuopen = ! submenuopen">
+                        Info
+                        <!-- pil -->
+                        <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                      </button>
+                      <ul class="ml-8 py-2 text-4xl dark:text-gray-200" x-show="submenuopen">
+                        <li>
+                          <a href="omVildskud.html" class="px-4 py-2 hover:bg-gray-100">Om Vildskud</a>
+                        </li>
+                        <li>
+                          <a href="opencall.html" class="px-4 py-2 hover:bg-gray-100">Open call</a>
+                        </li>
+                        <li>
+                          <a href="team.html" class="px-4 py-2 hover:bg-gray-100">Team</a>
+                        </li>
+                        <li>
+                          <a href="samarbejdspartnere.html" class="px-4 py-2 hover:bg-gray-100">Samarbejdspartnere</a>
+                        </li>
+                        <li>
+                          <a href="kontakt.html" class="px-4 py-2 hover:bg-gray-100">Kontakt</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <!-- Dropdown menu -->
+                <div class="z-10 h-screen divide-y divide-gray-100"></div>
               </div>
+            </div>
           </div>
+        </div>
       </div>
-      <div class="alle w-auto bg-gray-400 rounded-lg sahdow-lg overflow-hidden flex flex-row justify-center items-center hover:bg-indigo-500 hover:ring-indigo-500 m-4 gap-4">
-        <div class=" w-32 m-4">
-            <img class="object-center object-cover h-auto w-full " src="/img/Image-from-iOS.webp" alt="photo">
-        </div>
-        <div class="py-8 sm:py-6">
-            <p class="text-2xl text-gray-700 font-bold mb-2">GOGO YO-YOKU</p>
-            <p class="text-base text-white font-normal">Venue: DOWNUNDER</p>
-            <p class="text-base text-white font-normal">Genre:  gyser, thriller</p>
-            <p class="text-base text-white font-normal">Varighed: 90 min.</p>
-            <div class="flex flex-row gap-2">
-            <p class="text-base text-white font-normal">Vises: </p>
-              <p class="text-base text-white font-normal bg-purple-500 px-2">Mandag</p>
-              <p class="text-base text-white font-normal bg-yellow-500 px-2">Lørdag</p>
-            </div>
-        </div>
+    </header>
+
+    <div class="lightbulb">
+      <div class="light"></div>
+      <div><img src="https://i.imgur.com/i5AWSel.png" /></div>
     </div>
-        </div>
-  
-        </section>
-        <script>
-            function select(config) {
-                return {
-                    data: config.data,
-
-                    emptyOptionsMessage: config.emptyOptionsMessage ?? 'No results match your search.',
-
-                    focusedOptionIndex: null,
-
-                    name: config.name,
-
-                    open: false,
-
-                    options: {},
-
-                    placeholder: config.placeholder ?? 'Select an option',
-
-                    search: '',
-
-                    value: config.value,
-
-                    closeListbox: function () {
-                        this.open = false
-
-                        this.focusedOptionIndex = null
-
-                        this.search = ''
-                    },
-
-                    focusNextOption: function () {
-                        if (this.focusedOptionIndex === null) return this.focusedOptionIndex = Object.keys(this.options).length - 1
-
-                        if (this.focusedOptionIndex + 1 >= Object.keys(this.options).length) return
-
-                        this.focusedOptionIndex++
-
-                        this.$refs.listbox.children[this.focusedOptionIndex].scrollIntoView({
-                            block: "center",
-                        })
-                    },
-
-                    focusPreviousOption: function () {
-                        if (this.focusedOptionIndex === null) return this.focusedOptionIndex = 0
-
-                        if (this.focusedOptionIndex <= 0) return
-
-                        this.focusedOptionIndex--
-
-                        this.$refs.listbox.children[this.focusedOptionIndex].scrollIntoView({
-                            block: "center",
-                        })
-                    },
-
-                    init: function () {
-                        this.options = this.data
-
-                        if (!(this.value in this.options)) this.value = null
-
-                        this.$watch('search', ((value) => {
-                            if (!this.open || !value) return this.options = this.data
-
-                            this.options = Object.keys(this.data)
-                                .filter((key) => this.data[key].toLowerCase().includes(value.toLowerCase()))
-                                .reduce((options, key) => {
-                                    options[key] = this.data[key]
-                                    return options
-                                }, {})
-                        }))
-                    },
-
-                    selectOption: function () {
-                        if (!this.open) return this.toggleListboxVisibility()
-
-                        this.value = Object.keys(this.options)[this.focusedOptionIndex]
-
-                        this.closeListbox()
-                    },
-
-                    toggleListboxVisibility: function () {
-                        if (this.open) return this.closeListbox()
-
-                        this.focusedOptionIndex = Object.keys(this.options).indexOf(this.value)
-
-                        if (this.focusedOptionIndex < 0) this.focusedOptionIndex = 0
-
-                        this.open = true
-
-                        this.$nextTick(() => {
-                            this.$refs.search.focus()
-
-                            this.$refs.listbox.children[this.focusedOptionIndex].scrollIntoView({
-                                block: "center"
-                            })
-                        })
-                    },
-                }
-            }
-        </script>
-
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"></script>
-<script src="https://unpkg.com/alpinejs" defer=""></script>
-<script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
-</body>
+  </body>
 </html>

@@ -2,11 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-    html {
-      font-family: Proxima Nova, poppins, sans-serif;
+
+  @layer base {
+    h1 {
+      font-family: "Imbue", serif;
+      color: white;
+      font-size: 70px;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      padding-block: 20px;
+    }
+    h2 {
+      font-family: "Poppins", sans-serif;
+      font-size: 24px;
+      padding-bottom: 15px;
+      font-weight: 600;
+    }
+    h3 {
+      font-family: "Poppins", sans-serif;
+      font-size: 20px;
+      padding-bottom: 15px;
+      font-weight: 600;
+    }
+  
+    p {
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 24px;
     }
   }
+  
   body {
     /* background: linear-gradient(to top, purple, pink); */
     margin: 0;
@@ -86,7 +112,7 @@
   align-items: center;
   justify-content: center;
 }
-/* Hamburger line */
+/* Hamburger linje */
 .menu-wrap .hamburger >div {
   position: relative;
   width: 100%;
@@ -126,6 +152,37 @@
 .menu-wrap .toggler:checked:hover + .hamburger > div{
   transform: rotate(225deg);
 }
+
+/********************* cheeseburger */
+
+.cheeseburger {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+
+  z-index: 1;
+  width: 56px;
+  height: 53px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cheeseburger div {
+  content: '';
+  position: absolute;
+  z-index: 3;
+  top: -10px;
+  width: 100%;
+  height: 2px;
+  background: inherit;
+}
+
 /*************************************** Vis menu ***************************************/
 .menu-wrap .toggler:checked ~ .menu{
   visibility: visible;
@@ -144,20 +201,21 @@
 .menu-wrap .menu{
   position: fixed;
   height: 100%;
-   visibility: hidden; 
+  visibility: hidden; 
   overflow: hidden;
   display: flex;
-  align-items: center;
-  justify-content: center;
   scale: 100%;
-  
+
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+
 }
 .menu-wrap .menu > div{
-  background-color: blueviolet;
+  background-color: rgba(59, 59, 59, 0.9);
   display: flex;
   flex: none;
-  align-items: center;
-  justify-content: center;
    transform: scale(0); 
   transition: all 0.4s ease;
 }
@@ -169,27 +227,14 @@
   transition: opacity 0.4s ease;
   
 }
-.menu-wrap .menu > div > div > ul > li {
-  list-style: none;
-  color: #fff;
-  font-size: 2rem;
-  margin: 0;
-  padding: 0;
-}
 
-.menu-wrap .menu >div > div > ul > li > a{
-  color: inherit;
-  text-decoration: none;
-  transition: color 0.4s ease;
-}
 
 /* burgermenu vis*/
 .menu {
   color: white;
   font-size: 3.5em;
-  position: absolute;
-  top: 70px;
-  left: 0px;
+
+
   z-index: 100;
   transition: all 0.3s;
   margin: 0;
@@ -282,32 +327,33 @@ footer .linje {
 }
 
 
+/* ****************** glow lys *****************/
+.glowing-circle {
+  width: 100px;
+  height: 100px;
+  border-radius:50%;
+  background-color: #fff;
+  box-shadow: 0 0 60px 30px #fff, 0 0 100px 60px #b400ff, 0 0 140px 90px #ff00d4;
+}
+
+
+/* 
 /* bølge */
-.box {
+/* .box {
   --size: 50px;
   --p: 25px;
-  --R: 55.9px /*sqrt(var(--size)*var(--size) + var(--p)*var(--p))*/;
+  --R: 55.9px;
   height: 200px;
   -webkit-mask:
     radial-gradient(var(--R) at 50% calc(100% - (var(--size) + var(--p))),blue 99%,#0000 101%) calc(50% - 2*var(--size)) 0/calc(4*var(--size)) 100%,
     radial-gradient(var(--R) at 50% calc(100% + var(--p)),#0000 99%,red 101%) 50% calc(100% - var(--size))/calc(4*var(--size)) 100% repeat-x;
   background: #009A5B;  
   border: none;
-}
-
-/* scroll snap */
-.scroll_snap {
-  scroll-snap-type: y proximity;
-  
-}
-
-.child {
-  scroll-snap-align: start;
-}
+}  */
 
 
 /* kontakt spin */
-.kontakt {
+/* .kontakt {
   animation: spin 2.5s linear infinite;
 }
 @keyframes spin {
@@ -320,7 +366,38 @@ footer .linje {
   100% {
     transform: rotateY(0deg);
   }
+} */
+
+/* Info text */
+
+details > summary {
+  list-style: none;
 }
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: " +";
+}
+details[open] summary:after {
+  content: " -";
+}
+/* kontakt spin */
+.kontakt {
+  animation: spin 2.5s linear infinite;
+}
+
+.skewed {
+  transform: skewY(-6deg);
+  transform-origin: top left;
+}
+
+.text {
+  transform: skewY(6deg);
+}
+
+
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -333,3 +410,4 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+

@@ -4,10 +4,64 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <!-- alpine style -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
-      <title>Vildskud</title>
+      <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"> -->
+      <link rel="stylesheet" href="style.css">
+      <link href="https://fonts.googleapis.com/css2?family=Imbue:wght@900&family=Inter:wght@400;700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+   
+      <title>Vildskud program</title>
     </head>
     <body>
+   <!-- Cookies -->
+   <div class="relative left-0 bottom-0 z-40" x-data="{cookies: false}"  @keydown.window.escape="cookies = false">
+    <!-- Indhold til cookies -->
+    <div x-show="cookies" class="fixed sm:left-4 bottom-20 rounded-lg bg-white shadow-2xl w-full sm:w-1/2 xl:w-1/4 max-w-[450px] overflow-hidden z-50"
+         style="display: none;"
+         x-transition:enter="transition ease-in duration-200"
+         x-transition:enter-start="opacity-0 transform -translate-x-40"
+         x-transition:enter-end="opacity-100 transform translate-x-0"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100 transform translate-x-0"
+         x-transition:leave-end="opacity-0 transform -translate-x-40">
+  
+        <!-- Text -->
+        <div class="overflow-hidden">
+            <div class="relative overflow-hidden px-8 pt-8">
+                <div width="80" height="77" class="absolute -top-10 -right-10 text-yellow-500">
+                    <svg width="120" height="119" viewBox="0 0 120 119" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.3"
+                              d="M6.38128 49.1539C3.20326 32.893 13.809 17.1346 30.0699 13.9566L70.3846 6.07751C86.6455 2.89948 102.404 13.5052 105.582 29.7661L113.461 70.0808C116.639 86.3417 106.033 102.1 89.7724 105.278L49.4577 113.157C33.1968 116.335 17.4384 105.729 14.2604 89.4686L6.38128 49.1539Z"
+                              fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="text-2xl flex flex-col pb-4">
+                    <small>Cookies</small>
+                    <span class="text-3xl font-bold">Velkommen til Vildskud!</span>
+                </div>
+                <div class="pb-4">
+                    <p>Når du besøger vores hjemmeside, sætter vi cookies på din enhed. Det gør vi for at give dig den bedste oplevelse. 
+                      Ved at trykke ’Acceptér alle’ giver du samtykke til brugen af alle cookies. 
+                      Vælger du ’Kun nødvendige’, vil der være funktioner på hjemmesiden, der ikke virker. 
+                    </p>
+                </div>
+            </div>
+  
+        </div>
+        <!-- Boutons -->
+        <div class="w-full flex justify-center items-center border-t border-solid border-gray-200">
+            <button class="border-r border-gray-200 flex-1 px-4 py-3 text-gray-500 hover:text-white hover:bg-red-400 duration-150" @click="cookies = false">
+                Afvis
+            </button>
+            <button class="flex-1 px-4 py-3 text-gray-500 hover:text-white hover:bg-green-400 duration-150" @click="cookies = false">
+                Fint med mig
+            </button>
+        </div>
+    </div>
+    <!-- Cookie BTN -->
+    <button class="fixed left-4 bottom-2 uppercase text-sm px-4 py-3 bg-gray-900 text-white rounded-full z-20"
+            @click="cookies = !cookies">
+        Cookies
+    </button>
+  
 
 
     <header class="showcase">
@@ -18,9 +72,11 @@
         </a>
         <div class="flex flex-row place-items-center gap-4">
           <!-- Køb billet btn -->
-          <button class="main-btn btn-primary btn hover:scale-110">
-            Køb billet
-          </button>
+          <a href="billetsalg.html">
+            <button class="main-btn btn-primary btn hover:scale-110">
+              <p>Køb billet</p>
+            </button>
+          </a>
           <!-- Nav desktop -->
           <div class="hidden w-full md:block md:w-auto">
             <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
@@ -32,10 +88,10 @@
                   <a href="findrundt.html" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Find rundt</a>
                 </li>
                 <li>
-                  <a href="#" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">FAQ</a>
+                  <a href="faq.html" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">FAQ</a>
                 </li>
                 <li>
-                  <a href="#" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Frivillig</a>
+                  <a href="frivillig.html" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Frivillig</a>
                 </li>
                 <li>
                 <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex w-full items-center justify-between border-b border-gray-100 py-2 pl-3 pr-4 font-medium text-white hover:scale-110 md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">
@@ -59,8 +115,8 @@
                   <ul>
                     <li><a href="program.html">Program</a></li>
                     <li><a href="findrundt.html">Find rundt</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Frivillig</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="frivillig.html">Frivillig</a></li>
                     <li data-dropdown-toggle="dropdownNavbar">
                       <button>
                         Info
@@ -97,365 +153,206 @@
         <h2 class="mt-10 text-center text-5xl font-bold text-white">Program</h2>
         <h2 class="text-center text-2xl font-bold text-white">Oversigt over alle forestillinger og events</h2>
       </section>
-            <!-- filtrering knapper -->
-      <section class="m-10">
 
-      <!-- <div class="filters flex flex-row justify-between">
-        <div class="mx-auto flex w-full pt-4 sm:max-w-[640px] md:max-w-[768px] lg:max-w-[1024px] xl:max-w-[1280px] 2xl:max-w-[1536px]">
-          
-          <button type="button" class="text-white m-1 bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Kategori</button>
-          <button type="button" class="text-white m-1 bg-blue-700 hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Dag</button>
-        </div>
-      </div> -->
-      <!-- program -->
-      </section>
-      <!--  alpine filtrering -->
-      <div class="filters">
-        <div class="mx-auto flex w-full pt-4 sm:max-w-[640px] md:max-w-[768px] lg:max-w-[1024px] xl:max-w-[1280px] 2xl:max-w-[1536px]">
-          <div
-            x-data="filters()"
-            @reset="reset = $event.detail.reset, filterCounter = 0">
-            <div class="flex flex-wrap items-center">
-              <div class="flex items-start">
-                <!-- Kategori -->
-                <div
-                  class="mb-3"
-                  x-ref="myFilter"
-                  x-data="{
-                                    show: false,
-                                    counter: 0,
-                                    }
-                                    "
-                  @reset.window="counter = 0"
-                >
-                  <button
-                    id="dropdownDefault"
-                    data-dropdown-toggle="dropdown"
-                    x-on:click="open"
-                    type="button"
-                    class="flex text-white m-1 bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                    Kategori
-                    <!-- Viser filter -->
-                    <span
-                      x-show="counter"
-                      x-text="counter"
-                      class="bg-slate-500 card-pills--counter ml-2 rounded-md px-2 py-1 text-sm"
-                      style="display: none"
-                      >0</span>
-                      <!-- pil -->
-                    <i
-                      class="fas fa-angle-down pl-3 text-stone-700 dark:text-stone-300"
-                    ></i>
-                  </button>
-                  <div
-                    x-show="isOpen()"
-                    x-on:click.away="close"
-                    class="w-46 shadow-stone-55 absolute z-10 divide-y divide-gray-100 overflow-hidden rounded-md bg-white shadow-lg "
-                    data-popper-placement="bottom"
-                    style="display: none"
-                  >
-                    <ul
-                      class="text-gray-700"
-                      aria-labelledby="dropdownDefault"
-                    >
-                      <li
-                        x-data="{ 
-                           checked: false
-                                          }"
-                        @reset.window="checked = false"
-                      >
-                        <button
-                        x-data="{ forestillinger: false }"
-                        x-bind:class="forestillinger ? 'bg-red' : ''"
-
-                          @click="count" :class="checked ? : "
-                          :class="checked ? : ''"
-                          class="group flex w-full items-center justify-between px-4 py-2 hover:bg-stone-500 hover:text-stone-300"
-                        >
-                          Forestillinger
-                        </button>
-                      </li>
-                      <li
-                      x-data="{ 
-                         checked: false
-                                        }"
-                      @reset.window="checked = false"
-                    >
-                      <button
-                        @click="count" :class="checked ? : "
-                        class="group flex w-full items-center justify-between px-4 py-2 hover:bg-stone-500 hover:text-stone-300"
-                      > Events  
-                      </button>
-                    </li>
-                    </ul>
-                  </div>
-                </div>
-
-                <!-- Dag -->
-                <div
-                  class="ml-3 mb-3"
-                  x-ref="myFilter"
-                  x-data="{
-                    show: false,
-                    counter: 0,
-                    }
-                    "
-                  @reset.window="counter = 0"
-                >
-                  <button
-                    id="dropdownDefault"
-                    data-dropdown-toggle="dropdown"
-                    x-on:click="open"
-                    type="button"
-                    class="flex text-white m-1 bg-blue-700 hover:bg-blue-800 focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-                  >
-                    Dag
-                    <span
-                      x-show="counter"
-                      x-text="counter"
-                      class="bg-slate-500 text-green-100 card-pills--counter ml-2 rounded-md px-2 py-1 text-sm"
-                      style="display: none"
-                      >0</span
-                    >
-                    <i
-                      class="fas fa-angle-down pl-3 text-stone-700 dark:text-stone-300"
-                    ></i>
-                  </button>
-                  <div
-                    x-show="isOpen()"
-                    x-on:click.away="close"
-                    class="w-46 shadow-stone-55 absolute z-10 divide-y divide-gray-100 overflow-hidden rounded-md bg-white shadow-lg "
-                    data-popper-placement="bottom"
-                    style="display: none"
-                  >
-                    <ul
-                      class="text-gray-700"
-                      aria-labelledby="dropdownDefault"
-                    >
-                      <li
-                        x-data="{ 
-                                              checked: false
-                                          }"
-                        @reset.window="checked = false"
-                      >
-                        <button
-                          @click="count"
-                          :class="checked ? ' bg-green-50' : ''"
-                          class="group flex w-full items-center justify-between px-4 py-2 hover:bg-stone-500 hover:text-stone-300"
-                        >
-                          Mandag
-                        
-                        </button>
-                      </li>
-
-                      <li
-                        x-data="{ 
-                                              checked: false
-                                          }"
-                        @reset.window="checked = false"
-                      >
-                        <button
-                          @click="count"
-                          :class="checked ? ' bg-green-50' : ''"
-                          class="group flex w-full items-center justify-between px-4 py-2 hover:bg-stone-500 hover:text-stone-300"
-                        >
-                          Tirsdag
-                      
-                        </button>
-                      </li>
-
-                      <li
-                        x-data="{ 
-                                              checked: false
-                                          }"
-                        @reset.window="checked = false"
-                      >
-                        <button
-                          @click="count"
-                          :class="checked ? ' bg-green-50' : ''"
-                          class="group flex w-full items-center justify-between px-4 py-2 hover:bg-stone-500 hover:text-stone-300"
-                        >
-                          Onsdag
-                      
-                        </button>
-                      </li>
-
-                      <li
-                        x-data="{ 
-                                              checked: false
-                                          }"
-                        @reset.window="checked = false"
-                      >
-                        <button
-                          @click="count"
-                          :class="checked ? ' bg-green-50' : ''"
-                          class="group flex w-full items-center justify-between px-4 py-2 hover:bg-stone-500 hover:text-stone-300"
-                        >
-                          Torsdag
-                      
-                        </button>
-                      </li>
-                      <li
-                      x-data="{ 
-                                            checked: false
-                                        }"
-                      @reset.window="checked = false"
-                    >
-                      <button
-                        @click="count"
-                        :class="checked ? bg-green-50' : ''"
-                        class="group flex w-full items-center justify-between px-4 py-2 hover:bg-stone-500 hover:text-stone-300"
-                      >
-                        Fredag
-                      </button>
-                    </li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div>
-                  <button
-                    @click="$dispatch( 'reset', { reset : !reset } )"
-                    x-show="filterCounter"
-                    class="mb-3 ml-4 flex min-h-[3rem] items-center justify-between rounded-md bg-stone-500 px-4 py-2 text-stone-50"
-                    style="display: none"
-                  >
-                    <i class="fas fa-times pr-2 group-hover:text-white"></i>
-                    Fjern filtre
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <script>
-          function filters() {
-            return {
-              filterCounter: 0,
-              reset: false,
-              resetCounter: false,
-              open() {
-                this.show = true;
-              },
-              close() {
-                this.show = false;
-              },
-
-              isOpen() {
-                return this.show === true;
-              },
-
-              count() {
-                this.show = false;
-                this.checked = !this.checked;
-                if (this.checked) {
-                  this.counter = this.counter + 1;
-                  this.filterCounter = this.filterCounter + 1;
-                } else if (!this.checked) {
-                  this.counter = this.counter - 1;
-                  this.filterCounter = this.filterCounter - 1;
-                }
-              },
-            };
-          }
-        </script>
+<!-- filtrering -->
+  <section class="my-10 mx-4" id="step" x-data="{ spilledag: 'alledage', kategori: 'allekategori', skjulteforestillinger : 0 }">
+    <form id="filtre" class="flex">
+            
+        <div class="mb-4 mr-4 mx-10">
+        <label for="spilledag">Dato:</label>
+        <select class="flex text-white m-1 bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-6 py-2.5 text-center" name="spilledag" id="spilledag" x-model="spilledag" form="filtre" x-on:change="$nextTick(() => { ingenforestillinger() });">
+         
+          <option value="alledage">Alle dage</option>
+          <option value="tirsdag">Tirsdag</option>
+          <option value="onsdag">Onsdag</option>
+          <option value="torsdag">Torsdag</option>
+          <option value="fredag">Fredag</option>
+          <option value="lordag">Lørdag</option>
+        </select> 
       </div>
-      <!-- Program -->
-      <section>
-      <div class="content grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-       
-        <div class="alle w-auto bg-gray-400 rounded-lg sahdow-lg overflow-hidden flex flex-row justify-center items-center hover:bg-indigo-500 hover:ring-indigo-500 m-4 gap-4">
-            <div class=" w-32 m-4">
-                <img class="object-center object-cover h-auto w-full " src="/img/Billede1.webp" alt="photo">
-            </div>
-            <div class="py-8 sm:py-6">
-                <p class="text-2xl text-gray-700 font-bold mb-2">RE-BIRTH</p>
-                <p class="text-base text-white font-normal">Venue: DOWNUNDER</p>
-                <p class="text-base text-white font-normal">Genre:  gyser, thriller</p>
-                <p class="text-base text-white font-normal">Varighed: 90 min.</p>
-                <div class="flex flex-row gap-2">
-                <p class="text-base text-white font-normal">Vises: </p>
-                  <p class="text-base text-white font-normal bg-purple-500 px-2">Mandag</p>
-                  <p class="text-base text-white font-normal bg-green-700 px-2">Torsdag</p>
-                </div>
-            </div>
-        </div>
 
-        <div class="alle w-auto bg-gray-400 rounded-lg sahdow-lg overflow-hidden flex flex-row justify-center items-center hover:bg-indigo-500 hover:ring-indigo-500 m-4 gap-4">
-          <div class=" w-32 m-4">
-              <img class="object-center object-cover h-auto w-full " src="/img/9BEF0B3D-169C-4CB1-82BF-C3ED7BC468D8.webp" alt="photo">
-          </div>
-          <div class="py-8 sm:py-6">
-              <p class="text-2xl text-gray-700 font-bold mb-2">Det levende rum</p>
-              <p class="text-base text-white font-normal">Venue: DOWNUNDER</p>
-              <p class="text-base text-white font-normal">Genre:  gyser, thriller</p>
-              <p class="text-base text-white font-normal">Varighed: 90 min.</p>
-              <div class="flex flex-row gap-2">
-              <p class="text-base text-white font-normal">Vises: </p>
-                <p class="text-base text-white font-normal bg-blue-500 px-2">Tirsdag</p>
-                <p class="text-base text-white font-normal bg-green-700 px-2">Torsdag</p>
-              </div>
-          </div>
-      </div>        
-      <div class="alle w-auto bg-gray-400 rounded-lg sahdow-lg overflow-hidden flex flex-row justify-center items-center hover:bg-indigo-500 hover:ring-indigo-500 m-4 gap-4">
-            <div class=" w-32 m-4">
-                <img class="object-center object-cover h-auto w-full " src="/img/Billede1-2.webp" alt="photo">
-            </div>
-            <div class="py-8 sm:py-6">
-                <p class="text-2xl text-gray-700 font-bold mb-2 w-52">Mand ligger som mand har redt</p>
-                <p class="text-base text-white font-normal">Venue: DOWNUNDER</p>
-                <p class="text-base text-white font-normal">Genre:  gyser, thriller</p>
-                <p class="text-base text-white font-normal">Varighed: 90 min.</p>
-                <div class="flex flex-row gap-2">
-                <p class="text-base text-white font-normal">Vises: </p>
-                  <p class="text-base text-white font-normal bg-purple-500 px-2">Mandag</p>
-                  <p class="text-base text-white font-normal bg-yellow-500 px-2">Lørdag</p>
-                </div>
-            </div>
-        </div>
-      <div class="alle w-auto bg-gray-400 rounded-lg sahdow-lg overflow-hidden flex flex-row justify-center items-center hover:bg-indigo-500 hover:ring-indigo-500 m-4 gap-4">
-        <div class=" w-32 m-4">
-            <img class="object-center object-cover h-auto w-full " src="/img/WFTWT_instagram.webp" alt="photo">
-        </div>
-        <div class="py-8 sm:py-6">
-            <p class="text-2xl text-gray-700 font-bold mb-2 ">What fires together wires together</p>
-            <p class="text-base text-white font-normal">Venue: DOWNUNDER</p>
-            <p class="text-base text-white font-normal">Genre:  gyser, thriller</p>
-            <p class="text-base text-white font-normal">Varighed: 90 min.</p>
-            <div class="flex flex-row gap-2">
-            <p class="text-base text-white font-normal">Vises: </p>
-              <p class="text-base text-white font-normal bg-blue-500 px-2">Tirsdag</p>
-              <p class="text-base text-white font-normal bg-rose-400 px-2">Onsdag</p>
-            </div>
-        </div>
+      <div>
+      <label for="allekategori">Kategori</label>
+      <select class="flex text-white m-1 bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-6 py-2.5 text-center" name="kategori" id="kategori" x-model="kategori" form="filtre" x-on:change="$nextTick(() => { ingenforestillinger() });">
+        <option value="allekategori">Alle arrangementer</option>
+        <option value="forestilling">Forestillinger</option>
+        <option value="event">Events</option>
+      </select> 
     </div>
-    <div class="alle w-auto bg-gray-400 rounded-lg sahdow-lg overflow-hidden flex flex-row justify-center items-center hover:bg-indigo-500 hover:ring-indigo-500 m-4 gap-4">
-      <div class=" w-32 m-4">
-          <img class="object-center object-cover h-auto w-full " src="/img/Image-from-iOS.webp" alt="photo">
-      </div>
-      <div class="py-8 sm:py-6">
-          <p class="text-2xl text-gray-700 font-bold mb-2">GOGO YO-YOKU</p>
-          <p class="text-base text-white font-normal">Venue: DOWNUNDER</p>
-          <p class="text-base text-white font-normal">Genre:  gyser, thriller</p>
-          <p class="text-base text-white font-normal">Varighed: 90 min.</p>
-          <div class="flex flex-row gap-2">
-          <p class="text-base text-white font-normal">Vises: </p>
-            <p class="text-base text-white font-normal bg-purple-500 px-2">Mandag</p>
-            <p class="text-base text-white font-normal bg-yellow-500 px-2">Lørdag</p>
-          </div>
-      </div>
-  </div>
-      </div>
+        </form>
 
-      </section>
+<!-- forestillinger -->
+        <div class="content mb-10 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+            <a href="rebirth.html" class="forestilling alle shadow-lg m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg bg-gray-400 hover:bg-indigo-500 hover:ring-indigo-500" :class="{'hidden': !(['alledage', 'mandag', 'torsdag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori)) }" x-transition:enter.duration.800ms>
+              <div class="m-4 w-32">
+                <img class="h-auto w-full object-cover object-center" src="/img/Billede1.webp" alt="photo" />
+              </div>
+              <div class="py-8 sm:py-6">
+                <p class="mb-2 text-2xl font-bold text-gray-700">RE-BIRTH</p>
+                <p class="text-base font-normal text-white">Venue: DOWNUNDER</p>
+                <p class="text-base font-normal text-white">Genre: gyser, thriller</p>
+                <p class="text-base font-normal text-white">Varighed: 90 min.</p>
+                <div class="flex flex-row gap-2">
+                  <p class="text-base font-normal text-white">Vises:</p>
+                  <p class="bg-purple-500 px-2 text-base font-normal text-white">Mandag</p>
+                  <p class="bg-green-700 px-2 text-base font-normal text-white">Torsdag</p>
+                </div>
+              </div>
+            </a>
+    
+            <a href="det_levende_rum.html" class="forestilling alle shadow-lg m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg bg-gray-400 hover:bg-indigo-500 hover:ring-indigo-500" :class="{'hidden': !(['alledage', 'tirsdag', 'torsdag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori)) }">
+              <div class="m-4 w-32">
+                <img class="h-auto w-full object-cover object-center" src="/img/9BEF0B3D-169C-4CB1-82BF-C3ED7BC468D8.webp" alt="photo" />
+              </div>
+              <div class="py-8 sm:py-6">
+                <p class="mb-2 text-2xl font-bold text-gray-700">Det levende rum</p>
+                <p class="text-base font-normal text-white">Venue: DOWNUNDER</p>
+                <p class="text-base font-normal text-white">Genre: gyser, thriller</p>
+                <p class="text-base font-normal text-white">Varighed: 90 min.</p>
+                <div class="flex flex-row gap-2">
+                  <p class="text-base font-normal text-white">Vises:</p>
+                  <p class="bg-blue-500 px-2 text-base font-normal text-white">Tirsdag</p>
+                  <p class="bg-green-700 px-2 text-base font-normal text-white">Torsdag</p>
+                </div>
+              </div>
+            </a>
+            <a href="mand_ligger.html" class="forestilling alle shadow-lg m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg bg-gray-400 hover:bg-indigo-500 hover:ring-indigo-500" :class="{'hidden': !(['alledage', 'mandag', 'lordag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori)) }" x-transition:enter.duration.800ms>
+              <div class="m-4 w-32">
+                <img class="h-auto w-full object-cover object-center" src="/img/Billede1-2.webp" alt="photo" />
+              </div>
+              <div class="py-8 sm:py-6">
+                <p class="mb-2 w-52 text-2xl font-bold text-gray-700">Mand ligger som mand har redt</p>
+                <p class="text-base font-normal text-white">Venue: DOWNUNDER</p>
+                <p class="text-base font-normal text-white">Genre: gyser, thriller</p>
+                <p class="text-base font-normal text-white">Varighed: 90 min.</p>
+                <div class="flex flex-row gap-2">
+                  <p class="text-base font-normal text-white">Vises:</p>
+                  <p class="bg-purple-500 px-2 text-base font-normal text-white">Mandag</p>
+                  <p class="bg-yellow-500 px-2 text-base font-normal text-white">Lørdag</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="frygten_for_ikke.html" class="forestilling alle shadow-lg m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg bg-gray-400 hover:bg-indigo-500 hover:ring-indigo-500" :class="{'hidden': !(['alledage', 'onsdag', 'torsdag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori)) }" x-transition:enter.duration.800ms>
+              <div class="m-4 w-32">
+                <img class="h-auto w-full object-cover object-center" src="/img/Billede1-2.webp" alt="photo" />
+              </div>
+              <div class="py-8 sm:py-6">
+                <p class="mb-2 w-52 text-2xl font-bold text-gray-700">Frygten for ikke at leve</p>
+                <p class="text-base font-normal text-white">Venue: VOX</p>
+                <p class="text-base font-normal text-white">Genre: gyser, thriller</p>
+                <p class="text-base font-normal text-white">Varighed: 120 min.</p>
+                <div class="flex flex-row gap-2">
+                  <p class="text-base font-normal text-white">Vises:</p>
+                  <p class="bg-rose-400 px-2 text-base font-normal text-white">Onsdag</p>
+                  <p class="bg-green-700 px-2 text-base font-normal text-white">Torsdag</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="vild_med_dig.html" class="forestilling alle shadow-lg m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg bg-gray-400 hover:bg-indigo-500 hover:ring-indigo-500"  :class="{'hidden': !(['alledage', 'fredag', 'lordag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori))  }" x-transition:enter.duration.800ms>
+              <div class="m-4 w-32">
+                <img class="h-auto w-full object-cover object-center" src="/img/teater-mannequin-1-1.webp" alt="photo" />
+              </div>
+              <div class="py-8 sm:py-6">
+                <p class="mb-2 text-2xl font-bold text-gray-700">Vild med mig</p>
+                <p class="text-base font-normal text-white">Venue: DOWNUNDER</p>
+                <p class="text-base font-normal text-white">Genre: gyser, thriller</p>
+                <p class="text-base font-normal text-white">Varighed: 90 min.</p>
+                <div class="flex flex-row gap-2">
+                  <p class="text-base font-normal text-white">Vises:</p>
+                  <p class="bg-orange-500 px-2 text-base font-normal text-white">Fredag</p>
+                  <p class="bg-yellow-500 px-2 text-base font-normal text-white">Lørdag</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="what_fires_together.html" class="forestilling alle shadow-lg m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg bg-gray-400 hover:bg-indigo-500 hover:ring-indigo-500" :class="{'hidden': !(['alledage', 'tirsdag', 'onsdag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori)) }" x-transition:enter.duration.800ms>
+              <div class="m-4 w-32">
+                <img class="h-auto w-full object-cover object-center" src="/img/WFTWT_instagram.webp" alt="photo" />
+              </div>
+              <div class="py-8 sm:py-6">
+                <p class="mb-2 text-2xl font-bold text-gray-700">What fires together wires together</p>
+                <p class="text-base font-normal text-white">Venue: Xenon</p>
+                <p class="text-base font-normal text-white">Genre: gyser, thriller</p>
+                <p class="text-base font-normal text-white">Varighed: 90 min.</p>
+                <div class="flex flex-row gap-2">
+                  <p class="text-base font-normal text-white">Vises:</p>
+                  <p class="bg-blue-500 px-2 text-base font-normal text-white">Tirsdag</p>
+                  <p class="bg-rose-400 px-2 text-base font-normal text-white">Onsdag</p>
+                </div>
+              </div>
+            </a>
+            <a href="gogoyo.html" class="forestilling alle shadow-lg m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg bg-gray-400 hover:bg-indigo-500 hover:ring-indigo-500"  :class="{'hidden': !(['alledage', 'mandag', 'lordag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori))  }" x-transition:enter.duration.800ms>
+              <div class="m-4 w-32">
+                <img class="h-auto w-full object-cover object-center" src="/img/Image-from-iOS.webp" alt="photo" />
+              </div>
+              <div class="py-8 sm:py-6">
+                <p class="mb-2 text-2xl font-bold text-gray-700">GOGO YO-YOKU</p>
+                <p class="text-base font-normal text-white">Venue: DOWNUNDER</p>
+                <p class="text-base font-normal text-white">Genre: gyser, thriller</p>
+                <p class="text-base font-normal text-white">Varighed: 90 min.</p>
+                <div class="flex flex-row gap-2">
+                  <p class="text-base font-normal text-white">Vises:</p>
+                  <p class="bg-purple-500 px-2 text-base font-normal text-white">Mandag</p>
+                  <p class="bg-yellow-500 px-2 text-base font-normal text-white">Lørdag</p>
+                </div>
+              </div>
+            </a>
+            <a href="rebirth.html" class="forestilling alle shadow-lg m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg bg-gray-400 hover:bg-indigo-500 hover:ring-indigo-500" :class="{'hidden': !(['alledage', 'tirsdag'].includes(spilledag) && ['allekategori', 'event'].includes(kategori)) }" x-transition:enter.duration.800ms>
+              <div class="m-4 w-32">
+                <img class="h-auto w-full object-cover object-center" src="/img/dsc_2600-600x600.webp" alt="photo" />
+              </div>
+              <div class="py-8 sm:py-6">
+                <p class="mb-2 w-52 text-2xl font-bold text-gray-700">Lær dig selv at kende</p>
+                <p class="text-base font-normal text-white">Lokation: Ukirke</p>
+                <p class="text-base font-normal text-white">Kl. 20:00</p>
+                <p class="text-base font-normal text-white">Varighed: 2 timer</p>
+                <div class="flex flex-row gap-2">
+                  <p class="text-base font-normal text-white">Dato:</p>
+                  <p class="bg-blue-500 px-2 text-base font-normal text-white">Tirsdag</p>
+                </div>
+              </div>
+            </a>
+            <a href="rebirth.html" class="forestilling alle shadow-lg m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg bg-gray-400 hover:bg-indigo-500 hover:ring-indigo-500" :class="{'hidden': !(['alledage', 'torsdag'].includes(spilledag) && ['allekategori', 'event'].includes(kategori)) }" x-transition:enter.duration.800ms>
+              <div class="m-4 w-32">
+                <img class="h-auto w-full object-cover object-center" src="/img/2.webp" alt="photo" />
+              </div>
+              <div class="py-8 sm:py-6">
+                <p class="mb-2 w-52 text-2xl font-bold text-gray-700">Lad os snakke om tabu</p>
+                <p class="text-base font-normal text-white">Lokation: Ukirke</p>
+                <p class="text-base font-normal text-white">Kl. 17:30</p>
+
+                <p class="text-base font-normal text-white">Varighed: 1 1/2 timer</p>
+                <div class="flex flex-row gap-2">
+                  <p class="text-base font-normal text-white">Dato:</p>
+                  <p class="bg-green-700 px-2 text-base font-normal text-white">Torsdag</p>
+                </div>
+              </div>
+            </a>
+            <p id="ingenforestillinger" class="hidden">Ingen arrangementer denne dag</p>
+          </div>
+        </section>
+
+    <script>
+      function ingenforestillinger() {
+        const skjulteforestillinger = document.querySelectorAll(".forestilling.hidden").length;
+        if (skjulteforestillinger === 5) {
+          document.querySelector("#ingenforestillinger").classList.remove("hidden");
+        } else {
+          document.querySelector("#ingenforestillinger").classList.add("hidden");
+        }
+      }
+    </script>
     </main>
+
     <footer class="bg-slate-900">
       <div class="mx-auto max-w-screen-xl px-4 py-16 pb-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 place-content-end lg:grid-cols-2 lg:gap-8">
           <div>
             <img src="/img/LOGO2x.png" class="mr-5 h-10 sm:h-9" alt="logo" />
 
-            <!-- <div class="mb-8 mt-2 ml-2 flex space-x-6 text-white">
+            <div class="mb-8 mt-2 ml-2 flex space-x-6 text-white">
               <a class="hover:opacity-75" href target="_blank" rel="noreferrer">
                 <span class=""></span>
                 <svg class="relative h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -472,7 +369,7 @@
                   />
                 </svg>
               </a>
-            </div> -->
+            </div>
           </div>
           <div class="mx-6 grid grid-cols-2 gap-8 sm:grid-cols-2">
             <div>
@@ -512,6 +409,7 @@
         </div>
       </div>
     </footer>
+
     
       <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"></script>
       <script src="https://unpkg.com/alpinejs" defer=""></script>
