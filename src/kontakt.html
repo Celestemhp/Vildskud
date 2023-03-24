@@ -9,11 +9,16 @@
   </head>
   <body>
     <header x-data="{mainmenuopen: false}">
-      <div class="fixed right-5 top-5 z-50">
-        <button x-on:click="mainmenuopen = ! mainmenuopen">Nav</button>
+      <div for="check" class="fixed right-5 top-5 z-50">
+        <label x-on:click="mainmenuopen = ! mainmenuopen"> 
+            <input type="checkbox" id="check"/> 
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
       </div>
 
-      <nav class="fixed top-0 bottom-0 left-0 right-0 z-40 bg-red-400" x-show="mainmenuopen">
+      <nav class="fixed top-0 bottom-0 left-0 right-0 z-40 bg-indigo-400" x-show="mainmenuopen">
         <img src="img/chat.svg" />
         <ul class="primaer flex flex-col pt-28">
           <li class="place-self-center p-5">

@@ -10,7 +10,7 @@
    
       <title>Vildskud program</title>
     </head>
-    <body>
+    <body class="bg-slate-700">
    <!-- Cookies -->
    <div class="relative left-0 bottom-0 z-40" x-data="{cookies: false}"  @keydown.window.escape="cookies = false">
     <!-- Indhold til cookies -->
@@ -149,10 +149,10 @@
     </header>
 
     <main>
-      <section class="flex flex-col place-items-center justify-center">
-        <h2 class="mt-10 text-center text-5xl font-bold text-white">Program</h2>
-        <h2 class="text-center text-2xl font-bold text-white">Oversigt over alle forestillinger og events</h2>
-      </section>
+    <section class="flex flex-col place-items-center justify-center">
+      <h1>Program</h1>
+      <h2>Oversigt over alle forestillinger og events</h2>
+    </section>
 
 <!-- filtrering -->
   <section class="my-10 mx-4" id="step" x-data="{ spilledag: 'alledage', kategori: 'allekategori', skjulteforestillinger : 0 }">
@@ -195,7 +195,7 @@
                 <div class="flex flex-row gap-2">
                   <p class="text-base font-normal text-white">Vises:</p>
                   <p class="bg-purple-500 px-2 text-base font-normal text-white">Mandag</p>
-                  <p class="bg-green-700 px-2 text-base font-normal text-white">Torsdag</p>
+                  <p class="bg-rose-700 px-2 text-base font-normal text-white">Torsdag</p>
                 </div>
               </div>
             </a>
@@ -212,7 +212,7 @@
                 <div class="flex flex-row gap-2">
                   <p class="text-base font-normal text-white">Vises:</p>
                   <p class="bg-blue-500 px-2 text-base font-normal text-white">Tirsdag</p>
-                  <p class="bg-green-700 px-2 text-base font-normal text-white">Torsdag</p>
+                  <p class="bg-rose-700 px-2 text-base font-normal text-white">Torsdag</p>
                 </div>
               </div>
             </a>
@@ -245,7 +245,7 @@
                 <div class="flex flex-row gap-2">
                   <p class="text-base font-normal text-white">Vises:</p>
                   <p class="bg-rose-400 px-2 text-base font-normal text-white">Onsdag</p>
-                  <p class="bg-green-700 px-2 text-base font-normal text-white">Torsdag</p>
+                  <p class="bg-rose-700 px-2 text-base font-normal text-white">Torsdag</p>
                 </div>
               </div>
             </a>
@@ -326,7 +326,7 @@
                 <p class="text-base font-normal text-white">Varighed: 1 1/2 timer</p>
                 <div class="flex flex-row gap-2">
                   <p class="text-base font-normal text-white">Dato:</p>
-                  <p class="bg-green-700 px-2 text-base font-normal text-white">Torsdag</p>
+                  <p class="bg-rose-700 px-2 text-base font-normal text-white">Torsdag</p>
                 </div>
               </div>
             </a>
