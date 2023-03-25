@@ -29,6 +29,7 @@ export default defineConfig({
         vild_med_dig: resolve(__dirname, "src/vild_med_dig.html"),
         det_levende_rum: resolve(__dirname, "src/det_levende_rum.html"),
         navigation: resolve(__dirname, "src/navigation.html"),
+        frivillig: resolve(__dirname, "src/frivillig.html"),
       },
     },
   },

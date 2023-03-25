@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Imbue:wght@900&family=Inter:wght@400;700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <title>Team</title>
   </head>
-  <body class="bg-slate-700">
+  <body>
       <!-- Cookies -->
    <div class="relative left-0 bottom-0 z-40" x-data="{cookies: false}"  @keydown.window.escape="cookies = false">
     <!-- Indhold til cookies -->
@@ -60,90 +60,133 @@
     </button>
   
 
+    <header>
 
+      <!-- nav mobile -->
+    <div class="fixed z-50 mx-4 mt-5 flex items-center justify-between md:flex-wrap md:hidden lg:hidden" x-data="{mainmenuopen: false}">
+  
+      <!-- Logo -->
+    <a href="index.html" class="flex flex-col fixed top-7 left-4">       
+      <img src="/img/LOGO2x.png" alt="logo" class="mr-3 w-36" />
+      <p class="text-center -ml-4 text-white"> 2.-6. aug.</p>
+    </a>
     
-    <header class="showcase">
-      <div class="mx-4 mt-5 flex items-center justify-between md:flex-wrap">
-        <a href="index.html" class="flex flex-col">
-          <img src="/img/LOGO2x.png" alt="logo" class="mr-3 w-36" />
-          <p class="text-center">2.-6. aug.</p>
+  <!-- Køb billet btn -->
+  <a href="billetsalg.html" class="btn btn-primary hover:scale-110 fixed right-32 top-7 flex  bg-green-500 hover:bg-green-600">
+  <p class="font-bold ">Køb billet</p>
+  </a>
+  
+      
+    <!-- Nav knap -->
+    <div for="check" class="fixed right-5 top-5 z-50 md:hidden lg:hidden hover:scale-110">
+      <label> 
+          <input type="checkbox" id="check" x-on:click="mainmenuopen = ! mainmenuopen"/> 
+          <span></span>
+          <span></span>
+          <span></span>
+      </label>
+    </div>
+    <!-- Burger foldet ud -->
+    <nav class="fixed top-0 bottom-0 left-0 right-0 z-40 bg-indigo-400" x-show="mainmenuopen">
+      <img class="w-36 absolute" src="img/top_sky@2x.png" alt="sky"/>
+  
+      <ul class="slide-in-top nav-links primaer flex flex-col pt-14 text-white text-3xl transition duration-300 ease-in-out">
+  
+        <a href="index.html" class="flex flex-col">       
+          <img src="/img/LOGO2x.png" alt="logo" class="mr-3 w-52 place-self-center" />
         </a>
-        <div class="flex flex-row place-items-center gap-4">
-          <!-- Køb billet btn -->
-          <button class="main-btn btn-primary btn hover:scale-110">Køb billet</button>
-          <!-- Nav desktop -->
-          <div class="hidden w-full md:block md:w-auto">
-            <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
-              <ul class="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
-                <li>
-                  <a href="program.html" class="block rounded py-2 pl-3 pr-4 text-white hover:scale-110 focus:outline-none md:p-0 md:hover:text-fuchsia-400" aria-current="page">Program</a>
-                </li>
-                <li>
-                  <a href="findrundt.html" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Find rundt</a>
-                </li>
-                <li>
-                  <a href="#" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">FAQ</a>
-                </li>
-                <li>
-                  <a href="#" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Frivillig</a>
-                </li>
-                <li>
-                  <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex w-full items-center justify-between border-b border-gray-100 py-2 pl-3 pr-4 font-medium text-white hover:scale-110 md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">
-                    Info
-                    <!-- pil -->
-                    <i class="fas fa-angle-down pl-3 text-stone-700 dark:text-stone-300"></i>
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <!-- burgermenu -->
-          <div class="menu-wrap md:hidden lg:hidden">
-            <input type="checkbox" class="toggler" />
-            <div class="hamburger"><div></div></div>
-            <div class="menu">
-              <div>
-                <div class="w-full md:block md:w-auto">
-                  <ul>
-                    <li><a href="program.html">Program</a></li>
-                    <li><a href="findrundt.html">Find rundt</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Frivillig</a></li>
-                    <li data-dropdown-toggle="dropdownNavbar">
-                      <button>
-                        Info
-                        <!-- pil -->
-                        <i class="fas fa-angle-down pl-3 text-stone-700 dark:text-stone-300"></i>
-                      </button>
-                      <!-- Dropdown menu -->
-                      <div id="dropdownNavbar" class="z-10 mt-10 hidden list-none text-base">
-                        <ul class="py-1">
-                          <li>
-                            <a href="om.html" class="block px-4 py-2 hover:bg-gray-100">Om Vildskud</a>
-                          </li>
-                          <li>
-                            <a href="team.html" class="block px-4 py-2 hover:bg-gray-100">Team</a>
-                          </li>
-                          <li>
-                            <a href="samarbejdspartnere.html" class="block px-4 py-2 hover:bg-gray-100">Samarbejdspartnere</a>
-                          </li>
-                          <li>
-                            <a href="kontakt.html" class="block px-4 py-2 hover:bg-gray-100">Kontakt</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+  
+        <li class="place-self-center p-5">
+          <a href="program.html">Program</a>
+        </li>
+        <li class="place-self-center p-5 ">
+          <a href="findrundt.html" class="">Find rundt</a>
+        </li>
+        <li class="place-self-center p-5 ">
+          <a href="faq.html" class="">FAQ</a>
+        </li>
+        <li class="place-self-center p-5">
+          <a href="frivillig.html" class="">Frivillig</a>
+        </li>
+        <div x-data="{submenuopen: false}" class="primaer flex flex-col">
+          <li class="place-self-center p-5">
+            <button href="#" class="flex flex-row items-center" x-on:click="submenuopen = ! submenuopen">
+              Info
+                <!-- pil -->
+                <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>    
+            </button>
+  
+          </li>
+          <ul class="primaer flex flex-col text-2xl" x-show="submenuopen">
+            <li class="place-self-center p-2">
+              <a href="omVildskud.html" class="">Om Vildskud</a>
+            </li>
+            <li class="place-self-center p-2">
+              <a href="team.html" class="">Team</a>
+            </li>
+            <li class="place-self-center p-2">
+              <a href="opencall.html">Open call</a>
+            </li>
+            <li class="place-self-center p-2">
+              <a href="samarbejdspartnere.html">Samarbejdspartnere</a>
+            </li>
+            <li class="place-self-center p-2">
+              <a href="kontakt.html">Kontakt</a>
+            </li>
+          </ul>
         </div>
-      </div>
+      </ul>
+      <img src="img/bund_sky@2x.png" class="fixed w-32 bottom-0 right-0" alt="sky"/>
+    </nav>
+  </div>
+  
+  
+      <!-- Nav desktop -->
+      <div class="hidden w-full md:block md:w-auto">
+        <div class="mx-4 mt-2 flex justify-between md:flex-wrap">
+        <!-- Logo -->
+        <a href="index.html" class="flex flex-col">       
+          <img src="/img/LOGO2x.png" alt="logo" class="mr-3 w-36" />
+          <p class="text-center -ml-4 text-white"> 2.-6. aug.</p>
+        </a>
+    <div class="flex flex-row gap-5">
+  <!-- Køb billet btn -->
+  <a href="billetsalg.html" class="btn btn-primary hover:scale-110  flex  bg-green-500 hover:bg-green-600">
+    <p class="font-bold ">Køb billet</p>
+    </a>
     
-    </header>
+  
+        <div class="hidden w-full md:block md:w-auto mt-3">
+          <ul class="mt-4 flex  flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
+            <li>
+              <a href="program.html" class="text-white block rounded py-2 pl-3 pr-4 hover:scale-110 focus:outline-none md:p-0 md:hover:text-fuchsia-400" aria-current="page">Program</a>
+            </li>
+            <li>
+              <a href="findrundt.html" class="text-white block border-b border-gray-100 py-2 pl-3 pr-4 hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Find rundt</a>
+            </li>
+            <li>
+              <a href="faq.html" class="text-white block border-b border-gray-100 py-2 pl-3 pr-4 hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">FAQ</a>
+            </li>
+            <li>
+              <a href="frivillig.html" class="text-white block border-b border-gray-100 py-2 pl-3 pr-4  hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Frivillig</a>
+            </li>
+  
+            <div x-data="{deskSubmenuopen: true}" class="primaer flex flex-col">
+              <button href="#" class="flex flex-row items-center text-white" x-on:click="deskSubmenuopen = ! deskSubmenuopen">
+                Info
+                  <!-- pil -->
+                  <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>    
+              </button>
 
-    <main class="m-auto w-4/5 max-w-7xl">
+            </div>
+          </ul>
+      </div>
+    </div>
+    </div>
+  </div>
+  </header>
+
+    <main class="m-auto w-4/5 max-w-7xl pt-24">
       <h1 class="text-center">TEAM</h1>
       <p class="text-center italic text-white">Det er et stort arbejde at planlægge og afvikle en festival. Så giv en hånd til teamet bag årets festival!</p>
       <section class="mt-20 mb-20">

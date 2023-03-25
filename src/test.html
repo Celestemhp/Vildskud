@@ -2,390 +2,231 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- alpine style -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"> -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Imbue:wght@900&family=Inter:wght@400;700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+ 
+    <title>Vildskud program</title>
+</head>
+<style>
+  .nav-links {
+    display: flex;
+    justify-content:space-around;
+    width: 50%;
+    text-transform: uppercase;
+}
+.nav-links a{
+  display: block;
+   text-transform: uppercase;
+   text-decoration: none;
+   color: #fff;
+  border-bottom:2px solid transparent;
+  transition:0.5s ease;
+  transform: translateX(0%);
+}
+.nav-links a:hover{
+  color:#38b8ff;
+  letter-spacing: 5px;
+}
+.burger{
+  display: none;
+}
+.burger div{
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  margin: 5px;
+  transition:all 0.5s ease;
+}
+@media only screen and (max-width: 760px){
+   nav{
+    justify-content: space-between;
+    padding: 0 5vw;
+  }
+  .nav-links{
+    position: absolute;
+    top:8vh;
+    min-height:92vh;
+    /* background: #333; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    width: 50%;
+    margin: 0;
+    /* padding: 0; */
+    transform: translateX(100%);
+    transition:All 0.5s ease-in;
+  }
+  .nav-links a{
+    opacity: 0;
+ 
+  }
+  .burger{
+    display: block;
+  }
+ 
+}
+@media only screen and (max-width: 640px){
+  nav{
+    justify-content: space-between;
+    padding: 0 5vw;
+  }
+}
+.nav-active{
+  transform: translateX(0);
+}
+@media only screen and (max-width: 460px){
+  .nav-links{
+    width: 100%;
+    transition:All 0.5s ease;
+  }
+}
+.nav-active{
+  transform: translateX(0);
+}
+@keyframes navLinkFade{
+  from{
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.toggle .line1{
+   transform: rotate(-45deg) translate(-5px,6px );
+}
+.toggle .line2{
+   opacity: 0;
+}
+.toggle .line3{
+   transform: rotate(45deg) translate(-5px,-6px );
+}
+.nav-active{
+  transform: translateX(0);
+}
+@keyframes navLinkFade{
+  from{
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+</style>
 
-    <title>Select</title>
 
-    <!-- Tailwind CSS & its Custom Forms plugin -->
-    <link rel="stylesheet" href="style.css" />
 
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-  </head>
-  <style>
-    /******** Linjer på burgermenu ***************/
-    .menu-wrap2 {
-      position: relative;
-      z-index: 1;
-    }
-    .menu-wrap2 .toggler2 {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 2;
-      cursor: pointer;
-      width: 50px;
-      height: 50px;
-      opacity: 0;
-    }
-    .menu-wrap2 .cheeseburger {
-      z-index: 1;
-      width: 56px;
-      height: 53px;
-      padding: 1rem;
-      /* display: flex; */
-      align-items: center;
-      justify-content: center;
-    }
-    /* cheeseburger linje */
-    .menu-wrap2 .cheeseburger > div {
-      /* position: relative; */
-      width: 100%;
-      height: 2px;
-      background-color: #fff;
-      /* display: flex; */
-      align-items: center;
-      justify-content: center;
-      transition: all 0.4s ease;
-    }
-    /* Top and bottom lines */
-    .menu-wrap2 .cheeseburger > div:before,
-    .menu-wrap2 .cheeseburger > div:after {
-      content: "";
-      /* position: absolute; */
-      z-index: 1;
-      top: -10px;
-      width: 100%;
-      height: 2px;
-      background: inherit;
-    }
-    /* Moves line down */
-    .menu-wrap2 .cheeseburger > div:after {
-      top: 10px;
-    }
-    /* toggler2 animate */
-    .menu-wrap2 .toggler2:checked + .cheeseburger > div {
-      transform: rotate(135deg);
-    }
-    /* Turn Lines into X */
-    .menu-wrap2 .toggler2:checked + .cheeseburger > div:before,
-    .menu-wrap2 .toggler2:checked + .cheeseburger > div:after {
-      top: 0;
-      transform: rotate(90deg);
-    }
-    /* Rotate on hover when checked */
-    .menu-wrap2 .toggler2:checked:hover + .cheeseburger > div {
-      transform: rotate(225deg);
-    }
+<header>
+  <!-- nav mobile -->
+  <div class="fixed z-50 mx-4 mt-4 flex items-center justify-between md:flex-wrap md:hidden lg:hidden" x-data="{mainmenuopen: false}">
 
-    /********************* cheeseburger */
-
-    .cheeseburger {
-      /* position: relative; */
-      width: 100%;
-      height: 2px;
-      background-color: #fff;
-      /* display: flex; */
-      align-items: center;
-      justify-content: center;
-      transition: all 0.4s ease;
-
-      z-index: 1;
-      width: 56px;
-      height: 53px;
-      padding: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .cheeseburger div {
-      content: "";
-      /* position: absolute; */
-      z-index: 3;
-      top: -10px;
-      width: 100%;
-      height: 2px;
-      background: inherit;
-    }
-
-    /*************************************** Vis menu ***************************************/
-    .menu-wrap2 .toggler2:checked ~ .menu {
-      visibility: visible;
-    }
-    .menu-wrap2 .toggler2:checked ~ .menu > div {
-      transform: scale(1);
-      transition-duration: var(--menu-speed);
-    }
-    .menu-wrap2 .toggler2:checked ~ .menu > div > div {
-      opacity: 1;
-      transition: opacity 0.4s ease;
-    }
-    .menu-wrap2 .menu {
-      position: fixed;
-      height: 100%;
-      visibility: hidden;
-      overflow: hidden;
-      display: flex;
-      scale: 100%;
-
-      left: 0px;
-      top: 0px;
-      right: 0px;
-      bottom: 0px;
-    }
-    /* .menu-wrap2 .menu > div{
-  background-color: rgba(59, 59, 59, 0.9);
-  display: flex;
-  flex: none;
-   transform: scale(0); 
-  transition: all 0.4s ease;
-} */
-    /* .menu-wrap2 .menu > div >div{
-  text-align: center;
-  width: 300vw;
-  max-height: 100vh;
-   opacity: 0; 
-  transition: opacity 0.4s ease;
+    <!-- Logo -->
+  <a href="index.html" class="flex flex-col fixed top-7 left-4">       
+    <img src="/img/LOGO2x.png" alt="logo" class="mr-3 w-36" />
+    <p class="text-center -ml-4 text-white"> 2.-6. aug.</p>
+  </a>
   
-} */
+  <!-- Køb billet btn -->
+  <a href="billetsalg.html" class="btn btn-primary hover:scale-110 fixed right-32 top-7 flex  bg-green-500 hover:bg-green-600">
+  <p class="font-bold ">Køb billet</p>
+  </a>
 
-    /* burgermenu vis*/
-    .menu {
-      transition: all 0.3s;
-    }
 
-    .lightbulb {
-      margin-top: 100px;
-      position: relative;
-      left: 35%;
-    }
+<nav class="fixed right-2 top-9 ">
+  <ul class="nav-links "> 
+    <!-- <a href="index.html" class="flex flex-col">       
+      <img src="/img/LOGO2x.png" alt="logo" class="mr-3 w-52 place-self-center" />
+    </a> -->
 
-    .lightbulb img {
-      width: 400px;
-    }
+    <li class="place-self-center p-5">
+      <a href="program.html">Program</a>
+    </li>
+    <li class="place-self-center p-5 ">
+      <a href="findrundt.html" class="">Find rundt</a>
+    </li>
+    <li class="place-self-center p-5 ">
+      <a href="#" class="">FAQ</a>
+    </li>
+    <li class="place-self-center p-5">
+      <a href="#" class="">Frivillig</a>
+    </li>
+    <div x-data="{submenuopen: false}" class="primaer flex flex-col">
+      <li class="place-self-center p-5">
+        <button href="#" class="flex flex-row items-center" x-on:click="submenuopen = ! submenuopen">
+          Info
+            <!-- pil -->
+            <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>    
+        </button>
 
-    .light {
-      border: 1px solid red;
-      margin: 0 auto;
-      text-align: center;
-      position: absolute;
-      width: 800px;
-      height: 800px;
-      margin-top: -200px;
-      margin-left: -200px;
-      left: 0;
-      top: 0;
-
-      -webkit-animation-name: flicker;
-      animation-name: flicker;
-      -webkit-animation-duration: 8s;
-      animation-duration: 8s;
-      -webkit-animation-iteration-count: infinite;
-      animation-iteration-count: infinite;
-      -webkit-animation-timing-function: linear;
-      animation-timing-function: linear;
-    }
-
-    .light {
-      position: absolute;
-
-      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0.3+0,0+50 */
-      background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4dffffff', endColorstr='#00ffffff',GradientType=1 );
-    }
-
-    @keyframes flicker {
-      from {
-        opacity: 0.5;
-      }
-      4% {
-        opacity: 0.7;
-      }
-      8% {
-        opacity: 0.45;
-      }
-      12% {
-        opacity: 0.65;
-      }
-      16% {
-        opacity: 0.3;
-      }
-      20% {
-        opacity: 0.5;
-      }
-      24% {
-        opacity: 0.6;
-      }
-      28% {
-        opacity: 0.25;
-      }
-      32% {
-        opacity: 0.3;
-      }
-      36% {
-        opacity: 0.55;
-      }
-      40% {
-        opacity: 0.4;
-      }
-      44% {
-        opacity: 0.6;
-      }
-      48% {
-        opacity: 0.35;
-      }
-      52% {
-        opacity: 0.2;
-      }
-      56% {
-        opacity: 0.7;
-      }
-      60% {
-        opacity: 0.5;
-      }
-      64% {
-        opacity: 0.65;
-      }
-      68% {
-        opacity: 0.35;
-      }
-      72% {
-        opacity: 0.5;
-      }
-      76% {
-        opacity: 0.4;
-      }
-      80% {
-        opacity: 0.65;
-      }
-      84% {
-        opacity: 0.4;
-      }
-      88% {
-        opacity: 0.35;
-      }
-      92% {
-        opacity: 0.6;
-      }
-      96% {
-        opacity: 0.3;
-      }
-      to {
-        opacity: 0.5;
-      }
-    }
-  </style>
-
-  <body class="p-20">
-    <!-- <button class="whopper fixed right-5 top-5" style=""><div>test</div></button> -->
-
-    <header class="showcase">
-      <img class="absolute top-0 ml-0 w-24 sm:w-48" src="/img/mindre_streg@2x.png" alt="" />
-      <div class="mx-4 mt-5 flex items-center justify-between md:flex-wrap">
-        <a href="index.html" class="flex">
-          <!-- <img src="/img/LOGO2x.png" width="" alt="" class="mr-3 w-36" /> -->
-        </a>
-        <div class="flex flex-row place-items-center gap-4" style="margin-top: -64px">
-          <!-- Køb billet btn -->
-          <a href="billetsalg.html" class="z-50">
-            <button class="main-btn btn-primary btn hover:scale-110">
-              <p>Køb billet</p>
-            </button>
-          </a>
-
-          <!-- Nav desktop -->
-          <div class="hidden w-full md:block md:w-auto" id="">
-            <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
-              <ul class="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
-                <li>
-                  <a href="program.html" class="block rounded py-2 pl-3 pr-4 text-white hover:scale-110 focus:outline-none md:p-0 md:hover:text-fuchsia-400" aria-current="page">Program</a>
-                </li>
-                <li>
-                  <a href="findrundt.html" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Find rundt</a>
-                </li>
-                <li>
-                  <a href="#" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">FAQ</a>
-                </li>
-                <li>
-                  <a href="#" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Frivillig</a>
-                </li>
-                <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="inline-flex items-center rounded-lg text-center text-sm font-medium text-white hover:bg-slate-800 focus:outline-none dark:hover:bg-slate-700" type="button">
-                  Info
-                  <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </button>
-                <!-- Dropdown menu -->
-                <div id="dropdownHover" class="z-10 hidden divide-y divide-gray-100 rounded-lg bg-slate-500">
-                  <ul class="py-2 text-sm dark:text-gray-200" aria-labelledby="dropdownHoverButton">
-                    <li>
-                      <a href="omVildskud.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Om Vildskud</a>
-                    </li>
-                    <li>
-                      <a href="team.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Team</a>
-                    </li>
-                    <li>
-                      <a href="opencall.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Open call</a>
-                    </li>
-                    <li>
-                      <a href="samarbejdspartnere.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Samarbejdspartnere</a>
-                    </li>
-                    <li>
-                      <a href="kontakt.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Kontakt</a>
-                    </li>
-                  </ul>
-                </div>
-              </ul>
-            </div>
-          </div>
-          <!-- burgermenu -->
-          <div class="menu-wrap2 menutoggler2 z-50 md:hidden lg:hidden">
-            <input type="checkbox" class="toggler2 z-50" />
-            <button class="cheeseburger z-50"><div>test</div></button>
-            <div class="menu z-40 m-0 p-0">
-              <div>
-                <!-- nye -->
-                <button class=""><div></div></button>
-                <div class="w-full md:block md:w-auto">
-                  <ul>
-                    <li><a href="program.html">Program</a></li>
-                    <li><a href="findrundt.html">Find rundt</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="frivillig.html">Frivillig</a></li>
-                    <li x-data="{submenuopen: false}">
-                      <button x-on:click="submenuopen = ! submenuopen">
-                        Info
-                        <!-- pil -->
-                        <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                      </button>
-                      <ul class="ml-8 py-2 text-4xl dark:text-gray-200" x-show="submenuopen">
-                        <li>
-                          <a href="omVildskud.html" class="px-4 py-2 hover:bg-gray-100">Om Vildskud</a>
-                        </li>
-                        <li>
-                          <a href="opencall.html" class="px-4 py-2 hover:bg-gray-100">Open call</a>
-                        </li>
-                        <li>
-                          <a href="team.html" class="px-4 py-2 hover:bg-gray-100">Team</a>
-                        </li>
-                        <li>
-                          <a href="samarbejdspartnere.html" class="px-4 py-2 hover:bg-gray-100">Samarbejdspartnere</a>
-                        </li>
-                        <li>
-                          <a href="kontakt.html" class="px-4 py-2 hover:bg-gray-100">Kontakt</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-                <!-- Dropdown menu -->
-                <div class="z-10 h-screen divide-y divide-gray-100"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <div class="lightbulb">
-      <div class="light"></div>
-      <div></div>
+      </li>
+      <ul class="primaer flex flex-col" x-show="submenuopen">
+        <li class="place-self-center p-2">
+          <a href="omVildskud.html" class="">Om Vildskud</a>
+        </li>
+        <li class="place-self-center p-2">
+          <a href="team.html" class="">Team</a>
+        </li>
+        <li class="place-self-center p-2">
+          <a href="opencall.html">Open call</a>
+        </li>
+        <li class="place-self-center p-2">
+          <a href="samarbejdspartnere.html">Samarbejdspartnere</a>
+        </li>
+        <li class="place-self-center p-2">
+          <a href="kontakt.html">Kontakt</a>
+        </li>
+      </ul>
     </div>
+  </ul>
+  <!-- burgeren -->
+  <div class="burger">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
+</nav>
+
+
+</div>
+  
+<!-- Nav knap -->
+
+</header>
+
+
+
+<script>
+  const navSlide = () => {
+  const burger = document.querySelector(".burger");
+  const nav = document.querySelector(".nav-links");
+  const navLinks = document.querySelectorAll(".nav-links a");
+
+  burger.addEventListener("click", () => {
+    nav.classList.toggle("nav-active");
+
+    navLinks.forEach((link, index) => {
+      if (link.style.animation) {
+        link.style.animation = "";
+      } else {
+        link.style.animation = `navLinkFade 0.5s ease forwards ${
+          index / 7 + 0.5
+        }s `;
+      }
+    });
+    burger.classList.toggle("toggle");
+  });
+  //
+};
+
+navSlide();
+</script>
+<script type="module" src="./main.js"></script>
+
   </body>
 </html>

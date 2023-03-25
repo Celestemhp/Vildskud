@@ -95,9 +95,9 @@
   </div>
   <!-- Burger foldet ud -->
   <nav class="fixed top-0 bottom-0 left-0 right-0 z-40 bg-indigo-400" x-show="mainmenuopen">
-    <img class="-top-2" src="img/top_sky@2x.png" />
+    <img class="w-36 absolute" src="img/top_sky@2x.png" />
 
-    <ul class="primaer flex flex-col pt-6 text-white text-3xl">
+    <ul class="slide-in-top nav-links primaer flex flex-col pt-14 text-white text-3xl transition duration-300 ease-in-out">
 
       <a href="index.html" class="flex flex-col">       
         <img src="/img/LOGO2x.png" alt="logo" class="mr-3 w-52 place-self-center" />
@@ -110,10 +110,10 @@
         <a href="findrundt.html" class="">Find rundt</a>
       </li>
       <li class="place-self-center p-5 ">
-        <a href="#" class="">FAQ</a>
+        <a href="faq.html" class="">FAQ</a>
       </li>
       <li class="place-self-center p-5">
-        <a href="#" class="">Frivillig</a>
+        <a href="frivillig.html" class="">Frivillig</a>
       </li>
       <div x-data="{submenuopen: false}" class="primaer flex flex-col">
         <li class="place-self-center p-5">
@@ -125,25 +125,25 @@
 
         </li>
         <ul class="primaer flex flex-col text-2xl" x-show="submenuopen">
-          <li class="place-self-center p-3">
+          <li class="place-self-center p-2">
             <a href="omVildskud.html" class="">Om Vildskud</a>
           </li>
-          <li class="place-self-center p-3">
+          <li class="place-self-center p-2">
             <a href="team.html" class="">Team</a>
           </li>
-          <li class="place-self-center p-3">
+          <li class="place-self-center p-2">
             <a href="opencall.html">Open call</a>
           </li>
-          <li class="place-self-center p-5">
+          <li class="place-self-center p-2">
             <a href="samarbejdspartnere.html">Samarbejdspartnere</a>
           </li>
-          <li class="place-self-center p-3">
+          <li class="place-self-center p-2">
             <a href="kontakt.html">Kontakt</a>
           </li>
         </ul>
       </div>
     </ul>
-    <img src="img/chat.svg" class="fixed bottom-0 right-0" />
+    <img src="img/bund_sky@2x.png" class="fixed w-32 bottom-0 right-0" />
   </nav>
 </div>
 
@@ -244,7 +244,7 @@
 
 <main class="relative snap-y snap-mandatory overflow-y-auto">
     <!-- Hero section -->
-    <section class=" mb-16 flex flex-col place-items-center justify-center shrink-0 snap-center">
+    <section class="mt-14 sm:mt-0 md:mt-0 lg:mt-0 mb-16 flex flex-col place-items-center justify-center shrink-0 snap-center">
       <h2 class="mt-20 text-center text-3xl font-bold text-white lg:mt-10">2. - 6. august 2023</h2>
       <h2 class="mt-2 text-center text-3xl font-bold text-white">København</h2>
 
@@ -309,8 +309,8 @@
         <div class="text flex w-fit flex-col gap-5 place-self-center py-20">
           <h3 class="text-center text-3xl font-bold">Tid og sted</h3>
           <p class="mx-10 max-w-lg place-self-center text-lg text-white lg:text-xl">2. aug. kl. 15:00 - 6. aug. kl.03:00</p>
-          <p class="mx-10 max-w-lg place-self-center text-center text-lg text-white lg:text-xl">Forestillingerne foregår rundt i København. Du finder information om de forskellige steder under <a href="program.html" class="font-bold uppercase">Program</a>.</p>
-          <p class="mx-10 max-w-lg place-self-center text-center text-lg text-white lg:text-xl">Se også vores forslag til hvordan du kan planlægge din festival rute <a href="findrundt.html" class="font-bold uppercase">HER</a>.</p>
+          <p class="mx-10 max-w-lg place-self-center text-center text-lg text-white lg:text-xl">Forestillingerne foregår rundt i København. Du finder information om de forskellige steder under <a href="program.html" class="font-bold uppercase underline">Program</a>.</p>
+          <p class="mx-10 max-w-lg place-self-center text-center text-lg text-white lg:text-xl">Se også vores forslag til hvordan du kan planlægge din festival rute <a href="findrundt.html" class="font-bold uppercase underline">HER</a>.</p>
         </div>
       </section>
 
