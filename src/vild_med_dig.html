@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Imbue:wght@900&family=Inter:wght@400;700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
-  <body class="bg-slate-700 ">
+  <body>
       <!-- Cookies -->
    <div class="relative left-0 bottom-0 z-40" x-data="{cookies: false}"  @keydown.window.escape="cookies = false">
     <!-- Indhold til cookies -->
@@ -192,16 +192,16 @@
 
     <!-- Hero section -->
    
-   <main class="m-auto grid w-4/5 max-w-7xl text-white pt-24">
-    <div class="flex justify-center md:justify-start pt-10 pb-14">
-    <button class=" cursor-pointer btn-primary py-3 px-9 font-semibold py-3 px-9 hover:scale-110" onclick="history.back()">Tilbage</button>
-  </div>
-  <h1 class="text-center md:text-left text-6xl">Vild med dig</h1>
-    <section class="grid m-auto pb-20 pt-10 gap-5 lg:grid-cols-2">
+    <main class="m-auto grid w-4/5 max-w-7xl text-white pt-20">
+      <div class="flex md:justify-start pt-10 pb-2">
+        <button class=" btn-primary btn hover:scale-105 text-xs p-2" onclick="history.back()">Tilbage</button>
+      </div>
+  <h1 class="text-center md:text-left text-5xl">Vild med dig</h1>
+    <section class="grid m-auto pb-20 pt-6 gap-5 lg:grid-cols-2">
       <article class="flex py-5 md:py-24 lg:p-0 justify-center items-center lg:items-start
       ">
       <img class="absolute w-2/4 invisible md:visible  md:w-[45%] lg:w-1/3" src="img/former.svg">
-      <img class="z-10 w-3/6  lg:w-[22%] md:w-[14%]  md:pb-[2%]  lg:pt-[15%]" src="img/vild_med_dig.webp">
+      <img class="z-10 w-3/6  lg:w-[22%] md:w-[14%]  md:pb-[2%]  lg:pt-[15%]" src="img/vild_med_dig.png">
       </article>
       <article class="grid gap-6 md:grid-cols-2 lg:grid-cols-1">
         <div class=" flex gap-5 pb-8 flex-col md:flex-row md:justify-between">
@@ -209,16 +209,16 @@
           
           <div class="flex flex-row md:flex-col justify-center  md:gap-3 gap-5 py-2">
           <div class="flex flex-col items-center lg:flex-row gap-4">  
-            <div class="bg-blue-500  px-6 py-1">
-            <p class="text-center font-semibold w-16">Tirsdag</p></div>
+            <div class="bg-orange-500  px-6 py-1">
+            <p class="text-center font-semibold w-16">Fredag</p></div>
           <p>18:30</p></div>
          
          <div class="flex flex-col items-center lg:flex-row gap-4">  
           <div class="bg-amber-500 px-6 py-1">
-          <p class="text-center font-semibold w-16">Onsdag</p> </div>
+          <p class="text-center font-semibold w-16">Lørdag</p> </div>
           <p>16:15, 20:00</p></div>
         </div>
-          <div>
+          <div class="mt-8">
           <p class="font-semibold">Varighed: 90 min.</p>
           <p class="font-semibold">Venue: VOX, Teaterhuset</p>
           <p class="text-xs underline"><a href="findrundt.html">Rådhusstræde 13 v. HUSET-KBH. ß1466 København
@@ -232,7 +232,7 @@
           <input type="number" placeholder="+45" class="input-bordered bg-transparent font-semibold w-full max-w-xs" />
         </div>
         <br>
-        <input  class="text-white cursor-pointer w-40 btn-primary py-3 px-9 justify-center hover:scale-110 "
+        <input  class="text-white w-32 btn mt-2 btn-primary flex justify-center"
         type="submit" value="Påmind mig">
   </form>
 
@@ -243,13 +243,13 @@
   </div>
       
         <div class="flex pt-6 gap-6 font-semibold md:justify-center md:order-1 lg:order-none">
-          <button class="text-white cursor-pointer w-44 bg-green-500 hover:scale-110 hover:opacity-90 py-3 px-5 "><a href="billetsalg.html">Køb billet</a></button>
-          <button class="text-white cursor-pointer w-44 hover:scale-110 btn-primary py-3 px-5 "><a href="#">Reservere plads</a></button>
+          <button class="text-white btn cursor-pointer w-44 hover:scale-110 bg-green-500 hover:bg-green-600  hover:opacity-90 py-3 px-5 "><a href="billetsalg.html">Køb billet</a></button>
+          <button class="text-white btn cursor-pointer w-44 hover:scale-110 btn-primary py-3 px-5 "><a href="#">Reserver plads</a></button>
               </div>
-        <p class=" py-6 text-xs">*For at se forestillinger på Vildskud Festival 2022 SKAL pladsreservationer vises sammen med en Endags- eller Partoutbillet.
-          Du finder links til pladsreservationerne i de enkelte forestillingers begivenheder: https://bit.ly/3xSJ2JUeller ved at søge på ‘VILDSKUD’ inde på YourTickets hjemmeside: https://www.yourticket.dk/arrangementer/</p>
-      </article>
+        </article>
     </section>
+    <p class="text-xs pb-3 pt-10 text-slate-400">*For at se forestillinger på Vildskud Festival 2022 SKAL pladsreservationer vises sammen med en Endags- eller Partoutbillet.
+      Du finder links til pladsreservationerne i de enkelte forestillingers begivenheder: https://bit.ly/3xSJ2JUeller ved at søge på ‘VILDSKUD’ inde på YourTickets hjemmeside: https://www.yourticket.dk/arrangementer/</p>
    </main>
 
 

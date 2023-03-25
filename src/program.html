@@ -213,9 +213,9 @@
       </div>
 
       <div>
-      <label for="allekategori">Kategori</label>
+      <label for="allekategori">Kategori:</label>
       <select class="flex text-white m-1 bg-indigo-500 hover:bg-indigo-800 font-medium rounded-lg text-sm px-6 py-2.5 text-center" name="kategori" id="kategori" x-model="kategori" form="filtre" x-on:change="$nextTick(() => { ingenforestillinger() });">
-        <option value="allekategori">Alle arrangementer</option>
+        <option value="allekategori">Alle arrangementer </option>
         <option value="forestilling">Forestillinger</option>
         <option value="event">Events</option>
       </select> 
@@ -224,149 +224,149 @@
 
 <!-- forestillinger -->
         <div class="content mb-10 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-            <a href="rebirth.html" class="forestilling alle shadow-lg m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg bg-gray-400 hover:bg-indigo-500 hover:ring-indigo-500 hover:scale-105" :class="{'hidden': !(['alledage', 'mandag', 'torsdag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori)) }" x-transition:enter.duration.800ms>
+            <a href="rebirth.html" class="forestilling alle  m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg hover:scale-105" :class="{'hidden': !(['alledage', 'mandag', 'torsdag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori)) }" x-transition:enter.duration.800ms>
               <div class="m-4 w-32">
                 <img class="h-auto w-full object-cover object-center" src="/img/Billede1.webp" alt="photo" />
               </div>
               <div class="py-8 sm:py-6">
-                <p class="mb-2 text-2xl font-bold text-gray-700">RE-BIRTH</p>
-                <p class="text-base font-normal text-white">Venue: DOWNUNDER</p>
-                <p class="text-base font-normal text-white">Genre: gyser, thriller</p>
-                <p class="text-base font-normal text-white">Varighed: 90 min.</p>
+                <p class="mb-2 text-2xl font-bold text-white">RE-BIRTH</p>
+                <p class="text-base font-normal ">Venue: DOWNUNDER</p>
+                <p class="text-base font-normal ">Genre: gyser, thriller</p>
+                <p class="text-base font-normal ">Varighed: 90 min.</p>
                 <div class="flex flex-row gap-2">
-                  <p class="text-base font-normal text-white">Vises:</p>
+                  <p class="text-base font-normal ">Vises:</p>
                   <p class="bg-purple-500 px-2 text-base font-normal text-white">Mandag</p>
                   <p class="bg-rose-700 px-2 text-base font-normal text-white">Torsdag</p>
                 </div>
               </div>
             </a>
     
-            <a href="det_levende_rum.html" class="forestilling alle shadow-lg m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg bg-gray-400 hover:bg-indigo-500 hover:ring-indigo-500 hover:scale-105" :class="{'hidden': !(['alledage', 'tirsdag', 'torsdag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori)) }">
+            <a href="det_levende_rum.html" class="forestilling alle m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg hover:scale-105" :class="{'hidden': !(['alledage', 'tirsdag', 'torsdag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori)) }">
               <div class="m-4 w-32">
                 <img class="h-auto w-full object-cover object-center" src="/img/9BEF0B3D-169C-4CB1-82BF-C3ED7BC468D8.webp" alt="photo" />
               </div>
               <div class="py-8 sm:py-6">
-                <p class="mb-2 text-2xl font-bold text-gray-700">Det levende rum</p>
-                <p class="text-base font-normal text-white">Venue: DOWNUNDER</p>
-                <p class="text-base font-normal text-white">Genre: gyser, thriller</p>
-                <p class="text-base font-normal text-white">Varighed: 90 min.</p>
+                <p class="mb-2 text-2xl font-bold text-white">Det levende rum</p>
+                <p class="text-base font-normal ">Venue: DOWNUNDER</p>
+                <p class="text-base font-normal ">Genre: gyser, thriller</p>
+                <p class="text-base font-normal ">Varighed: 90 min.</p>
                 <div class="flex flex-row gap-2">
-                  <p class="text-base font-normal text-white">Vises:</p>
+                  <p class="text-base font-normal ">Vises:</p>
                   <p class="bg-blue-500 px-2 text-base font-normal text-white">Tirsdag</p>
                   <p class="bg-rose-700 px-2 text-base font-normal text-white">Torsdag</p>
                 </div>
               </div>
             </a>
-            <a href="mand_ligger.html" class="forestilling alle shadow-lg m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg bg-gray-400 hover:bg-indigo-500 hover:ring-indigo-500 hover:scale-105" :class="{'hidden': !(['alledage', 'mandag', 'lordag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori)) }" x-transition:enter.duration.800ms>
+            <a href="mand_ligger.html" class="forestilling alle  m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg   hover:scale-105" :class="{'hidden': !(['alledage', 'mandag', 'lordag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori)) }" x-transition:enter.duration.800ms>
               <div class="m-4 w-32">
                 <img class="h-auto w-full object-cover object-center" src="/img/Billede1-2.webp" alt="photo" />
               </div>
               <div class="py-8 sm:py-6">
-                <p class="mb-2 w-52 text-2xl font-bold text-gray-700">Mand ligger som mand har redt</p>
-                <p class="text-base font-normal text-white">Venue: DOWNUNDER</p>
-                <p class="text-base font-normal text-white">Genre: gyser, thriller</p>
-                <p class="text-base font-normal text-white">Varighed: 90 min.</p>
+                <p class="mb-2 w-52 text-2xl font-bold text-white">Mand ligger som mand har redt</p>
+                <p class="text-base font-normal ">Venue: DOWNUNDER</p>
+                <p class="text-base font-normal ">Genre: gyser, thriller</p>
+                <p class="text-base font-normal ">Varighed: 90 min.</p>
                 <div class="flex flex-row gap-2">
-                  <p class="text-base font-normal text-white">Vises:</p>
+                  <p class="text-base font-normal ">Vises:</p>
                   <p class="bg-purple-500 px-2 text-base font-normal text-white">Mandag</p>
                   <p class="bg-yellow-500 px-2 text-base font-normal text-white">Lørdag</p>
                 </div>
               </div>
             </a>
 
-            <a href="frygten_for_ikke.html" class="forestilling alle shadow-lg m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg bg-gray-400 hover:bg-indigo-500 hover:ring-indigo-500 hover:scale-105" :class="{'hidden': !(['alledage', 'onsdag', 'torsdag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori)) }" x-transition:enter.duration.800ms>
+            <a href="frygten_for_ikke.html" class="forestilling alle  m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg   hover:scale-105" :class="{'hidden': !(['alledage', 'onsdag', 'torsdag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori)) }" x-transition:enter.duration.800ms>
               <div class="m-4 w-32">
                 <img class="h-auto w-full object-cover object-center" src="/img/dsc_2600-600x600.webp" alt="photo" />
               </div>
               <div class="py-8 sm:py-6">
-                <p class="mb-2 w-52 text-2xl font-bold text-gray-700">Frygten for ikke at leve</p>
-                <p class="text-base font-normal text-white">Venue: VOX</p>
-                <p class="text-base font-normal text-white">Genre: gyser, thriller</p>
-                <p class="text-base font-normal text-white">Varighed: 120 min.</p>
+                <p class="mb-2 w-52 text-2xl font-bold text-white">Frygten for ikke at leve</p>
+                <p class="text-base font-normal ">Venue: VOX</p>
+                <p class="text-base font-normal ">Genre: gyser, thriller</p>
+                <p class="text-base font-normal ">Varighed: 120 min.</p>
                 <div class="flex flex-row gap-2">
-                  <p class="text-base font-normal text-white">Vises:</p>
+                  <p class="text-base font-normal ">Vises:</p>
                   <p class="bg-rose-400 px-2 text-base font-normal text-white">Onsdag</p>
                   <p class="bg-rose-700 px-2 text-base font-normal text-white">Torsdag</p>
                 </div>
               </div>
             </a>
 
-            <a href="vild_med_dig.html" class="forestilling alle shadow-lg m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg bg-gray-400 hover:bg-indigo-500 hover:ring-indigo-500 hover:scale-105"  :class="{'hidden': !(['alledage', 'fredag', 'lordag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori))  }" x-transition:enter.duration.800ms>
+            <a href="vild_med_dig.html" class="forestilling alle  m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg   hover:scale-105"  :class="{'hidden': !(['alledage', 'fredag', 'lordag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori))  }" x-transition:enter.duration.800ms>
               <div class="m-4 w-32">
                 <img class="h-auto w-full object-cover object-center" src="/img/teater-mannequin-1-1.webp" alt="photo" />
               </div>
               <div class="py-8 sm:py-6">
-                <p class="mb-2 text-2xl font-bold text-gray-700">Vild med mig</p>
-                <p class="text-base font-normal text-white">Venue: DOWNUNDER</p>
-                <p class="text-base font-normal text-white">Genre: gyser, thriller</p>
-                <p class="text-base font-normal text-white">Varighed: 90 min.</p>
+                <p class="mb-2 text-2xl font-bold text-white">Vild med mig</p>
+                <p class="text-base font-normal ">Venue: DOWNUNDER</p>
+                <p class="text-base font-normal ">Genre: gyser, thriller</p>
+                <p class="text-base font-normal ">Varighed: 90 min.</p>
                 <div class="flex flex-row gap-2">
-                  <p class="text-base font-normal text-white">Vises:</p>
+                  <p class="text-base font-normal ">Vises:</p>
                   <p class="bg-orange-500 px-2 text-base font-normal text-white">Fredag</p>
                   <p class="bg-yellow-500 px-2 text-base font-normal text-white">Lørdag</p>
                 </div>
               </div>
             </a>
 
-            <a href="what_fires_together.html" class="forestilling alle shadow-lg m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg bg-gray-400 hover:bg-indigo-500 hover:ring-indigo-500 hover:scale-105" :class="{'hidden': !(['alledage', 'tirsdag', 'onsdag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori)) }" x-transition:enter.duration.800ms>
+            <a href="what_fires_together.html" class="forestilling alle  m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg   hover:scale-105" :class="{'hidden': !(['alledage', 'tirsdag', 'onsdag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori)) }" x-transition:enter.duration.800ms>
               <div class="m-4 w-32">
                 <img class="h-auto w-full object-cover object-center" src="/img/WFTWT_instagram.webp" alt="photo" />
               </div>
               <div class="py-8 sm:py-6">
-                <p class="mb-2 text-2xl font-bold text-gray-700">What fires together wires together</p>
-                <p class="text-base font-normal text-white">Venue: Xenon</p>
-                <p class="text-base font-normal text-white">Genre: gyser, thriller</p>
-                <p class="text-base font-normal text-white">Varighed: 90 min.</p>
+                <p class="mb-2 text-2xl font-bold text-white">What fires together <br> wires together</p>
+                <p class="text-base font-normal ">Venue: Xenon</p>
+                <p class="text-base font-normal ">Genre: gyser, thriller</p>
+                <p class="text-base font-normal ">Varighed: 90 min.</p>
                 <div class="flex flex-row gap-2">
-                  <p class="text-base font-normal text-white">Vises:</p>
+                  <p class="text-base font-normal ">Vises:</p>
                   <p class="bg-blue-500 px-2 text-base font-normal text-white">Tirsdag</p>
                   <p class="bg-rose-400 px-2 text-base font-normal text-white">Onsdag</p>
                 </div>
               </div>
             </a>
-            <a href="gogoyo.html" class="forestilling alle shadow-lg m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg bg-gray-400 hover:bg-indigo-500 hover:ring-indigo-500 hover:scale-105"  :class="{'hidden': !(['alledage', 'mandag', 'lordag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori))  }" x-transition:enter.duration.800ms>
+            <a href="gogoyo.html" class="forestilling alle  m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg   hover:scale-105"  :class="{'hidden': !(['alledage', 'mandag', 'lordag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori))  }" x-transition:enter.duration.800ms>
               <div class="m-4 w-32">
                 <img class="h-auto w-full object-cover object-center" src="/img/Image-from-iOS.webp" alt="photo" />
               </div>
               <div class="py-8 sm:py-6">
-                <p class="mb-2 text-2xl font-bold text-gray-700">GOGO YO-YOKU</p>
-                <p class="text-base font-normal text-white">Venue: DOWNUNDER</p>
-                <p class="text-base font-normal text-white">Genre: gyser, thriller</p>
-                <p class="text-base font-normal text-white">Varighed: 90 min.</p>
+                <p class="mb-2 text-2xl font-bold text-white">GOGO YO-YOKU</p>
+                <p class="text-base font-normal ">Venue: DOWNUNDER</p>
+                <p class="text-base font-normal ">Genre: gyser, thriller</p>
+                <p class="text-base font-normal ">Varighed: 90 min.</p>
                 <div class="flex flex-row gap-2">
-                  <p class="text-base font-normal text-white">Vises:</p>
+                  <p class="text-base font-normal ">Vises:</p>
                   <p class="bg-purple-500 px-2 text-base font-normal text-white">Mandag</p>
                   <p class="bg-yellow-500 px-2 text-base font-normal text-white">Lørdag</p>
                 </div>
               </div>
             </a>
-            <a href="rebirth.html" class="forestilling alle shadow-lg m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg bg-gray-400 hover:bg-indigo-500 hover:ring-indigo-500 hover:scale-105" :class="{'hidden': !(['alledage', 'tirsdag'].includes(spilledag) && ['allekategori', 'event'].includes(kategori)) }" x-transition:enter.duration.800ms>
+            <a href="rebirth.html" class="forestilling alle  m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg   hover:scale-105" :class="{'hidden': !(['alledage', 'tirsdag'].includes(spilledag) && ['allekategori', 'event'].includes(kategori)) }" x-transition:enter.duration.800ms>
               <div class="m-4 w-32">
                 <img class="h-auto w-full object-cover object-center" src="/img/dsc_2600-600x600.webp" alt="photo" />
               </div>
               <div class="py-8 sm:py-6">
-                <p class="mb-2 w-52 text-2xl font-bold text-gray-700">Lær dig selv at kende</p>
-                <p class="text-base font-normal text-white">Lokation: Ukirke</p>
-                <p class="text-base font-normal text-white">Kl. 20:00</p>
-                <p class="text-base font-normal text-white">Varighed: 2 timer</p>
+                <p class="mb-2 w-52 text-2xl font-bold text-white">Lær dig selv at kende</p>
+                <p class="text-base font-normal ">Lokation: Ukirke</p>
+                <p class="text-base font-normal ">Kl. 20:00</p>
+                <p class="text-base font-normal ">Varighed: 2 timer</p>
                 <div class="flex flex-row gap-2">
-                  <p class="text-base font-normal text-white">Dato:</p>
+                  <p class="text-base font-normal ">Dato:</p>
                   <p class="bg-blue-500 px-2 text-base font-normal text-white">Tirsdag</p>
                 </div>
               </div>
             </a>
-            <a href="rebirth.html" class="forestilling alle shadow-lg m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg bg-gray-400 hover:bg-indigo-500 hover:ring-indigo-500 hover:scale-105" :class="{'hidden': !(['alledage', 'torsdag'].includes(spilledag) && ['allekategori', 'event'].includes(kategori)) }" x-transition:enter.duration.800ms>
+            <a href="rebirth.html" class="forestilling alle  m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg   hover:scale-105" :class="{'hidden': !(['alledage', 'torsdag'].includes(spilledag) && ['allekategori', 'event'].includes(kategori)) }" x-transition:enter.duration.800ms>
               <div class="m-4 w-32">
                 <img class="h-auto w-full object-cover object-center" src="/img/2.webp" alt="photo" />
               </div>
               <div class="py-8 sm:py-6">
-                <p class="mb-2 w-52 text-2xl font-bold text-gray-700">Lad os snakke om tabu</p>
-                <p class="text-base font-normal text-white">Lokation: Ukirke</p>
-                <p class="text-base font-normal text-white">Kl. 17:30</p>
+                <p class="mb-2 w-52 text-2xl font-bold text-white">Lad os snakke om tabu</p>
+                <p class="text-base font-normal ">Lokation: Ukirke</p>
+                <p class="text-base font-normal ">Kl. 17:30</p>
 
-                <p class="text-base font-normal text-white">Varighed: 1 1/2 timer</p>
+                <p class="text-base font-normal ">Varighed: 1 1/2 timer</p>
                 <div class="flex flex-row gap-2">
-                  <p class="text-base font-normal text-white">Dato:</p>
+                  <p class="text-base font-normal ">Dato:</p>
                   <p class="bg-rose-700 px-2 text-base font-normal text-white">Torsdag</p>
                 </div>
               </div>
