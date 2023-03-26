@@ -8,6 +8,56 @@
     <link href="https://fonts.googleapis.com/css2?family=Imbue:wght@900&family=Inter:wght@400;700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body>
+          <!-- Cookies -->
+   <div class="relative left-0 bottom-0 z-40" x-data="{cookies: false}"  @keydown.window.escape="cookies = false">
+    <!-- Indhold til cookies -->
+    <div x-show="cookies" class="fixed sm:left-4 bottom-20 rounded-lg bg-white shadow-2xl w-full sm:w-1/2 xl:w-1/4 max-w-[450px] overflow-hidden z-50"
+         style="display: none;"
+         x-transition:enter="transition ease-in duration-200"
+         x-transition:enter-start="opacity-0 transform -translate-x-40"
+         x-transition:enter-end="opacity-100 transform translate-x-0"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100 transform translate-x-0"
+         x-transition:leave-end="opacity-0 transform -translate-x-40">
+  
+        <!-- Text -->
+        <div class="overflow-hidden">
+            <div class="relative overflow-hidden px-8 pt-8">
+                <div width="80" height="77" class="absolute -top-10 -right-10 text-yellow-500">
+                    <svg width="120" height="119" viewBox="0 0 120 119" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.3"
+                              d="M6.38128 49.1539C3.20326 32.893 13.809 17.1346 30.0699 13.9566L70.3846 6.07751C86.6455 2.89948 102.404 13.5052 105.582 29.7661L113.461 70.0808C116.639 86.3417 106.033 102.1 89.7724 105.278L49.4577 113.157C33.1968 116.335 17.4384 105.729 14.2604 89.4686L6.38128 49.1539Z"
+                              fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="text-2xl flex flex-col pb-4">
+                    <small>Cookies</small>
+                    <span class="text-3xl font-bold">Velkommen til Vildskud!</span>
+                </div>
+                <div class="pb-4">
+                    <p>Når du besøger vores hjemmeside, sætter vi cookies på din enhed. Det gør vi for at give dig den bedste oplevelse. 
+                      Ved at trykke ’Acceptér alle’ giver du samtykke til brugen af alle cookies. 
+                      Vælger du ’Kun nødvendige’, vil der være funktioner på hjemmesiden, der ikke virker. 
+                    </p>
+                </div>
+            </div>
+  
+        </div>
+        <!-- Boutons -->
+        <div class="w-full flex justify-center items-center border-t border-solid border-gray-200">
+            <button class="border-r border-gray-200 flex-1 px-4 py-3 text-gray-500 hover:text-white hover:bg-red-400 duration-150" @click="cookies = false">
+                Afvis
+            </button>
+            <button class="flex-1 px-4 py-3 text-gray-500 hover:text-white hover:bg-green-400 duration-150" @click="cookies = false">
+                Fint med mig
+            </button>
+        </div>
+    </div>
+    <!-- Cookie BTN -->
+    <button class="fixed left-4 bottom-2 uppercase text-sm px-4 py-3 bg-gray-900 text-white rounded-full z-20"
+            @click="cookies = !cookies">
+        Cookies
+    </button>
     <header>
 
       <!-- nav mobile -->
@@ -119,13 +169,32 @@
               <a href="frivillig.html" class="text-white block border-b border-gray-100 py-2 pl-3 pr-4  hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Frivillig</a>
             </li>
   
-            <div x-data="{deskSubmenuopen: true}" class="primaer flex flex-col">
-              <button href="#" class="flex flex-row items-center text-white" x-on:click="deskSubmenuopen = ! deskSubmenuopen">
-                Info
-                  <!-- pil -->
-                  <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>    
-              </button>
-
+            <div x-data="{submenuopen: false}" class="primaer flex flex-col">
+              <li class="text-white block border-b border-gray-100 py-2 pl-3 pr-4  hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">
+                <button href="#" class="flex flex-row items-center" x-on:click="submenuopen = ! submenuopen">
+                  Info
+                    <!-- pil -->
+                    <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>    
+                </button>
+      
+              </li>
+              <ul class="primaer absolute top-10 right-3" x-show="submenuopen">
+                <li class=" p-2">
+                  <a href="omVildskud.html" class="">Om Vildskud</a>
+                </li>
+                <li class=" p-2">
+                  <a href="team.html" class="">Team</a>
+                </li>
+                <li class="p-2">
+                  <a href="opencall.html">Open call</a>
+                </li>
+                <li class="p-2">
+                  <a href="samarbejdspartnere.html">Partnere</a>
+                </li>
+                <li class="p-2">
+                  <a href="kontakt.html">Kontakt</a>
+                </li>
+              </ul>
             </div>
           </ul>
       </div>
@@ -137,7 +206,7 @@
 
     <!-- Hero section -->
 
-    <main class="m-auto w-4/5 mt-16 max-w-7xl pt-24">
+    <main class="m-auto w-4/5 pt-16 lg:pt-0 max-w-7xl">
       <h1 class="text-center">kontakt</h1>
       <!-- <img class="m-auto my-9 spin kontakt" src="img/chat.svg" alt="chat"> -->
       <section class="my-9 grid gap-10 lg:grid-cols-2 lg:gap-5">
@@ -162,7 +231,7 @@
             </div>
             <label class="label text-white">Skriv her </label>
             <textarea id="freeform" name="freeform" rows="4" cols="40" placeholder="Type here"> </textarea>
-            <input class="bg-lilla btn-primary w-40 cursor-pointer py-3 px-9 text-white mt-10" type="submit" value="Send" />
+            <input class="bg-lilla btn-primary btn w-40 cursor-pointer py-3 px-9 text-white mt-10" type="submit" value="Send" />
           </form>
         </article>
       </section>
@@ -200,8 +269,9 @@
                 <a class="hover:opacity-75" href="program.html"> Program </a>
                 <a class="hover:opacity-75" href="findrundt.html"> Find rundt</a>
                 <a class="hover:opacity-75" href="faq.html"> FAQ </a>
-                <a class="hover:opacity-75" href="frivillige.html"> Frivilige </a>
-                <a class="hover:opacity-75" href="omVildskud.html"> Om Vildskud </a>
+                <a class="hover:opacity-75" href="frivillig.html"> Frivillig </a>
+                <a class="hover:opacity-75" href="opencall.html"> Open Call </a>
+                  <a class="hover:opacity-75" href="omVildskud.html"> Om Vildskud </a>
               </nav>
             </div>
             <div>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sanarbejdspartnere</title>
+    <title>Samarbejdspartnere</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Imbue:wght@900&family=Inter:wght@400;700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
@@ -172,13 +172,32 @@
               <a href="frivillig.html" class="text-white block border-b border-gray-100 py-2 pl-3 pr-4  hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Frivillig</a>
             </li>
   
-            <div x-data="{deskSubmenuopen: true}" class="primaer flex flex-col">
-              <button href="#" class="flex flex-row items-center text-white" x-on:click="deskSubmenuopen = ! deskSubmenuopen">
-                Info
-                  <!-- pil -->
-                  <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>    
-              </button>
-
+            <div x-data="{submenuopen: false}" class="primaer flex flex-col">
+              <li class="text-white block border-b border-gray-100 py-2 pl-3 pr-4  hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">
+                <button href="#" class="flex flex-row items-center" x-on:click="submenuopen = ! submenuopen">
+                  Info
+                    <!-- pil -->
+                    <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>    
+                </button>
+      
+              </li>
+              <ul class="primaer absolute top-10 right-3" x-show="submenuopen">
+                <li class=" p-2">
+                  <a href="omVildskud.html" class="">Om Vildskud</a>
+                </li>
+                <li class=" p-2">
+                  <a href="team.html" class="">Team</a>
+                </li>
+                <li class="p-2">
+                  <a href="opencall.html">Open call</a>
+                </li>
+                <li class="p-2">
+                  <a href="samarbejdspartnere.html">Partnere</a>
+                </li>
+                <li class="p-2">
+                  <a href="kontakt.html">Kontakt</a>
+                </li>
+              </ul>
             </div>
           </ul>
       </div>
@@ -187,13 +206,10 @@
   </div>
   </header>
 
-
-
-
     <!-- Hero section -->
    
-   <main class="m-auto max-w-7xl w-4/5 pt-24">
-    <h1 class="text-center">samarbejds<br>partnere</h1>
+   <main class="m-auto max-w-7xl w-4/5  pt-24 md:pt-10 lg:pt-0">
+    <h1 class="text-center text-6xl">samarbejds<br>partnere</h1>
     <p class="text-white text-center max-w-prose m-auto pb-16">Vildskud 2022 ville ikke have eksisteret uden hjælp fra vores mange samarbejdspartnere. Tak!</p>
   
 <section class="grid gap-20 m-auto pb-20  lg:grid-cols-2 ">
@@ -203,12 +219,12 @@
             ">Venues</h2> </div>
             <div class="flex my-4 flex-row flex-wrap justify-center gap-x-8 gap-y-3 lg:gap-x-16">
                 <img src="img/cph-stage.svg" alt="cph stage">
-                <img src="img/huset.svg" alt="huset">
+                <img src="img/huset.svg" alt="huset" class="bg-slate-300">
                 <img src="img/tårnby-teater.svg" alt="tårnby teater">
                 <img src="img/zebu.svg" alt="zebus">
                 <img src="img/teater-v.svg" alt="teater v">
-                <img src="img/teater-republique.svg" alt="teater teater-republique">
-                <img src="img/teaterhuset.svg" alt="teaterhuset">
+                <img src="img/teater-republique.svg" alt="teater teater-republique" class="bg-slate-300">
+                <img src="img/teaterhuset.svg" alt="teaterhuset" class="bg-slate-300">
     
     </div>
 </article>
@@ -219,9 +235,9 @@
         <div class="flex my-4 flex-row flex-wrap justify-center gap-x-8 gap-y-3 lg:gap-x-16">
             <img src="img/vestervovvov.svg" alt="vestervovvov">
             <img src="img/cristianhavns_beboerhus.svg" alt="cristianhavns_beboerhus">
-            <img src="img/kbh-kommune.svg" alt="kbh kommune">
-            <img src="img/nordeafonden.svg" alt="nordeafonden"> 
-            <img src="img/dats.svg" alt="dats">
+            <img src="img/kbh-kommune.svg" alt="kbh kommune" class="bg-slate-300">
+            <img src="img/nordeafonden.svg" alt="nordeafonden" class="bg-slate-300"> 
+            <img src="img/dats.svg" alt="dats" class="bg-slate-300">
             <img src="img/fadd.svg" alt="fadd">
              <img src="img/landsorganisation.svg" alt="landsorganisation"> 
    
@@ -263,7 +279,8 @@
               <a class="hover:opacity-75" href="program.html"> Program </a>
               <a class="hover:opacity-75" href="findrundt.html"> Find rundt</a>
               <a class="hover:opacity-75" href="faq.html"> FAQ </a>
-              <a class="hover:opacity-75" href="frivillige.html"> Frivilige </a>
+              <a class="hover:opacity-75" href="frivillig.html"> Frivillig </a>
+              <a class="hover:opacity-75" href="opencall.html"> Open Call </a>
               <a class="hover:opacity-75" href="omVildskud.html"> Om Vildskud </a>
             </nav>
           </div>

@@ -172,13 +172,32 @@
               <a href="frivillig.html" class="text-white block border-b border-gray-100 py-2 pl-3 pr-4  hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Frivillig</a>
             </li>
   
-            <div x-data="{deskSubmenuopen: true}" class="primaer flex flex-col">
-              <button href="#" class="flex flex-row items-center text-white" x-on:click="deskSubmenuopen = ! deskSubmenuopen">
-                Info
-                  <!-- pil -->
-                  <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>    
-              </button>
-
+            <div x-data="{submenuopen: false}" class="primaer flex flex-col">
+              <li class="text-white block border-b border-gray-100 py-2 pl-3 pr-4  hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">
+                <button href="#" class="flex flex-row items-center" x-on:click="submenuopen = ! submenuopen">
+                  Info
+                    <!-- pil -->
+                    <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>    
+                </button>
+      
+              </li>
+              <ul class="primaer absolute top-10 right-3" x-show="submenuopen">
+                <li class=" p-2">
+                  <a href="omVildskud.html" class="">Om Vildskud</a>
+                </li>
+                <li class=" p-2">
+                  <a href="team.html" class="">Team</a>
+                </li>
+                <li class="p-2">
+                  <a href="opencall.html">Open call</a>
+                </li>
+                <li class="p-2">
+                  <a href="samarbejdspartnere.html">Partnere</a>
+                </li>
+                <li class="p-2">
+                  <a href="kontakt.html">Kontakt</a>
+                </li>
+              </ul>
             </div>
           </ul>
       </div>
@@ -188,7 +207,7 @@
   </header>
     <!-- Hero section -->
    
-   <main class="m-auto max-w-7xl pt-24">
+   <main class="m-auto max-w-7xl pt-16 lg:pt-0">
     <h1 class="text-center">FAQ</h1>
     <section class=" text-white text-center">
       <p class="italic">Her kan du finde svar på de mest stillede spørgsmål. <br> Informationerne bliver løbende opdateret.</p>
@@ -271,7 +290,8 @@
               <a class="hover:opacity-75" href="program.html"> Program </a>
               <a class="hover:opacity-75" href="findrundt.html"> Find rundt</a>
               <a class="hover:opacity-75" href="faq.html"> FAQ </a>
-              <a class="hover:opacity-75" href="frivillige.html"> Frivilige </a>
+              <a class="hover:opacity-75" href="frivillig.html"> Frivillig </a>
+              <a class="hover:opacity-75" href="opencall.html"> Open Call </a>
               <a class="hover:opacity-75" href="omVildskud.html"> Om Vildskud </a>
             </nav>
           </div>
