@@ -90,28 +90,6 @@ section {
 :root {
   --menu-speed: 0.75s;
 }
-/* Header */
-/* .showcase .showcase-inner{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-} */
-
-/* .btn{
-  display: inline-block;
-  border: none;
-  background-color: var(--primary-color);
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  margin-top: 1rem;
-  text-decoration: none;
-  transition: opacity 1s ease-in;
-  border-radius: 2rem;
-} */
-
 
 /******************* ord anmation **********/
 
@@ -245,11 +223,6 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-/* Firefox */
-/* input[type="number"] {
-  -moz-appearance: textfield;
-}
- */
 
 /* Tasty cheese burger */
 .nav-links {
