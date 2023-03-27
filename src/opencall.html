@@ -59,156 +59,128 @@
         Cookies
     </button>
   
-
-  
     <header>
-
-      <!-- nav mobile -->
-    <div class="fixed z-50 mx-4 mt-5 flex items-center justify-between md:flex-wrap md:hidden lg:hidden" x-data="{mainmenuopen: false}">
-  
-      <!-- Logo -->
-    <a href="index.html" class="flex flex-col fixed top-7 left-4">       
-      <img src="/img/LOGO2x.png" alt="logo" class="mr-3 w-36" />
-      <p class="text-center -ml-4 text-white"> 2.-6. aug.</p>
-    </a>
-    
-  <!-- Køb billet btn -->
-  <a href="billetsalg.html" class="btn btn-primary hover:scale-110 fixed right-32 top-7 flex  bg-green-500 hover:bg-green-600">
-  <p class="font-bold ">Køb billet</p>
-  </a>
-  
-      
-    <!-- Nav knap -->
-    <div for="check" class="fixed right-5 top-5 z-50 md:hidden lg:hidden hover:scale-110">
-      <label> 
-          <input type="checkbox" id="check" x-on:click="mainmenuopen = ! mainmenuopen"/> 
-          <span></span>
-          <span></span>
-          <span></span>
-      </label>
-    </div>
-    <!-- Burger foldet ud -->
-    <nav class="fixed top-0 bottom-0 left-0 right-0 z-40 bg-indigo-400" x-show="mainmenuopen">
-      <img class="w-36 absolute" src="img/top_sky@2x.png" alt="sky"/>
-  
-      <ul class="slide-in-top nav-links primaer flex flex-col pt-14 text-white text-3xl transition duration-300 ease-in-out">
-  
-        <a href="index.html" class="flex flex-col">       
-          <img src="/img/LOGO2x.png" alt="logo" class="mr-3 w-52 place-self-center" />
-        </a>
-  
-        <li class="place-self-center p-5">
-          <a href="program.html">Program</a>
-        </li>
-        <li class="place-self-center p-5 ">
-          <a href="findrundt.html" class="">Find rundt</a>
-        </li>
-        <li class="place-self-center p-5 ">
-          <a href="faq.html" class="">FAQ</a>
-        </li>
-        <li class="place-self-center p-5">
-          <a href="frivillig.html" class="">Frivillig</a>
-        </li>
-        <div x-data="{submenuopen: false}" class="primaer flex flex-col">
-          <li class="place-self-center p-5">
-            <button href="#" class="flex flex-row items-center" x-on:click="submenuopen = ! submenuopen">
-              Info
-                <!-- pil -->
-                <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>    
-            </button>
-  
-          </li>
-          <ul class="primaer flex flex-col text-2xl" x-show="submenuopen">
-            <li class="place-self-center p-2">
-              <a href="omVildskud.html" class="">Om Vildskud</a>
-            </li>
-            <li class="place-self-center p-2">
-              <a href="team.html" class="">Team</a>
-            </li>
-            <li class="place-self-center p-2">
-              <a href="opencall.html">Open call</a>
-            </li>
-            <li class="place-self-center p-2">
-              <a href="samarbejdspartnere.html">Samarbejdspartnere</a>
-            </li>
-            <li class="place-self-center p-2">
-              <a href="kontakt.html">Kontakt</a>
-            </li>
-          </ul>
+      <nav class="z-20 md:hidden lg:hidden">
+        <div class="logo">
+               <!-- Logo -->
+          <a href="index.html" class="flex flex-col fixed top-7 left-4">       
+            <img src="/img/LOGO2x.png" alt="logo" class="mr-3 w-36" />
+            <p class="text-center -ml-4 text-white"> 2.-6. aug.</p>
+          </a>
         </div>
-      </ul>
-      <img src="img/bund_sky@2x.png" class="fixed w-32 bottom-0 right-0" alt="sky"/>
-    </nav>
-  </div>
-  
-  
-      <!-- Nav desktop -->
-      <div class="hidden w-full md:block md:w-auto">
-        <div class="mx-4 mt-2 flex justify-between md:flex-wrap">
-        <!-- Logo -->
-        <a href="index.html" class="flex flex-col">       
-          <img src="/img/LOGO2x.png" alt="logo" class="mr-3 w-36" />
-          <p class="text-center -ml-4 text-white"> 2.-6. aug.</p>
-        </a>
-    <div class="flex flex-row gap-5">
-  <!-- Køb billet btn -->
-  <a href="billetsalg.html" class="btn btn-primary hover:scale-110  flex  bg-green-500 hover:bg-green-600">
-    <p class="font-bold ">Køb billet</p>
-    </a>
-    
-  
-        <div class="hidden w-full md:block md:w-auto mt-3">
-          <ul class="mt-4 flex  flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
-            <li>
-              <a href="program.html" class="text-white block rounded py-2 pl-3 pr-4 hover:scale-110 focus:outline-none md:p-0 md:hover:text-fuchsia-400" aria-current="page">Program</a>
-            </li>
-            <li>
-              <a href="findrundt.html" class="text-white block border-b border-gray-100 py-2 pl-3 pr-4 hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Find rundt</a>
-            </li>
-            <li>
-              <a href="faq.html" class="text-white block border-b border-gray-100 py-2 pl-3 pr-4 hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">FAQ</a>
-            </li>
-            <li>
-              <a href="frivillig.html" class="text-white block border-b border-gray-100 py-2 pl-3 pr-4  hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Frivillig</a>
-            </li>
-  
-            <div x-data="{submenuopen: false}" class="primaer flex flex-col">
-              <li class="text-white block border-b border-gray-100 py-2 pl-3 pr-4  hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">
-                <button href="#" class="flex flex-row items-center" x-on:click="submenuopen = ! submenuopen">
-                  Info
-                    <!-- pil -->
-                    <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>    
-                </button>
+          <!-- Køb billet btn -->
+          <a href="billetsalg.html" class="btn btn-primary hover:scale-110 fixed right-20 top-5 flex p-1 bg-green-500 hover:bg-green-600 z-20">
+            <p class="font-bold ">Køb billet</p>
+            </a>
+        <ul class="nav-links z-20 fixed h-screen"> 
+          <img class="w-36 absolute top-0 left-0" src="img/top_sky@2x.png" alt="sky"/>
+          <img src="img/bund_sky@2x.png" class="fixed w-32 bottom-0 right-0" alt="sky"/>
+          <a href="index.html">Forside</a>
+            <a href="program.html">Program</a>
+            <a href="findrundt.html">Find rundt</a> 
+            <a href="faq.html">FAQ</a>
       
+           <!-- ret bagefter til false -->
+           <div x-data="{submenuopen: false}" class="text-white flex flex-col infoknap">
+      
+              <a href="#" class="flex flex-row items-center place-self-center w-auto" x-on:click="submenuopen = ! submenuopen">
+                Info
+                  <!-- pil -->
+                  <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>    
+              </a>
+      
+      
+            <ul class="pt-2 flex flex-col gap-3" x-show="submenuopen">
+              <li>
+                <a href="frivillig.html">Frivillig</a> 
               </li>
-              <ul class="primaer absolute top-10 right-3" x-show="submenuopen">
-                <li class=" p-2">
-                  <a href="omVildskud.html" class="">Om Vildskud</a>
-                </li>
-                <li class=" p-2">
-                  <a href="team.html" class="">Team</a>
-                </li>
-                <li class="p-2">
-                  <a href="opencall.html">Open call</a>
-                </li>
-                <li class="p-2">
-                  <a href="samarbejdspartnere.html">Partnere</a>
-                </li>
-                <li class="p-2">
-                  <a href="kontakt.html">Kontakt</a>
-                </li>
-              </ul>
+              <li>
+                <a href="opencall.html">Optræd</a>
+              </li>
+              <li>
+                <a href="omVildskud.html">Om Vildskud</a>
+              </li>
+              <li>
+                <a href="team.html">Team</a>
+              </li>
+      
+      
+      
+            </ul>
+          </div>
+      
+        </ul>
+        <div class="burger fixed right-5 top-5 z-50 md:hidden lg:hidden hover:scale-110">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+      
+            <!-- Nav desktop -->
+            <div class="hidden w-full md:block md:w-auto">
+              <div class="mx-4 mt-2 flex justify-between md:flex-wrap">
+              <!-- Logo -->
+              <a href="index.html" class="flex flex-col">       
+                <img src="/img/LOGO2x.png" alt="logo" class="mr-3 w-36" />
+                <p class="text-center -ml-4 text-white"> 2.-6. aug.</p>
+              </a>
+          <div class="flex flex-row gap-5">
+        <!-- Køb billet btn -->
+        <a href="billetsalg.html" class="btn btn-primary hover:scale-110  flex  bg-green-500 hover:bg-green-600">
+          <p class="font-bold ">Køb billet</p>
+          </a>
+          
+        
+              <div class="hidden w-full md:block md:w-auto mt-3">
+                <ul class="mt-4 flex  flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
+                  <li>
+                    <a href="program.html" class="text-white block rounded py-2 pl-3 pr-4 hover:scale-110 focus:outline-none md:p-0 md:hover:text-fuchsia-400" aria-current="page">Program</a>
+                  </li>
+                  <li>
+                    <a href="findrundt.html" class="text-white block border-b border-gray-100 py-2 pl-3 pr-4 hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Find rundt</a>
+                  </li>
+                  <li>
+                    <a href="faq.html" class="text-white block border-b border-gray-100 py-2 pl-3 pr-4 hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">FAQ</a>
+                  </li>
+                  <li>
+                    <a href="frivillig.html" class="text-white block border-b border-gray-100 py-2 pl-3 pr-4  hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Frivillig</a>
+                  </li>
+                  <li>
+                    <a href="opencall.html" class="text-white block border-b border-gray-100 py-2 pl-3 pr-4  hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Optræd</a>
+                  </li>
+                  <div x-data="{submenuopen: false}" class="primaer flex flex-col">
+                    <li class="text-white block border-b border-gray-100 py-2 pl-3 pr-4  hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">
+                      <button href="#" class="flex flex-row items-center" x-on:click="submenuopen = ! submenuopen">
+                        Info
+                          <!-- pil -->
+                          <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>    
+                      </button>
+            
+                    </li>
+                    <ul class="primaer absolute top-10 right-3" x-show="submenuopen">
+                      <li class=" p-2">
+                        <a href="omVildskud.html" class="">Om Vildskud</a>
+                      </li>
+                      <li class=" p-2">
+                        <a href="team.html" class="">Team</a>
+                      </li>
+      
+                    </ul>
+                  </div>
+                </ul>
             </div>
-          </ul>
-      </div>
-    </div>
-    </div>
-  </div>
-  </header>
+          </div>
+          </div>
+        </div>
+      </header>
+      
     <!-- Hero section -->
    
    <main class="m-auto max-w-7xl text-white w-4/5  pt-24 md:pt-10 lg:pt-0">
     <h1 class="text-center">Open call</h1>
+    <h2 class="text-center">Har du en forestillig der skal med?</h2>
+
     <img class="m-auto my-4 w-40 pb-9 md:w-56" src="img/guitar.svg" alt="guitar">
     <section class="flex flex-col ">
 <article class="mb-8 flex gap-3 flex-col m-auto">

@@ -234,50 +234,133 @@ input[type="number"] {
 
 
 /* Tasty cheese burger */
-header label{
- display:flex;
-  flex-direction:column;
-  width:60px;
-  cursor:pointer;
+.nav-links {
+    display: flex;
+    justify-content:space-around;
+    width: 50%;
+    text-transform: uppercase;
+}
+.nav-links a{
+  display: block;
+   text-transform: uppercase;
+   text-decoration: none;
+   color: #fff;
+  border-bottom:2px solid transparent;
+  transition:0.5s ease;
+  transform: translateX(0%);
+}
+.nav-links a:hover{
+  color:#38b8ff;
+  letter-spacing: 5px;
+}
+.nav-links .infoknap {
+  width: fit-content;
+  display: flex;
+    justify-content:space-around;
+    text-transform: uppercase;
+    height: fit-screen;
+
+
+}
+.nav-links .infoknap ul {
+  display: flex;
+  place-items: center;
+}
+.nav-links .infoknap li {
+  width: fit-content;
+   text-transform: uppercase;
+   text-decoration: none;
+   color: #fff;
+  border-bottom:2px solid transparent;
+
+
 }
 
-header label span{
+.nav-links .infoknap li:hover{
+  color:#38b8ff;
+  letter-spacing: 2px;
+}
+
+
+
+.burger{
+  display: none;
+}
+.burger div{
+  width: 25px;
+  height: 3px;
   background: #fff;
-  border-radius:10px;
-  height:7px;
-  margin: 2px 0;
+  margin: 5px;
+  transition:all 0.5s ease;
 }
-header span:nth-of-type(1){
-  width:80%;
+@media only screen and (max-width: 760px){
+   nav{
+    justify-content: space-between;
+    padding: 0 5vw;
+  }
+  .nav-links{
+    position: absolute;
+    right: 0;
+    height: max-content;
+    min-height:92vh;
+    background: #855cd8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    transform: translateX(100%);
+    transition:All 0.5s ease-in;
+  }
+  .nav-links a{
+    opacity: 0;
+ 
+  }
+  .burger{
+    display: block;
+    z-index: 99;
+  }
+ 
 }
-header span:nth-of-type(2){
-  width:90%;
+@media only screen and (max-width: 640px){
+  nav{
+    justify-content: space-between;
+    padding: 0 5vw;
+  }
 }
-header span:nth-of-type(3){
-  width:100%;
+.nav-active{
+  transform: translateX(0);
 }
-header input[type="checkbox"]{
-  display:none;
+@media only screen and (max-width: 460px){
+  .nav-links{
+    width: 100%;
+    transition:All 0.5s ease;
+  }
 }
-header input[type="checkbox"]:checked ~ span:nth-of-type(1){
-  transform-origin:bottom;
-  transform:rotatez(31deg) translate(5px,0px)
+.nav-active{
+  transform: translateX(0);
 }
-header input[type="checkbox"]:checked ~ span:nth-of-type(2){
-  transform-origin:top;
-  transform:rotatez(-45deg)
+@keyframes navLinkFade{
+  from{
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
-header input[type="checkbox"]:checked ~ span:nth-of-type(3){
-  transform-origin:bottom;
-  width:50%;
-  transform: translate(30px,-10px) rotatez(35deg);
+.toggle .line1{
+   transform: rotate(-45deg) translate(-5px,6px );
+}
+.toggle .line2{
+   opacity: 0;
+}
+.toggle .line3{
+   transform: rotate(45deg) translate(-5px,-6px );
+}
 
-}
-/* test nav swipe ind */
-header li a [type="checkbox"]:checked{
-  transform-origin:top;
-  transform:scaleY(30%) translate(8px,0px)
-}
 
 
 
