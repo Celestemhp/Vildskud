@@ -4,7 +4,6 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" href="style.css">
-      <link href="https://fonts.googleapis.com/css2?family=Imbue:wght@900&family=Inter:wght@400;700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
    
       <title>Vildskud program</title>
     </head>
@@ -212,10 +211,8 @@
 
 <!-- forestillinger -->
         <div class="content mb-10 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-            <a href="rebirth.html" class="forestilling alle  m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg hover:scale-105" :class="{'hidden': !(['alledage', 'mandag', 'torsdag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori)) }" x-transition:enter.duration.800ms>
-              <div class="m-4 w-32">
-                <img class="h-auto w-full object-cover object-center" src="/img/Billede1.webp" alt="photo" />
-              </div>
+            <a href="rebirth.html" class="forestilling alle  m-4 flex w-auto flex-row items-center justify-center gap-3 overflow-hidden rounded-lg hover:scale-105" :class="{'hidden': !(['alledage', 'mandag', 'torsdag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori)) }" x-transition:enter.duration.800ms>
+
               <div class="py-8 sm:py-6">
                 <p class="mb-2 text-2xl font-bold text-white">RE-BIRTH</p>
                 <p class="text-base font-normal ">Venue: DOWNUNDER</p>
@@ -230,9 +227,7 @@
             </a>
     
             <a href="det_levende_rum.html" class="forestilling alle m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg hover:scale-105" :class="{'hidden': !(['alledage', 'tirsdag', 'torsdag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori)) }">
-              <div class="m-4 w-32">
-                <img class="h-auto w-full object-cover object-center" src="/img/9BEF0B3D-169C-4CB1-82BF-C3ED7BC468D8.webp" alt="photo" />
-              </div>
+
               <div class="py-8 sm:py-6">
                 <p class="mb-2 text-2xl font-bold text-white">Det levende rum</p>
                 <p class="text-base font-normal ">Venue: DOWNUNDER</p>
@@ -246,9 +241,7 @@
               </div>
             </a>
             <a href="mand_ligger.html" class="forestilling alle  m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg   hover:scale-105" :class="{'hidden': !(['alledage', 'mandag', 'lordag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori)) }" x-transition:enter.duration.800ms>
-              <div class="m-4 w-32">
-                <img class="h-auto w-full object-cover object-center" src="/img/Billede1-2.webp" alt="photo" />
-              </div>
+
               <div class="py-8 sm:py-6">
                 <p class="mb-2 w-52 text-2xl font-bold text-white">Mand ligger som mand har redt</p>
                 <p class="text-base font-normal ">Venue: DOWNUNDER</p>
@@ -263,9 +256,7 @@
             </a>
 
             <a href="frygten_for_ikke.html" class="forestilling alle  m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg   hover:scale-105" :class="{'hidden': !(['alledage', 'onsdag', 'torsdag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori)) }" x-transition:enter.duration.800ms>
-              <div class="m-4 w-32">
-                <img class="h-auto w-full object-cover object-center" src="/img/dsc_2600-600x600.webp" alt="photo" />
-              </div>
+
               <div class="py-8 sm:py-6">
                 <p class="mb-2 w-52 text-2xl font-bold text-white">Frygten for ikke at leve</p>
                 <p class="text-base font-normal ">Venue: VOX</p>
@@ -280,9 +271,7 @@
             </a>
 
             <a href="vild_med_dig.html" class="forestilling alle  m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg   hover:scale-105"  :class="{'hidden': !(['alledage', 'fredag', 'lordag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori))  }" x-transition:enter.duration.800ms>
-              <div class="m-4 w-32">
-                <img class="h-auto w-full object-cover object-center" src="/img/teater-mannequin-1-1.webp" alt="photo" />
-              </div>
+
               <div class="py-8 sm:py-6">
                 <p class="mb-2 text-2xl font-bold text-white">Vild med mig</p>
                 <p class="text-base font-normal ">Venue: DOWNUNDER</p>
@@ -297,9 +286,7 @@
             </a>
 
             <a href="what_fires_together.html" class="forestilling alle  m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg   hover:scale-105" :class="{'hidden': !(['alledage', 'tirsdag', 'onsdag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori)) }" x-transition:enter.duration.800ms>
-              <div class="m-4 w-32">
-                <img class="h-auto w-full object-cover object-center" src="/img/WFTWT_instagram.webp" alt="photo" />
-              </div>
+
               <div class="py-8 sm:py-6">
                 <p class="mb-2 text-2xl font-bold text-white">What fires together <br> wires together</p>
                 <p class="text-base font-normal ">Venue: Xenon</p>
@@ -313,10 +300,8 @@
               </div>
             </a>
             <a href="gogoyo.html" class="forestilling alle  m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg   hover:scale-105"  :class="{'hidden': !(['alledage', 'mandag', 'lordag'].includes(spilledag) && ['allekategori', 'forestilling'].includes(kategori))  }" x-transition:enter.duration.800ms>
-              <div class="m-4 w-32">
-                <img class="h-auto w-full object-cover object-center" src="/img/Image-from-iOS.webp" alt="photo" />
-              </div>
-              <div class="py-8 sm:py-6">
+
+              <div>
                 <p class="mb-2 text-2xl font-bold text-white">GOGO YO-YOKU</p>
                 <p class="text-base font-normal ">Venue: DOWNUNDER</p>
                 <p class="text-base font-normal ">Genre: gyser, thriller</p>
@@ -329,9 +314,7 @@
               </div>
             </a>
             <a href="rebirth.html" class="forestilling alle  m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg   hover:scale-105" :class="{'hidden': !(['alledage', 'tirsdag'].includes(spilledag) && ['allekategori', 'event'].includes(kategori)) }" x-transition:enter.duration.800ms>
-              <div class="m-4 w-32">
-                <img class="h-auto w-full object-cover object-center" src="/img/dsc_2600-600x600.webp" alt="photo" />
-              </div>
+
               <div class="py-8 sm:py-6">
                 <p class="mb-2 w-52 text-2xl font-bold text-white">Lær dig selv at kende</p>
                 <p class="text-base font-normal ">Lokation: Ukirke</p>
@@ -344,9 +327,7 @@
               </div>
             </a>
             <a href="rebirth.html" class="forestilling alle  m-4 flex w-auto flex-row items-center justify-center gap-4 overflow-hidden rounded-lg   hover:scale-105" :class="{'hidden': !(['alledage', 'torsdag'].includes(spilledag) && ['allekategori', 'event'].includes(kategori)) }" x-transition:enter.duration.800ms>
-              <div class="m-4 w-32">
-                <img class="h-auto w-full object-cover object-center" src="/img/2.webp" alt="photo" />
-              </div>
+
               <div class="py-8 sm:py-6">
                 <p class="mb-2 w-52 text-2xl font-bold text-white">Lad os snakke om tabu</p>
                 <p class="text-base font-normal ">Lokation: Ukirke</p>
@@ -441,9 +422,6 @@
     </footer>
 
     
-      <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"></script>
-      <script src="https://unpkg.com/alpinejs" defer=""></script>
-      <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
-      <script type="module" src="./main.js"></script>
+          <script type="module" src="./main.js"></script>
     </body>
   </html>

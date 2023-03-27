@@ -32,25 +32,7 @@
       line-height: 24px;
     }
   }
-  
-  body {
-    /* background: linear-gradient(to top, purple, pink); */
-    margin: 0;
-    height: 100%;
-  }
-  h3 {
-    font-family: "Poppins", sans-serif;
-    font-size: 20px;
-    padding-bottom: 15px;
-    font-weight: 600;
-  }
 
-  p {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
-  }
 
 body {
   /* background: linear-gradient(to top, purple, pink); */
@@ -65,7 +47,6 @@ p {
   color: white;
 }
 section {
-  scroll-snap-align: start;
   position: relative;
 }
 /************** Buttons ************/
@@ -86,31 +67,6 @@ section {
     justify-content: center;
   }
 }
-/* Burger menu */
-:root {
-  --menu-speed: 0.75s;
-}
-/* Header */
-/* .showcase .showcase-inner{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-} */
-
-/* .btn{
-  display: inline-block;
-  border: none;
-  background-color: var(--primary-color);
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  margin-top: 1rem;
-  text-decoration: none;
-  transition: opacity 1s ease-in;
-  border-radius: 2rem;
-} */
 
 
 /******************* ord anmation **********/
@@ -194,17 +150,6 @@ footer .linje {
   }
 }
 
-/* 
-/* bølge */
-/* .box {
-  --size: 50px;
-  --p: 25px;
-  --R: 55.9px;
-  height: 200px;
-  -webkit-mask: radial-gradient(var(--R) at 50% calc(100% - (var(--size) + var(--p))), blue 99%, #0000 101%) calc(50% - 2 * var(--size)) 0 / calc(4 * var(--size)) 100%, radial-gradient(var(--R) at 50% calc(100% + var(--p)), #0000 99%, red 101%) 50% calc(100% - var(--size)) / calc(4 * var(--size)) 100% repeat-x;
-  background: #009a5b;
-  border: none;
-}  */
 
 
 /* Info text */
@@ -222,34 +167,8 @@ summary::after {
 details[open] summary:after {
   content: " -";
 }
-/* kontakt spin */
-.kontakt {
-  animation: spin 2.5s linear infinite;
-}
-
-.skewed {
-  transform: skewY(-6deg);
-  transform-origin: top left;
-}
-
-.text {
-  transform: skewY(6deg);
-}
 
 
-
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-/* input[type="number"] {
-  -moz-appearance: textfield;
-}
- */
 
 /* Tasty cheese burger */
 .nav-links {
@@ -290,16 +209,12 @@ input::-webkit-inner-spin-button {
    text-decoration: none;
    color: #fff;
   border-bottom:2px solid transparent;
-
-
 }
 
 .nav-links .infoknap li:hover{
   color:#38b8ff;
   letter-spacing: 2px;
 }
-
-
 
 .burger{
   display: none;
@@ -320,7 +235,7 @@ input::-webkit-inner-spin-button {
     position: absolute;
     right: 0;
     height: max-content;
-    min-height:92vh;
+    min-height:100vh;
     background: #855cd8;
     display: flex;
     flex-direction: column;
@@ -378,8 +293,6 @@ input::-webkit-inner-spin-button {
 .toggle .line3{
    transform: rotate(45deg) translate(-5px,-6px );
 }
-
-
 
 
 
@@ -499,35 +412,6 @@ input::-webkit-inner-spin-button {
   }
   to {
     opacity: 0.5;
-  }
-}
-
-/* ****************** glow lys *****************/
-.glowing-circlelg {
-  width: 46px;
-  height: 46px;
-  border-radius:50%;
-  background-color: #fff;
-  box-shadow: 0 0 60px 30px #fff, 0 0 100px 60px #b400ff, 0 0 140px 90px #ff00d4;
-}
-
-/* .glowing-circle {
-  width: 46px;
-  height: 50px;
-  border-radius:50%;
-  background-color: #fff;
-  box-shadow: 0 0 60px 30px #fff, 0 0 100px 60px #b400ff, 0 0 140px 90px #ff00d4;
-} */
-/* menu animation */
-
-@keyframes slide-in-top {
-  0% {
-    transform: translateY(-100vw);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
   }
 }
 
