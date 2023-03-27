@@ -5,98 +5,35 @@ window.Alpine = Alpine
 Alpine.start()
 
 
-// Alpine.js filtrering
-function filters() {
-  return {
-    filterCounter: 0,
-    reset: false,
-    resetCounter: false,
-    open() {
-      this.show = true;
-    },
-    close() {
-      this.show = false;
-    },
+// let counter = 99
+// setInterval(() => {
+// 		if(counter>0){
+// 			counter--
+// 		}
+//     document.getElementById('counterElement').style.setProperty('--value', counter)
+// }, 1000)
 
-    isOpen() {
-      return this.show === true;
-    },
-
-    count() {
-      this.show = false;
-      this.checked = !this.checked;
-      if (this.checked) {
-        this.counter = this.counter + 1;
-        this.filterCounter = this.filterCounter + 1;
-      } else if (!this.checked) {
-        this.counter = this.counter - 1;
-        this.filterCounter = this.filterCounter - 1;
-      }
-    },
+const navSlide = () => {
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".nav-links");
+    const navLinks = document.querySelectorAll(".nav-links a");
+  
+    burger.addEventListener("click", () => {
+      nav.classList.toggle("nav-active");
+  
+      navLinks.forEach((link, index) => {
+        if (link.style.animation) {
+          link.style.animation = "";
+        } else {
+          link.style.animation = `navLinkFade 0.5s ease forwards ${
+            index / 7 + 0.5
+          }s `;
+        }
+      });
+      burger.classList.toggle("toggle");
+    });
+    //
   };
-}
-
-// function dropdown() {
-//   return {
-//       options: [],
-//       selected: [],
-//       show: false,
-//       open() { this.show = true },
-//       close() { this.show = false },
-//       isOpen() { return this.show === true },
-//       select(index, event) {
-
-//           if (!this.options[index].selected) {
-
-//               this.options[index].selected = true;
-//               this.options[index].element = event.target;
-//               this.selected.push(index);
-
-//           } else {
-//               this.selected.splice(this.selected.lastIndexOf(index), 1);
-//               this.options[index].selected = false
-//           }
-//       },
-//       remove(index, option) {
-//           this.options[option].selected = false;
-//           this.selected.splice(index, 1);
-
-
-//       },
-//       loadOptions() {
-//           const options = document.getElementById('select').options;
-//           for (let i = 0; i < options.length; i++) {
-//               this.options.push({
-//                   value: options[i].value,
-//                   text: options[i].innerText,
-//                   selected: options[i].getAttribute('selected') != null ? options[i].getAttribute('selected') : false
-//               });
-//           }
-
-
-//       },
-//       selectedValues(){
-//           return this.selected.map((option)=>{
-//               return this.options[option].value;
-//           })
-//       }
-//   }
-// }
-
-// scroll snap
-const gra = function(min, max) {
-  return Math.random() * (max - min) + min;
-}
-const init = function(){
-let items = document.querySelectorAll('section');
-for (let i = 0; i < items.length; i++){
-  items[i].style.background = randomColor({luminosity: 'light'});
-}
-cssScrollSnapPolyfill()
-}
-init();
-
-
-
-// test program
+  
+  navSlide();
 

@@ -1,312 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-slate-400">
 <head>
-    <meta charset="UTF-8">
-
-    <title>Select</title>
-
-    <!-- Tailwind CSS & its Custom Forms plugin -->
-    <link rel="stylesheet" href="style.css"/>
-
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burger</title>
 </head>
+<style>
 
+.stage{
+  height: 350px;
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.p{
+  font-size: 35px;
+  text-align: center;
+  margin-top: 0;
+  cursor: pointer;
+  width: 100%;
+  background: #78FED6;
+  border-radius: 10px;
+  font-family: Century Gothic;
+  letter-spacing: 5px;
+}
+.div{
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  width: 200px;
+  height: 40px;
+  margin-top: 4%;
+ transition-duration: 0.2s;
 
-<body class="p-20">
-    <div class="max-w-xs">
-        <div
-                x-data="select({ data: { alle: 'Alle', forestilling: 'Forestilling', event: 'Event'}, emptyOptionsMessage: 'No countries match your search.', name: 'Kategori', placeholder: 'Kategori' })"
-                x-init="init()"
-                @click.away="closeListbox()"
-                @keydown.escape="closeListbox()"
-                class="relative"
-        >
-                <span class="inline-block w-full rounded-md shadow-sm">
-                      <button
-                              x-ref="button"
-                              @click="toggleListboxVisibility()"
-                              :aria-expanded="open"
-                              aria-haspopup="listbox"
-                              class="relative z-0 w-full py-2 pl-3 pr-10 text-left transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md cursor-default focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5"
-                      >
-                            <span
-                                    x-show="! open"
-                                    x-text="value in options ? options[value] : placeholder"
-                                    :class="{ 'text-gray-500': ! (value in options) }"
-                                    class="block truncate"
-                            ></span>
+}
+.p:hover{
+  background: white;
+  color: black;
+}
+.div:nth-child(odd){
+  transform: perspective(300px) rotateY(45deg);
+  box-shadow: -2px 2px 7px gray;
+}
+.div:nth-child(even){
+  transform: perspective(300px) rotateY(-45deg);
+    box-shadow: 2px 2px 7px gray;
+}
+.div:hover{
+  transform: rotateY(0);
+  background: white;
+  color: black;
+  box-shadow: 0px 0px 0px;
+}
 
-                            <input
-                                    x-ref="search"
-                                    x-show="open"
-                                    x-model="search"
-                                    @keydown.enter.stop.prevent="selectOption()"
-                                    @keydown.arrow-up.prevent="focusPreviousOption()"
-                                    @keydown.arrow-down.prevent="focusNextOption()"
-                                    type="search"
-                                    class="w-full h-full form-control focus:outline-none"
-                            />
-
-                            <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                                <svg class="w-5 h-5 text-gray-400" viewBox="0 0 20 20" fill="none" stroke="currentColor">
-                                    <path d="M7 7l3-3 3 3m0 6l-3 3-3-3" stroke-width="1.5" stroke-linecap="round"
-                                          stroke-linejoin="round"></path>
-                                </svg>
-                            </span>
-                      </button>
-                </span>
-
-            <div
-                    x-show="open"
-                    x-transition:leave="transition ease-in duration-100"
-                    x-transition:leave-start="opacity-100"
-                    x-transition:leave-end="opacity-0"
-                    x-cloak
-                    class="absolute z-10 w-full mt-1 bg-white rounded-md shadow-lg"
-            >
-                <ul
-                        x-ref="listbox"
-                        @keydown.enter.stop.prevent="selectOption()"
-                        @keydown.arrow-up.prevent="focusPreviousOption()"
-                        @keydown.arrow-down.prevent="focusNextOption()"
-                        role="listbox"
-                        :aria-activedescendant="focusedOptionIndex ? name + 'Option' + focusedOptionIndex : null"
-                        tabindex="-1"
-                        class="py-1 overflow-auto text-base leading-6 rounded-md shadow-xs max-h-60 focus:outline-none sm:text-sm sm:leading-5"
-                >
-                    <template x-for="(key, index) in Object.keys(options)" :key="index">
-                        <li
-                                :id="name + 'Option' + focusedOptionIndex"
-                                @click="selectOption()"
-                                @mouseenter="focusedOptionIndex = index"
-                                @mouseleave="focusedOptionIndex = null"
-                                role="option"
-                                :aria-selected="focusedOptionIndex === index"
-                                :class="{ 'text-white bg-indigo-600': index === focusedOptionIndex, 'text-gray-900': index !== focusedOptionIndex }"
-                                class="relative py-2 pl-3 text-gray-900 cursor-default select-none pr-9"
-                        >
-                                <span x-text="Object.values(options)[index]"
-                                      :class="{ 'font-semibold': index === focusedOptionIndex, 'font-normal': index !== focusedOptionIndex }"
-                                      class="block font-normal truncate"
-                                ></span>
-
-                            <span
-                                    x-show="key === value"
-                                    :class="{ 'text-white': index === focusedOptionIndex, 'text-indigo-600': index !== focusedOptionIndex }"
-                                    class="absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600"
-                            >
-                                    <svg class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                              clip-rule="evenodd"/>
-                                    </svg>
-                                </span>
-                        </li>
-                    </template>
-
-                    <div
-                            x-show="! Object.keys(options).length"
-                            x-text="emptyOptionsMessage"
-                            class="px-3 py-2 text-gray-900 cursor-default select-none"></div>
-                </ul>
-            </div>
-        </div>
-
-
-    </div>
-
-
-       <!-- Program -->
-       <section>
-        <div class="content grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-
-          <div name="Forestilling" value="Forestilling" x-model="Forestilling" class="alle w-auto bg-gray-400 rounded-lg sahdow-lg overflow-hidden flex flex-row justify-center items-center hover:bg-indigo-500 hover:ring-indigo-500 m-4 gap-4">
-            <option value="6">6</option>
-            <div class=" w-32 m-4">
-                  <img class="object-center object-cover h-auto w-full " src="/img/Billede1.webp" alt="photo">
-              </div>
-              <div class="py-8 sm:py-6">
-                  <p class="text-2xl text-gray-700 font-bold mb-2">RE-BIRTH</p>
-                  <p class="text-base text-white font-normal">Venue: DOWNUNDER</p>
-                  <p class="text-base text-white font-normal">Genre:  gyser, thriller</p>
-                  <p class="text-base text-white font-normal">Varighed: 90 min.</p>
-                  <div class="flex flex-row gap-2">
-                  <p class="text-base text-white font-normal">Vises: </p>
-                    <p class="text-base text-white font-normal bg-purple-500 px-2">Mandag</p>
-                    <p class="text-base text-white font-normal bg-green-700 px-2">Torsdag</p>
-                  </div>
-              </div>
-          </div>
+</style>
+<body >
   
-          <div class="alle w-auto bg-gray-400 rounded-lg sahdow-lg overflow-hidden flex flex-row justify-center items-center hover:bg-indigo-500 hover:ring-indigo-500 m-4 gap-4">
-            <div class=" w-32 m-4">
-                <img class="object-center object-cover h-auto w-full " src="/img/9BEF0B3D-169C-4CB1-82BF-C3ED7BC468D8.webp" alt="photo">
-            </div>
-            <div class="py-8 sm:py-6">
-                <p class="text-2xl text-gray-700 font-bold mb-2">Det levende rum</p>
-                <p class="text-base text-white font-normal">Venue: DOWNUNDER</p>
-                <p class="text-base text-white font-normal">Genre:  gyser, thriller</p>
-                <p class="text-base text-white font-normal">Varighed: 90 min.</p>
-                <div class="flex flex-row gap-2">
-                <p class="text-base text-white font-normal">Vises: </p>
-                  <p class="text-base text-white font-normal bg-blue-500 px-2">Tirsdag</p>
-                  <p class="text-base text-white font-normal bg-green-700 px-2">Torsdag</p>
-                </div>
-            </div>
-        </div>        
-        <div class="alle w-auto bg-gray-400 rounded-lg sahdow-lg overflow-hidden flex flex-row justify-center items-center hover:bg-indigo-500 hover:ring-indigo-500 m-4 gap-4">
-              <div class=" w-32 m-4">
-                  <img class="object-center object-cover h-auto w-full " src="/img/Billede1-2.webp" alt="photo">
-              </div>
-              <div class="py-8 sm:py-6">
-                  <p class="text-2xl text-gray-700 font-bold mb-2 w-52">Mand ligger som mand har redt</p>
-                  <p class="text-base text-white font-normal">Venue: DOWNUNDER</p>
-                  <p class="text-base text-white font-normal">Genre:  gyser, thriller</p>
-                  <p class="text-base text-white font-normal">Varighed: 90 min.</p>
-                  <div class="flex flex-row gap-2">
-                  <p class="text-base text-white font-normal">Vises: </p>
-                    <p class="text-base text-white font-normal bg-purple-500 px-2">Mandag</p>
-                    <p class="text-base text-white font-normal bg-yellow-500 px-2">Lørdag</p>
-                  </div>
-              </div>
-          </div>
-        <div class="alle w-auto bg-gray-400 rounded-lg sahdow-lg overflow-hidden flex flex-row justify-center items-center hover:bg-indigo-500 hover:ring-indigo-500 m-4 gap-4">
-          <div class=" w-32 m-4">
-              <img class="object-center object-cover h-auto w-full " src="/img/WFTWT_instagram.webp" alt="photo">
-          </div>
-          <div class="py-8 sm:py-6">
-              <p class="text-2xl text-gray-700 font-bold mb-2 ">What fires together wires together</p>
-              <p class="text-base text-white font-normal">Venue: DOWNUNDER</p>
-              <p class="text-base text-white font-normal">Genre:  gyser, thriller</p>
-              <p class="text-base text-white font-normal">Varighed: 90 min.</p>
-              <div class="flex flex-row gap-2">
-              <p class="text-base text-white font-normal">Vises: </p>
-                <p class="text-base text-white font-normal bg-blue-500 px-2">Tirsdag</p>
-                <p class="text-base text-white font-normal bg-rose-400 px-2">Onsdag</p>
-              </div>
-          </div>
-      </div>
-      <div class="alle w-auto bg-gray-400 rounded-lg sahdow-lg overflow-hidden flex flex-row justify-center items-center hover:bg-indigo-500 hover:ring-indigo-500 m-4 gap-4">
-        <div class=" w-32 m-4">
-            <img class="object-center object-cover h-auto w-full " src="/img/Image-from-iOS.webp" alt="photo">
-        </div>
-        <div class="py-8 sm:py-6">
-            <p class="text-2xl text-gray-700 font-bold mb-2">GOGO YO-YOKU</p>
-            <p class="text-base text-white font-normal">Venue: DOWNUNDER</p>
-            <p class="text-base text-white font-normal">Genre:  gyser, thriller</p>
-            <p class="text-base text-white font-normal">Varighed: 90 min.</p>
-            <div class="flex flex-row gap-2">
-            <p class="text-base text-white font-normal">Vises: </p>
-              <p class="text-base text-white font-normal bg-purple-500 px-2">Mandag</p>
-              <p class="text-base text-white font-normal bg-yellow-500 px-2">Lørdag</p>
-            </div>
-        </div>
+
+  <section class="stage">
+    <div id="home" class="div"><p id="homep" class="p">Home</p></div>
+    <div class="div" id="about"><p class="p">About</p>
     </div>
+    <div class="div" id="contact"><p class="p">Gallery</p>
+    </div>
+    <div class="div" id="gallery"><p class="p">Contact</p>
+    </div>
+  </section>
+
+
+
+  <!-- Navigation virker -->
+  <!-- <header x-data="{mainmenuopen: false}">
+
+    <div for="check" class="fixed right-5 top-5 z-50 md:hidden lg:hidden">
+      <label x-on:click="mainmenuopen = ! mainmenuopen"> 
+          <input type="checkbox" id="check" x-on:click="mainmenuopen = ! mainmenuopen"/> 
+          <span></span>
+          <span></span>
+          <span></span>
+      </label>
+    </div> -->
+
+    <!-- Burger foldet ud -->
+    <!-- <nav class="fixed top-0 bottom-0 left-0 right-0 z-40 bg-indigo-400" x-show="mainmenuopen">
+      <img src="img/chat.svg" />
+      <ul class="primaer flex flex-col pt-28">
+        <li class="place-self-center p-5">
+          <a href="program.html">Program</a>
+        </li>
+        <li class="place-self-center p-5">
+          <a href="findrundt.html" class="">Find rundt</a>
+        </li>
+        <li class="place-self-center p-5">
+          <a href="#" class="">FAQ</a>
+        </li>
+        <li class="place-self-center p-5">
+          <a href="#" class="">Frivillig</a>
+        </li>
+        <div x-data="{submenuopen: false}" class="primaer flex flex-col">
+          <li class="place-self-center p-5">
+            <button href="#" class="" x-on:click="submenuopen = ! submenuopen">Info (pil ned)</button>
+          </li>
+          <ul class="primaer flex flex-col" x-show="submenuopen">
+            <li class="place-self-center p-5">
+              <a href="omVildskud.html" class="">Om Vildskud</a>
+            </li>
+            <li class="place-self-center p-5">
+              <a href="team.html" class="">Team</a>
+            </li>
+            <li class="place-self-center p-5">
+              <a href="opencall.html" class="text-lg text-yellow-400">Open call</a>
+            </li>
+            <li class="place-self-center p-5">
+              <a href="samarbejdspartnere.html" class="text-lg text-yellow-400">Samarbejdspartnere</a>
+            </li>
+            <li class="place-self-center p-5">
+              <a href="kontakt.html" class="text-lg text-yellow-400">Kontakt</a>
+            </li>
+          </ul>
         </div>
-  
-        </section>
-        <script>
-            function select(config) {
-                return {
-                    data: config.data,
+      </ul>
+      <img src="img/chat.svg" class="fixed bottom-0 right-0" />
+    </nav> -->
+  <!-- </header> -->
 
-                    emptyOptionsMessage: config.emptyOptionsMessage ?? 'No results match your search.',
-
-                    focusedOptionIndex: null,
-
-                    name: config.name,
-
-                    open: false,
-
-                    options: {},
-
-                    placeholder: config.placeholder ?? 'Select an option',
-
-                    search: '',
-
-                    value: config.value,
-
-                    closeListbox: function () {
-                        this.open = false
-
-                        this.focusedOptionIndex = null
-
-                        this.search = ''
-                    },
-
-                    focusNextOption: function () {
-                        if (this.focusedOptionIndex === null) return this.focusedOptionIndex = Object.keys(this.options).length - 1
-
-                        if (this.focusedOptionIndex + 1 >= Object.keys(this.options).length) return
-
-                        this.focusedOptionIndex++
-
-                        this.$refs.listbox.children[this.focusedOptionIndex].scrollIntoView({
-                            block: "center",
-                        })
-                    },
-
-                    focusPreviousOption: function () {
-                        if (this.focusedOptionIndex === null) return this.focusedOptionIndex = 0
-
-                        if (this.focusedOptionIndex <= 0) return
-
-                        this.focusedOptionIndex--
-
-                        this.$refs.listbox.children[this.focusedOptionIndex].scrollIntoView({
-                            block: "center",
-                        })
-                    },
-
-                    init: function () {
-                        this.options = this.data
-
-                        if (!(this.value in this.options)) this.value = null
-
-                        this.$watch('search', ((value) => {
-                            if (!this.open || !value) return this.options = this.data
-
-                            this.options = Object.keys(this.data)
-                                .filter((key) => this.data[key].toLowerCase().includes(value.toLowerCase()))
-                                .reduce((options, key) => {
-                                    options[key] = this.data[key]
-                                    return options
-                                }, {})
-                        }))
-                    },
-
-                    selectOption: function () {
-                        if (!this.open) return this.toggleListboxVisibility()
-
-                        this.value = Object.keys(this.options)[this.focusedOptionIndex]
-
-                        this.closeListbox()
-                    },
-
-                    toggleListboxVisibility: function () {
-                        if (this.open) return this.closeListbox()
-
-                        this.focusedOptionIndex = Object.keys(this.options).indexOf(this.value)
-
-                        if (this.focusedOptionIndex < 0) this.focusedOptionIndex = 0
-
-                        this.open = true
-
-                        this.$nextTick(() => {
-                            this.$refs.search.focus()
-
-                            this.$refs.listbox.children[this.focusedOptionIndex].scrollIntoView({
-                                block: "center"
-                            })
-                        })
-                    },
-                }
-            }
-        </script>
-
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"></script>
-<script src="https://unpkg.com/alpinejs" defer=""></script>
-<script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
-<script type="module" src="./main.js"></script>
 </body>
 </html>

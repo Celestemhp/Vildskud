@@ -1,234 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-
-    <title>Select</title>
-
-    <!-- Tailwind CSS & its Custom Forms plugin -->
-    <link rel="stylesheet" href="style.css"/>
-
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- alpine style -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"> -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Imbue:wght@900&family=Inter:wght@400;700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+ 
+    <title>Vildskud program</title>
 </head>
+<style>
 
-
+/* header {
+  overflow:hidden;
+} */
+/* nav{
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  color: #fff;
+} */
+.nav-links {
+    display: flex;
+    justify-content:space-around;
+    width: 50%;
+    text-transform: uppercase;
     
-    <body class="p-20">
-    
-        
-        
-   <!-- kategorier knap -->
- <div x-data="{ selectedOption: 'Alle', 
- kategorier: [ 
-    'Alle',
-    'Forestillinger', 
-    'Events'
- ]}">
-
-<div class="w-1/2 inline-block relative">
-<select name="my_option" x-model="selectedOption" class="">
-    <template x-for="option in kategorier" :key="option">
-        <option :value="option" x-text="option"></option>
-    </template>
-</select>
-
-</div>
- <span x-text="selectedOption"></span>
-</div>
-
-       <!-- Program -->
-       <section  x-text="selectedOption" :value="Forestillinger" x-text="Forestillinger">
+}
+.nav-links a{
+  display: block;
+   text-transform: uppercase;
+   text-decoration: none;
+   color: #fff;
+  border-bottom:2px solid transparent;
+  transition:0.5s ease;
+  transform: translateX(0%);
+}
+.nav-links a:hover{
+  color:#38b8ff;
+  letter-spacing: 5px;
+}
+.nav-links .infoknap {
+  width: fit-content;
+  display: flex;
+    justify-content:space-around;
+    text-transform: uppercase;
+    height: fit-screen;
 
 
-        <div class="content grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+}
+.nav-links .infoknap ul {
+  display: flex;
+  place-items: center;
+}
+.nav-links .infoknap li {
+  width: fit-content;
+   text-transform: uppercase;
+   text-decoration: none;
+   color: #fff;
+  border-bottom:2px solid transparent;
 
-          <div class="alle w-auto bg-gray-400 rounded-lg sahdow-lg overflow-hidden flex flex-row justify-center items-center hover:bg-indigo-500 hover:ring-indigo-500 m-4 gap-4">
-            <div class=" w-32 m-4">
 
-                  <img class="object-center object-cover h-auto w-full " src="/img/Billede1.webp" alt="photo">
-              </div>
-              <div class="py-8 sm:py-6">
+}
 
-                  <p class="text-2xl text-gray-700 font-bold mb-2">RE-BIRTH</p>
-                  <p class="text-base text-white font-normal">Venue: DOWNUNDER</p>
-                  <p class="text-base text-white font-normal">Genre:  gyser, thriller</p>
-                  <p class="text-base text-white font-normal">Varighed: 90 min.</p>
-                  <div class="flex flex-row gap-2">
-                  <p class="text-base text-white font-normal">Vises: </p>
-                    <p class="text-base text-white font-normal bg-purple-500 px-2">Mandag</p>
-                    <p class="text-base text-white font-normal bg-green-700 px-2">Torsdag</p>
-                  </div>
-              </div>
-          </div>
-  
-          <div class="alle w-auto bg-gray-400 rounded-lg sahdow-lg overflow-hidden flex flex-row justify-center items-center hover:bg-indigo-500 hover:ring-indigo-500 m-4 gap-4">
-            <div class=" w-32 m-4">
-                <img class="object-center object-cover h-auto w-full " src="/img/9BEF0B3D-169C-4CB1-82BF-C3ED7BC468D8.webp" alt="photo">
-            </div>
-            <div class="py-8 sm:py-6">
-                <p class="text-2xl text-gray-700 font-bold mb-2">Det levende rum</p>
-                <p class="text-base text-white font-normal">Venue: DOWNUNDER</p>
-                <p class="text-base text-white font-normal">Genre:  gyser, thriller</p>
-                <p class="text-base text-white font-normal">Varighed: 90 min.</p>
-                <div class="flex flex-row gap-2">
-                <p class="text-base text-white font-normal">Vises: </p>
-                  <p class="text-base text-white font-normal bg-blue-500 px-2">Tirsdag</p>
-                  <p class="text-base text-white font-normal bg-green-700 px-2">Torsdag</p>
-                </div>
-            </div>
-        </div>        
-        <div class="alle w-auto bg-gray-400 rounded-lg sahdow-lg overflow-hidden flex flex-row justify-center items-center hover:bg-indigo-500 hover:ring-indigo-500 m-4 gap-4">
-              <div class=" w-32 m-4">
-                  <img class="object-center object-cover h-auto w-full " src="/img/Billede1-2.webp" alt="photo">
-              </div>
-              <div class="py-8 sm:py-6">
-                  <p class="text-2xl text-gray-700 font-bold mb-2 w-52">Mand ligger som mand har redt</p>
-                  <p class="text-base text-white font-normal">Venue: DOWNUNDER</p>
-                  <p class="text-base text-white font-normal">Genre:  gyser, thriller</p>
-                  <p class="text-base text-white font-normal">Varighed: 90 min.</p>
-                  <div class="flex flex-row gap-2">
-                  <p class="text-base text-white font-normal">Vises: </p>
-                    <p class="text-base text-white font-normal bg-purple-500 px-2">Mandag</p>
-                    <p class="text-base text-white font-normal bg-yellow-500 px-2">Lørdag</p>
-                  </div>
-              </div>
-          </div>
-        <div class="alle w-auto bg-gray-400 rounded-lg sahdow-lg overflow-hidden flex flex-row justify-center items-center hover:bg-indigo-500 hover:ring-indigo-500 m-4 gap-4">
-          <div class=" w-32 m-4">
-              <img class="object-center object-cover h-auto w-full " src="/img/WFTWT_instagram.webp" alt="photo">
-          </div>
-          <div class="py-8 sm:py-6">
-              <p class="text-2xl text-gray-700 font-bold mb-2 ">What fires together wires together</p>
-              <p class="text-base text-white font-normal">Venue: DOWNUNDER</p>
-              <p class="text-base text-white font-normal">Genre:  gyser, thriller</p>
-              <p class="text-base text-white font-normal">Varighed: 90 min.</p>
-              <div class="flex flex-row gap-2">
-              <p class="text-base text-white font-normal">Vises: </p>
-                <p class="text-base text-white font-normal bg-blue-500 px-2">Tirsdag</p>
-                <p class="text-base text-white font-normal bg-rose-400 px-2">Onsdag</p>
-              </div>
-          </div>
-      </div>
-      <div class="alle w-auto bg-gray-400 rounded-lg sahdow-lg overflow-hidden flex flex-row justify-center items-center hover:bg-indigo-500 hover:ring-indigo-500 m-4 gap-4">
-        <div class=" w-32 m-4">
-            <img class="object-center object-cover h-auto w-full " src="/img/Image-from-iOS.webp" alt="photo">
-        </div>
-        <div class="py-8 sm:py-6">
-            <p class="text-2xl text-gray-700 font-bold mb-2">GOGO YO-YOKU</p>
-            <p class="text-base text-white font-normal">Venue: DOWNUNDER</p>
-            <p class="text-base text-white font-normal">Genre:  gyser, thriller</p>
-            <p class="text-base text-white font-normal">Varighed: 90 min.</p>
-            <div class="flex flex-row gap-2">
-            <p class="text-base text-white font-normal">Vises: </p>
-              <p class="text-base text-white font-normal bg-purple-500 px-2">Mandag</p>
-              <p class="text-base text-white font-normal bg-yellow-500 px-2">Lørdag</p>
-            </div>
-        </div>
+.nav-links .infoknap li:hover{
+  color:#38b8ff;
+  letter-spacing: 2px;
+}
+
+
+
+.burger{
+  display: none;
+}
+.burger div{
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  margin: 5px;
+  transition:all 0.5s ease;
+}
+@media only screen and (max-width: 760px){
+   nav{
+    justify-content: space-between;
+    padding: 0 5vw;
+  }
+  .nav-links{
+    position: absolute;
+    right: 0;
+    height: max-content;
+    min-height:92vh;
+    background: #855cd8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    transform: translateX(100%);
+    transition:All 0.5s ease-in;
+  }
+  .nav-links a{
+    opacity: 0;
+ 
+  }
+  .burger{
+    display: block;
+    z-index: 99;
+  }
+ 
+}
+@media only screen and (max-width: 640px){
+  nav{
+    justify-content: space-between;
+    padding: 0 5vw;
+  }
+}
+.nav-active{
+  transform: translateX(0);
+}
+@media only screen and (max-width: 460px){
+  .nav-links{
+    width: 100%;
+    transition:All 0.5s ease;
+  }
+}
+.nav-active{
+  transform: translateX(0);
+}
+@keyframes navLinkFade{
+  from{
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.toggle .line1{
+   transform: rotate(-45deg) translate(-5px,6px );
+}
+.toggle .line2{
+   opacity: 0;
+}
+.toggle .line3{
+   transform: rotate(45deg) translate(-5px,-6px );
+}
+</style>
+
+<header>
+<nav class="z-20 md:hidden lg:hidden">
+  <div class="logo">
+         <!-- Logo -->
+    <a href="index.html" class="flex flex-col fixed top-7 left-4">       
+      <img src="/img/LOGO2x.png" alt="logo" class="mr-3 w-36" />
+      <p class="text-center -ml-4 text-white"> 2.-6. aug.</p>
+    </a>
+  </div>
+    <!-- Køb billet btn -->
+    <a href="billetsalg.html" class="btn btn-primary hover:scale-110 fixed right-20 top-5 flex p-1 bg-green-500 hover:bg-green-600 z-20">
+      <p class="font-bold ">Køb billet</p>
+      </a>
+  <ul class="nav-links z-20 fixed h-screen"> 
+    <img class="w-36 absolute top-0 left-0" src="img/top_sky@2x.png" alt="sky"/>
+    <img src="img/bund_sky@2x.png" class="fixed w-32 bottom-0 right-0" alt="sky"/>
+    <a href="index.html">Forside</a>
+      <a href="program.html">Program</a>
+      <a href="findrundt.html">Find rundt</a> 
+      <a href="faq.html">FAQ</a>
+
+     <!-- ret bagefter til false -->
+     <div x-data="{submenuopen: false}" class="text-white flex flex-col infoknap">
+
+        <a href="#" class="flex flex-row items-center place-self-center w-auto" x-on:click="submenuopen = ! submenuopen">
+          Info
+            <!-- pil -->
+            <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>    
+        </a>
+
+
+      <ul class="pt-2 flex flex-col gap-3" x-show="submenuopen">
+        <li>
+          <a href="frivillig.html">Frivillig</a> 
+        </li>
+        <li>
+          <a href="opencall.html">Optræd</a>
+        </li>
+        <li>
+          <a href="omVildskud.html">Om Vildskud</a>
+        </li>
+        <li>
+          <a href="team.html">Team</a>
+        </li>
+
+
+
+      </ul>
     </div>
-        </div>
+
+  </ul>
+  <div class="burger fixed right-5 top-5 z-50 md:hidden lg:hidden hover:scale-110">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
+</nav>
+
+      <!-- Nav desktop -->
+      <div class="hidden w-full md:block md:w-auto">
+        <div class="mx-4 mt-2 flex justify-between md:flex-wrap">
+        <!-- Logo -->
+        <a href="index.html" class="flex flex-col">       
+          <img src="/img/LOGO2x.png" alt="logo" class="mr-3 w-36" />
+          <p class="text-center -ml-4 text-white"> 2.-6. aug.</p>
+        </a>
+    <div class="flex flex-row gap-5">
+  <!-- Køb billet btn -->
+  <a href="billetsalg.html" class="btn btn-primary hover:scale-110  flex  bg-green-500 hover:bg-green-600">
+    <p class="font-bold ">Køb billet</p>
+    </a>
+    
   
-        </section>
-        <script>
-            function select(config) {
-                return {
-                    data: config.data,
+        <div class="hidden w-full md:block md:w-auto mt-3">
+          <ul class="mt-4 flex  flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
+            <li>
+              <a href="program.html" class="text-white block rounded py-2 pl-3 pr-4 hover:scale-110 focus:outline-none md:p-0 md:hover:text-fuchsia-400" aria-current="page">Program</a>
+            </li>
+            <li>
+              <a href="findrundt.html" class="text-white block border-b border-gray-100 py-2 pl-3 pr-4 hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Find rundt</a>
+            </li>
+            <li>
+              <a href="faq.html" class="text-white block border-b border-gray-100 py-2 pl-3 pr-4 hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">FAQ</a>
+            </li>
+            <li>
+              <a href="frivillig.html" class="text-white block border-b border-gray-100 py-2 pl-3 pr-4  hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Frivillig</a>
+            </li>
+            <li>
+              <a href="opencall.html" class="text-white block border-b border-gray-100 py-2 pl-3 pr-4  hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Optræd</a>
+            </li>
+            <div x-data="{submenuopen: false}" class="primaer flex flex-col">
+              <li class="text-white block border-b border-gray-100 py-2 pl-3 pr-4  hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">
+                <button href="#" class="flex flex-row items-center" x-on:click="submenuopen = ! submenuopen">
+                  Info
+                    <!-- pil -->
+                    <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>    
+                </button>
+      
+              </li>
+              <ul class="primaer absolute top-10 right-3" x-show="submenuopen">
+                <li class=" p-2">
+                  <a href="omVildskud.html" class="">Om Vildskud</a>
+                </li>
+                <li class=" p-2">
+                  <a href="team.html" class="">Team</a>
+                </li>
 
-                    emptyOptionsMessage: config.emptyOptionsMessage ?? 'No results match your search.',
+              </ul>
+            </div>
+          </ul>
+      </div>
+    </div>
+    </div>
+  </div>
+</header>
 
-                    focusedOptionIndex: null,
+<main class="m-auto max-w-7xl w-4/5  pt-24 md:pt-10 lg:pt-0">
+  <h1 class="text-center text-4xl md:text-5xl lg:text-5xl">Bliv frivillig</h1>
+  <img class="m-auto my-9 spin " src="/img/Partnership.svg" alt="Partnership">
+  <section class="grid gap-10 lg:gap-5 lg:grid-cols-2 my-9">
+ <article class="text-white flex flex-col gap-6 text-base  max-w-prose ">
+  <h2>Vil du være frivillig?</h2>
+  <div class="flex flex-col gap-2">
+  <p >Vildskud Festival er afhængig af, at der hvert år er en masse frivillige, der har lyst til at være med til at gøre festivalen til en god oplevelse for alle deltagende.</p>
+<p>Alle frivillige får mulighed for at se forestillingerne <strong> GRATIS</strong>, får mad under deres vagter og muligheden for at møde en masse teaternørder.</p>
+<p>Jobbet som frivillig består af 2 vagter på 3-4 timer. Der er et infomøde d. 1. august 2022.</p>
+</div>
+<img src="/img/humanright.svg" class="m-auto w-56" alt="human right">
+ </article>
 
-                    name: config.name,
+ <!-- Button trigger modal -->
+<button
+type="button"
+class="inline-block rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
+data-te-toggle="modal"
+data-te-target="#exampleModal"
+data-te-ripple-init
+data-te-ripple-color="light">
+Launch demo modal
+</button>
 
-                    open: false,
+<!-- Modal -->
+<div
+data-te-modal-init
+class="fixed top-0 left-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
+id="exampleModal"
+tabindex="-1"
+aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div
+  data-te-modal-dialog-ref
+  class="pointer-events-none relative w-auto translate-y-[-50px] opacity-0 transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:max-w-[500px]">
+  <div
+    class="min-[576px]:shadow-[0_0.5rem_1rem_rgba(#000, 0.15)] pointer-events-auto relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none dark:bg-neutral-600">
+    <div
+      class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
+      <h5
+        class="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200"
+        id="exampleModalLabel">
+        Modal title
+      </h5>
+      <button
+        type="button"
+        class="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+        data-te-modal-dismiss
+        aria-label="Close">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="h-6 w-6">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <div class="relative flex-auto p-4" data-te-modal-body-ref>
+      Modal body text goes here.
+    </div>
+    <div
+      class="flex flex-shrink-0 flex-wrap items-center justify-end rounded-b-md border-t-2 border-neutral-100 border-opacity-100 p-4 dark:border-opacity-50">
+      <button
+        type="button"
+        class="inline-block rounded bg-primary-100 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200"
+        data-te-modal-dismiss
+        data-te-ripple-init
+        data-te-ripple-color="light">
+        Close
+      </button>
+      <button
+        type="button"
+        class="ml-1 inline-block rounded bg-primary px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
+        data-te-ripple-init
+        data-te-ripple-color="light">
+        Save changes
+      </button>
+    </div>
+  </div>
+</div>
+</div>
 
-                    options: {},
 
-                    placeholder: config.placeholder ?? 'Select an option',
+ <article class="text-white flex flex-col gap-6 text-base  max-w-prose ">
+  <h2>PR og SOME ansvarlig</h2>
+  <div class="flex flex-col gap-2">
+  <p >VILDSKUD festival søger PR og SOME ansvarlig – det kan blive dig!</p>
+<p>Vi giver dig kunstnerisk frihed til at danne rammerne for festivalens visuelle udtryk!Du bliver en del af et stærkt kunstnerisk team, som brænder for scenekunsten og festiva- len!</p>
+</div>
+<div>
+<h3>Rødderne - kom og vær med!</h3>
+<div class="flex flex-col gap-2">
+<p>Bag VILDSKUD står der hvert år et hold af frivillige arrangører.
+Arrangørgruppen arbejder med en flad struktur og er altid åben for at få flere med. Sammensætningen af gruppen forandrer sig fra år til år og derfor forandrer måden hvorpå arbejdet med festivalen udføres sig også konstant.</p>
+<p>Ønsker du at være en del af arrangørgruppen til Vildskud Festival 2020? Så send en motiveret ansøgning til info@vildskud.dk. Vi tager imod ansøgninger hele året, så tøv ikke med at kontakte os.</p>
+<p>Som arrangør i Vildskud kan du få erfaring inden for: <br>
+  Projektledelse, budgetplanlægning, pr-strategier på SoMe platforme, udfoldelse af pressemeddelelser, grafisk design af program og plakater, networking og samarbejde med professionelle scener i København. Planlægning og udvikling af Danmarks største festival for det scenekunstneriske vækstlag!</p>
+  </div>
+</div>
+ </article>
 
-                    search: '',
+</section>
+<p class="text-center pb-20 text-lg">Vil du være frivillig eller PR & SOME ansvarlig, eller har du spørgsmål så KONTAKT OS <a class="font-bold uppercase underline" href="kontakt.html">HER</a></p>
+</main>
 
-                    value: config.value,
 
-                    closeListbox: function () {
-                        this.open = false
+<script>
 
-                        this.focusedOptionIndex = null
+const navSlide = () => {
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".nav-links");
+    const navLinks = document.querySelectorAll(".nav-links a");
+  
+    burger.addEventListener("click", () => {
+      nav.classList.toggle("nav-active");
+  
+      navLinks.forEach((link, index) => {
+        if (link.style.animation) {
+          link.style.animation = "";
+        } else {
+          link.style.animation = `navLinkFade 0.5s ease forwards ${
+            index / 7 + 0.5
+          }s `;
+        }
+      });
+      burger.classList.toggle("toggle");
+    });
+    //
+  };
+  
+  navSlide();
 
-                        this.search = ''
-                    },
 
-                    focusNextOption: function () {
-                        if (this.focusedOptionIndex === null) return this.focusedOptionIndex = Object.keys(this.options).length - 1
+</script>
 
-                        if (this.focusedOptionIndex + 1 >= Object.keys(this.options).length) return
 
-                        this.focusedOptionIndex++
-
-                        this.$refs.listbox.children[this.focusedOptionIndex].scrollIntoView({
-                            block: "center",
-                        })
-                    },
-
-                    focusPreviousOption: function () {
-                        if (this.focusedOptionIndex === null) return this.focusedOptionIndex = 0
-
-                        if (this.focusedOptionIndex <= 0) return
-
-                        this.focusedOptionIndex--
-
-                        this.$refs.listbox.children[this.focusedOptionIndex].scrollIntoView({
-                            block: "center",
-                        })
-                    },
-
-                    init: function () {
-                        this.options = this.data
-
-                        if (!(this.value in this.options)) this.value = null
-
-                        this.$watch('search', ((value) => {
-                            if (!this.open || !value) return this.options = this.data
-
-                            this.options = Object.keys(this.data)
-                                .filter((key) => this.data[key].toLowerCase().includes(value.toLowerCase()))
-                                .reduce((options, key) => {
-                                    options[key] = this.data[key]
-                                    return options
-                                }, {})
-                        }))
-                    },
-
-                    selectOption: function () {
-                        if (!this.open) return this.toggleListboxVisibility()
-
-                        this.value = Object.keys(this.options)[this.focusedOptionIndex]
-
-                        this.closeListbox()
-                    },
-
-                    toggleListboxVisibility: function () {
-                        if (this.open) return this.closeListbox()
-
-                        this.focusedOptionIndex = Object.keys(this.options).indexOf(this.value)
-
-                        if (this.focusedOptionIndex < 0) this.focusedOptionIndex = 0
-
-                        this.open = true
-
-                        this.$nextTick(() => {
-                            this.$refs.search.focus()
-
-                            this.$refs.listbox.children[this.focusedOptionIndex].scrollIntoView({
-                                block: "center"
-                            })
-                        })
-                    },
-                }
-            }
-        </script>
-
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"></script>
-<script src="https://unpkg.com/alpinejs" defer=""></script>
-<script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
-</body>
+  </body>
 </html>

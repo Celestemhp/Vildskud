@@ -3,115 +3,181 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Team</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Imbue:wght@900&family=Inter:wght@400;700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <title>Team</title>
   </head>
-  <body class="bg-slate-700">
-    <header class="showcase">
-      <div class="mx-4 mt-5 flex items-center justify-between md:flex-wrap">
-        <a href="index.html" class="flex flex-col">
-          <img src="/img/LOGO2x.png" alt="logo" class="mr-3 w-36" />
-          <p class="text-center">2.-6. aug.</p>
-        </a>
-        <div class="flex flex-row place-items-center gap-4">
+  <body>
+      <!-- Cookies -->
+   <div class="relative left-0 bottom-0 z-40" x-data="{cookies: false}"  @keydown.window.escape="cookies = false">
+    <!-- Indhold til cookies -->
+    <div x-show="cookies" class="fixed sm:left-4 bottom-20 rounded-lg bg-white shadow-2xl w-full sm:w-1/2 xl:w-1/4 max-w-[450px] overflow-hidden z-50"
+         style="display: none;"
+         x-transition:enter="transition ease-in duration-200"
+         x-transition:enter-start="opacity-0 transform -translate-x-40"
+         x-transition:enter-end="opacity-100 transform translate-x-0"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100 transform translate-x-0"
+         x-transition:leave-end="opacity-0 transform -translate-x-40">
+  
+        <!-- Text -->
+        <div class="overflow-hidden">
+            <div class="relative overflow-hidden px-8 pt-8">
+                <div width="80" height="77" class="absolute -top-10 -right-10 text-yellow-500">
+                    <svg width="120" height="119" viewBox="0 0 120 119" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.3"
+                              d="M6.38128 49.1539C3.20326 32.893 13.809 17.1346 30.0699 13.9566L70.3846 6.07751C86.6455 2.89948 102.404 13.5052 105.582 29.7661L113.461 70.0808C116.639 86.3417 106.033 102.1 89.7724 105.278L49.4577 113.157C33.1968 116.335 17.4384 105.729 14.2604 89.4686L6.38128 49.1539Z"
+                              fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="text-2xl flex flex-col pb-4">
+                    <small>Cookies</small>
+                    <span class="text-3xl font-bold">Velkommen til Vildskud!</span>
+                </div>
+                <div class="pb-4">
+                    <p>Når du besøger vores hjemmeside, sætter vi cookies på din enhed. Det gør vi for at give dig den bedste oplevelse. 
+                      Ved at trykke ’Acceptér alle’ giver du samtykke til brugen af alle cookies. 
+                      Vælger du ’Kun nødvendige’, vil der være funktioner på hjemmesiden, der ikke virker. 
+                    </p>
+                </div>
+            </div>
+  
+        </div>
+        <!-- Boutons -->
+        <div class="w-full flex justify-center items-center border-t border-solid border-gray-200">
+            <button class="border-r border-gray-200 flex-1 px-4 py-3 text-gray-500 hover:text-white hover:bg-red-400 duration-150" @click="cookies = false">
+                Afvis
+            </button>
+            <button class="flex-1 px-4 py-3 text-gray-500 hover:text-white hover:bg-green-400 duration-150" @click="cookies = false">
+                Fint med mig
+            </button>
+        </div>
+    </div>
+    <!-- Cookie BTN -->
+    <button class="fixed left-4 bottom-2 uppercase text-sm px-4 py-3 bg-gray-900 text-white rounded-full z-20"
+            @click="cookies = !cookies">
+        Cookies
+    </button>
+  
+
+    <header>
+      <nav class="z-20 md:hidden lg:hidden">
+        <div class="logo">
+               <!-- Logo -->
+          <a href="index.html" class="flex flex-col fixed top-7 left-4">       
+            <img src="/img/LOGO2x.png" alt="logo" class="mr-3 w-36" />
+            <p class="text-center -ml-4 text-white"> 2.-6. aug.</p>
+          </a>
+        </div>
           <!-- Køb billet btn -->
-          <button class="main-btn btn-primary btn hover:scale-110">Køb billet</button>
-          <!-- Nav desktop -->
-          <div class="hidden w-full md:block md:w-auto">
-            <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
-              <ul class="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
-                <li>
-                  <a href="program.html" class="block rounded py-2 pl-3 pr-4 text-white hover:scale-110 focus:outline-none md:p-0 md:hover:text-fuchsia-400" aria-current="page">Program</a>
-                </li>
-                <li>
-                  <a href="findrundt.html" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Find rundt</a>
-                </li>
-                <li>
-                  <a href="#" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">FAQ</a>
-                </li>
-                <li>
-                  <a href="#" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Frivillig</a>
-                </li>
-                <li>
-                  <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex w-full items-center justify-between border-b border-gray-100 py-2 pl-3 pr-4 font-medium text-white hover:scale-110 md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">
-                    Info
-                    <!-- pil -->
-                    <i class="fas fa-angle-down pl-3 text-stone-700 dark:text-stone-300"></i>
-                  </button>
-                </li>
-              </ul>
+          <a href="billetsalg.html" class="btn btn-primary hover:scale-110 fixed right-20 top-5 flex p-1 bg-green-500 hover:bg-green-600 z-20">
+            <p class="font-bold ">Køb billet</p>
+            </a>
+        <ul class="nav-links z-20 fixed h-screen"> 
+          <img class="w-36 absolute top-0 left-0" src="img/top_sky@2x.png" alt="sky"/>
+          <img src="img/bund_sky@2x.png" class="fixed w-32 bottom-0 right-0" alt="sky"/>
+          <a href="index.html">Forside</a>
+            <a href="program.html">Program</a>
+            <a href="findrundt.html">Find rundt</a> 
+            <a href="faq.html">FAQ</a>
+      
+           <!-- ret bagefter til false -->
+           <div x-data="{submenuopen: false}" class="text-white flex flex-col infoknap">
+      
+              <a href="#" class="flex flex-row items-center place-self-center w-auto" x-on:click="submenuopen = ! submenuopen">
+                Info
+                  <!-- pil -->
+                  <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>    
+              </a>
+      
+      
+            <ul class="pt-2 flex flex-col gap-3" x-show="submenuopen">
+              <li>
+                <a href="frivillig.html">Frivillig</a> 
+              </li>
+              <li>
+                <a href="opencall.html">Optræd</a>
+              </li>
+              <li>
+                <a href="omVildskud.html">Om Vildskud</a>
+              </li>
+              <li>
+                <a href="team.html">Team</a>
+              </li>
+      
+      
+      
+            </ul>
+          </div>
+      
+        </ul>
+        <div class="burger fixed right-5 top-5 z-50 md:hidden lg:hidden hover:scale-110">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+      
+            <!-- Nav desktop -->
+            <div class="hidden w-full md:block md:w-auto">
+              <div class="mx-4 mt-2 flex justify-between md:flex-wrap">
+              <!-- Logo -->
+              <a href="index.html" class="flex flex-col">       
+                <img src="/img/LOGO2x.png" alt="logo" class="mr-3 w-36" />
+                <p class="text-center -ml-4 text-white"> 2.-6. aug.</p>
+              </a>
+          <div class="flex flex-row gap-5">
+        <!-- Køb billet btn -->
+        <a href="billetsalg.html" class="btn btn-primary hover:scale-110  flex  bg-green-500 hover:bg-green-600">
+          <p class="font-bold ">Køb billet</p>
+          </a>
+          
+        
+              <div class="hidden w-full md:block md:w-auto mt-3">
+                <ul class="mt-4 flex  flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
+                  <li>
+                    <a href="program.html" class="text-white block rounded py-2 pl-3 pr-4 hover:scale-110 focus:outline-none md:p-0 md:hover:text-fuchsia-400" aria-current="page">Program</a>
+                  </li>
+                  <li>
+                    <a href="findrundt.html" class="text-white block border-b border-gray-100 py-2 pl-3 pr-4 hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Find rundt</a>
+                  </li>
+                  <li>
+                    <a href="faq.html" class="text-white block border-b border-gray-100 py-2 pl-3 pr-4 hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">FAQ</a>
+                  </li>
+                  <li>
+                    <a href="frivillig.html" class="text-white block border-b border-gray-100 py-2 pl-3 pr-4  hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Frivillig</a>
+                  </li>
+                  <li>
+                    <a href="opencall.html" class="text-white block border-b border-gray-100 py-2 pl-3 pr-4  hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Optræd</a>
+                  </li>
+                  <div x-data="{submenuopen: false}" class="primaer flex flex-col">
+                    <li class="text-white block border-b border-gray-100 py-2 pl-3 pr-4  hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">
+                      <button href="#" class="flex flex-row items-center" x-on:click="submenuopen = ! submenuopen">
+                        Info
+                          <!-- pil -->
+                          <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>    
+                      </button>
+            
+                    </li>
+                    <ul class="primaer absolute top-10 right-3" x-show="submenuopen">
+                      <li class=" p-2">
+                        <a href="omVildskud.html" class="">Om Vildskud</a>
+                      </li>
+                      <li class=" p-2">
+                        <a href="team.html" class="">Team</a>
+                      </li>
+      
+                    </ul>
+                  </div>
+                </ul>
             </div>
           </div>
-          <!-- burgermenu -->
-          <div class="menu-wrap md:hidden lg:hidden">
-            <input type="checkbox" class="toggler" />
-            <div class="hamburger"><div></div></div>
-            <div class="menu">
-              <div>
-                <div class="w-full md:block md:w-auto">
-                  <ul>
-                    <li><a href="program.html">Program</a></li>
-                    <li><a href="findrundt.html">Find rundt</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Frivillig</a></li>
-                    <li data-dropdown-toggle="dropdownNavbar">
-                      <button>
-                        Info
-                        <!-- pil -->
-                        <i class="fas fa-angle-down pl-3 text-stone-700 dark:text-stone-300"></i>
-                      </button>
-                      <!-- Dropdown menu -->
-                      <div id="dropdownNavbar" class="z-10 mt-10 hidden list-none text-base">
-                        <ul class="py-1">
-                          <li>
-                            <a href="om.html" class="block px-4 py-2 hover:bg-gray-100">Om Vildskud</a>
-                          </li>
-                          <li>
-                            <a href="team.html" class="block px-4 py-2 hover:bg-gray-100">Team</a>
-                          </li>
-                          <li>
-                            <a href="samarbejdspartnere.html" class="block px-4 py-2 hover:bg-gray-100">Samarbejdspartnere</a>
-                          </li>
-                          <li>
-                            <a href="kontakt.html" class="block px-4 py-2 hover:bg-gray-100">Kontakt</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
-      </div>
-      <!-- Baggrund animationer -->
-      <!-- <div class="container">
-        <svg version="1.1" id="svg-left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 600 400" style="enable-background: new 0 0 600 400" xml:space="preserve">
-          <g>
-            <path
-              class="blob"
-              d="M220.262,366.814c41.228-14.367,64.978-58.826,96.198-136.802
-        c43.518-108.692,53.929-137.426,67.672-149.92s154.708-58.065,177.821-65.59C576.392,9.802,591.841,5.391,596.66-2H-2v334.452
-        c16.689,8.319,35.468,14.508,56.726,18.745C98.453,359.914,179.034,381.181,220.262,366.814z"
-            />
-          </g>
-        </svg>
-        <svg version="1.1" id="svg-right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 600 400" style="enable-background: new 0 0 600 400" xml:space="preserve">
-          <g>
-            <path
-              class="blob2"
-              d="M361.076,143.985c9.307,26.708,38.108,42.094,88.622,62.319
-        c70.412,28.192,89.027,34.936,97.12,43.839c8.093,8.903,37.615,100.223,42.49,115.196c3.045,9.354,5.902,19.361,10.691,22.483V0
-        H383.337c-5.389,10.811-9.398,22.976-12.143,36.748C365.547,65.075,351.769,117.277,361.076,143.985z"
-            />
-          </g>
-        </svg>
-      </div> -->
-    </header>
+      </header>
+      
 
-    <main class="m-auto w-4/5 max-w-7xl">
+    <main class="m-auto w-4/5 max-w-7xl  pt-24 md:pt-10 lg:pt-0">
       <h1 class="text-center">TEAM</h1>
       <p class="text-center italic text-white">Det er et stort arbejde at planlægge og afvikle en festival. Så giv en hånd til teamet bag årets festival!</p>
       <section class="mt-20 mb-20">
@@ -179,30 +245,31 @@
       </section>
     </main>
 
+
     <footer class="bg-slate-900">
       <div class="mx-auto max-w-screen-xl px-4 py-16 pb-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 place-content-end lg:grid-cols-2 lg:gap-8">
           <div>
             <img src="/img/LOGO2x.png" class="mr-5 h-10 sm:h-9" alt="logo" />
 
-            <!-- <div class="mb-8 mt-2 ml-2 flex space-x-6 text-white">
-          <a class="hover:opacity-75" href target="_blank" rel="noreferrer">
-            <span class=""></span>
-            <svg class="relative h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
-            </svg>
-          </a>
-          <a class="hover:opacity-75" href target="_blank" rel="noreferrer">
-            <span class=""></span>
-            <svg class="relative h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                fillRule="evenodd"
-                d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </a>
-        </div> -->
+            <div class="mb-8 mt-2 ml-2 flex space-x-6 text-white">
+              <a class="hover:opacity-75" href target="_blank" rel="noreferrer">
+                <span class=""></span>
+                <svg class="relative h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+                </svg>
+              </a>
+              <a class="hover:opacity-75" href target="_blank" rel="noreferrer">
+                <span class=""></span>
+                <svg class="relative h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fillRule="evenodd"
+                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </a>
+            </div>
           </div>
           <div class="mx-6 grid grid-cols-2 gap-8 sm:grid-cols-2">
             <div>
@@ -211,8 +278,9 @@
                 <a class="hover:opacity-75" href="program.html"> Program </a>
                 <a class="hover:opacity-75" href="findrundt.html"> Find rundt</a>
                 <a class="hover:opacity-75" href="faq.html"> FAQ </a>
-                <a class="hover:opacity-75" href="frivillige.html"> Frivilige </a>
-                <a class="hover:opacity-75" href="om.html"> Om Vildskud </a>
+                <a class="hover:opacity-75" href="frivillig.html"> Frivillig </a>
+                <a class="hover:opacity-75" href="opencall.html"> Open Call </a>
+                  <a class="hover:opacity-75" href="omVildskud.html"> Om Vildskud </a>
               </nav>
             </div>
             <div>
@@ -242,6 +310,7 @@
         </div>
       </div>
     </footer>
+
     <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
     <script type="module" src="./main.js"></script>
   </body>
