@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="myTheme">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontakt</title>
+    
+    <script type="module" crossorigin src="./assets/main-985182e7.js"></script>
+    <link rel="stylesheet" href="./assets/main-ea7937ad.css">
+  </head>
+  
+  <body class="bg-slate-700">
+          <!-- Cookies -->
+   <div class="relative left-0 bottom-0 z-40" x-data="{cookies: false}"  @keydown.window.escape="cookies = false">
+    <!-- Indhold til cookies -->
+    <div x-show="cookies" class="fixed sm:left-4 bottom-20 rounded-lg bg-white shadow-2xl w-full sm:w-1/2 xl:w-1/4 max-w-[450px] overflow-hidden z-50"
+         style="display: none;"
+         x-transition:enter="transition ease-in duration-200"
+         x-transition:enter-start="opacity-0 transform -translate-x-40"
+         x-transition:enter-end="opacity-100 transform translate-x-0"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100 transform translate-x-0"
+         x-transition:leave-end="opacity-0 transform -translate-x-40">
+  
+        <!-- Text -->
+        <div class="overflow-hidden">
+            <div class="relative overflow-hidden px-8 pt-8">
+                <div width="80" height="77" class="absolute -top-10 -right-10 text-yellow-500">
+                    <svg width="120" height="119" viewBox="0 0 120 119" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.3"
+                              d="M6.38128 49.1539C3.20326 32.893 13.809 17.1346 30.0699 13.9566L70.3846 6.07751C86.6455 2.89948 102.404 13.5052 105.582 29.7661L113.461 70.0808C116.639 86.3417 106.033 102.1 89.7724 105.278L49.4577 113.157C33.1968 116.335 17.4384 105.729 14.2604 89.4686L6.38128 49.1539Z"
+                              fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="text-2xl flex flex-col pb-4">
+                    <small>Cookies</small>
+                    <span class="text-3xl font-bold">Velkommen til Vildskud!</span>
+                </div>
+                <div class="pb-4">
+                    <p>Når du besøger vores hjemmeside, sætter vi cookies på din enhed. Det gør vi for at give dig den bedste oplevelse. 
+                      Ved at trykke ’Acceptér alle’ giver du samtykke til brugen af alle cookies. 
+                      Vælger du ’Kun nødvendige’, vil der være funktioner på hjemmesiden, der ikke virker. 
+                    </p>
+                </div>
+            </div>
+  
+        </div>
+        <!-- Boutons -->
+        <div class="w-full flex justify-center items-center border-t border-solid border-gray-200">
+            <button class="border-r border-gray-200 flex-1 px-4 py-3 text-gray-500 hover:text-white hover:bg-red-400 duration-150" @click="cookies = false">
+                Afvis
+            </button>
+            <button class="flex-1 px-4 py-3 text-gray-500 hover:text-white hover:bg-green-400 duration-150" @click="cookies = false">
+                Fint med mig
+            </button>
+        </div>
+    </div>
+    <!-- Cookie BTN -->
+    <button class="fixed left-4 bottom-2 uppercase text-sm px-4 py-3 bg-gray-900 text-white rounded-full z-20"
+            @click="cookies = !cookies">
+        Cookies
+    </button>
+    <header class="bg-slate-900">
+      <nav class="z-20 md:hidden lg:hidden">
+        <div class="logo">
+          <!-- Logo -->
+          <a href="index.html" class="fixed top-7 left-4 hidden flex-col sm:block">
+            <img src="./assets/LOGO2x-6a3c2dd1.webp" alt="logo" class="mr-3 w-36" />
+            <p class="-ml-4 text-center text-white">2.-6. aug.</p>
+          </a>
+        </div>
+        <!-- Køb billet btn -->
+        <a href="billetsalg.html" class="btn-primary btn fixed right-20 top-5 z-20 flex bg-green-500 p-1 hover:scale-110 hover:bg-green-600">
+          <p class="font-bold">Køb billet</p>
+        </a>
+        <ul class="nav-links fixed z-20">
+          <img class="absolute top-0 left-0 w-36" src="data:image/webp;base64,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" alt="sky" />
+          <img src="./assets/bund_sky@2x-a5e87b93.png" class="fixed bottom-0 right-0 w-32" alt="sky" />
+          <a href="index.html">Forside</a>
+          <a href="billetsalg.html">Billetsalg</a>
+          <a href="program.html">Program</a>
+          <a href="findrundt.html">Find rundt</a>
+          <a href="faq.html">FAQ</a>
+
+          <!-- ret bagefter til false -->
+          <div x-data="{submenuopen: false}" class="infoknap flex flex-col text-white">
+            <a href="#" class="flex w-auto flex-row items-center place-self-center" x-on:click="submenuopen = ! submenuopen">
+              Info
+              <!-- pil -->
+              <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </a>
+
+            <ul class="infoknapUl flex flex-col gap-3 pt-2" x-show="submenuopen">
+              <li>
+                <a href="frivillig.html">Frivillig</a>
+              </li>
+              <li>
+                <a href="opencall.html">Optræd</a>
+              </li>
+              <li>
+                <a href="omVildskud.html">Om Vildskud</a>
+              </li>
+              <li>
+                <a href="team.html">Team</a>
+              </li>
+            </ul>
+          </div>
+        </ul>
+        <div class="burger fixed right-5 top-5 z-50 hover:scale-110 md:hidden lg:hidden">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+
+      <!-- Nav desktop -->
+      <div class="fixed z-50 hidden w-full bg-slate-800 md:block">
+        <div class="mx-4 flex justify-between pt-2 md:flex-wrap">
+          <!-- Logo -->
+          <a href="index.html" class="flex flex-col">
+            <img src="./assets/LOGO2x-6a3c2dd1.webp" alt="logobillede" class="mr-3 w-36" />
+            <p class="-ml-4 text-center text-white">2.-6. aug.</p>
+          </a>
+          <div class="flex flex-row gap-5">
+            <!-- Køb billet btn -->
+            <a href="billetsalg.html" class="btn-primary btn flex bg-green-500 hover:scale-110 hover:bg-green-600">
+              <p class="font-bold">Køb billet</p>
+            </a>
+
+            <div class="mt-3 hidden w-full md:block md:w-auto">
+              <ul class="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
+                <li>
+                  <a href="program.html" class="block rounded py-2 pl-3 pr-4 text-white hover:scale-110 focus:outline-none md:p-0 md:hover:text-fuchsia-400" aria-current="page">Program</a>
+                </li>
+                <li>
+                  <a href="findrundt.html" class="block rounded py-2 pl-3 pr-4 text-white hover:scale-110 focus:outline-none md:p-0 md:hover:text-fuchsia-400" aria-current="page">Find rundt</a>
+                </li>
+                <li>
+                  <a href="faq.html" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">FAQ</a>
+                </li>
+                <li>
+                  <a href="frivillig.html" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Frivillig</a>
+                </li>
+                <li>
+                  <a href="opencall.html" class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">Optræd</a>
+                </li>
+                <div x-data="{submenuopen: false}" class="primaer flex flex-col">
+                  <li class="block border-b border-gray-100 py-2 pl-3 pr-4 text-white hover:scale-110 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-fuchsia-400">
+                    <button href="#" class="flex flex-row items-center" x-on:click="submenuopen = ! submenuopen">
+                      Info
+                      <!-- pil -->
+                      <svg class="ml-2 h-4 w-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                  </li>
+                  <ul class="primaer absolute top-14 right-0 bg-slate-800 px-6 text-white" x-show="submenuopen">
+                    <li class="p-2">
+                      <a href="omVildskud.html" class="">Om Vildskud</a>
+                    </li>
+                    <li class="p-2">
+                      <a href="team.html" class="">Team</a>
+                    </li>
+                  </ul>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+      
+    <!-- Hero section -->
+
+    <main class="m-auto w-4/5 pt-24 max-w-7xl">
+      <h1 class="text-center text-5xl">kontakt</h1>
+      <!-- <img class="m-auto my-9 spin kontakt" src="img/chat.svg" alt="chat"> -->
+      <section class="my-9 grid gap-10 lg:grid-cols-2 lg:gap-5">
+        <article class="flex max-w-prose flex-col gap-6 text-base text-white">
+          <p class="">Har du spørgsmål vedr. frivilligt arbejde, hvad det vil sige at være samarbejdspartner med Vildskud, om at spille på festivalen, eller vil du bare sige hej?</p>
+          <p>Så send en besked til Vildskud-temaet ved hjælp af kontaktformularen.</p>
+          <p>Hvis du er på udkig efter en bestemt person/rolle i teamet, kan du også tage et kig på vores <strong>Teamet bag</strong> side.</p>
+        </article>
+        <article class="flex">
+          <form class="m-auto flex flex-col justify-center">
+            <div class="form-control w-full max-w-xs">
+              <label class="label text-white">Navn </label>
+              <input type="text" placeholder="Navn" class="input-bordered w-full max-w-xs" />
+            </div>
+            <div class="form-control w-full max-w-xs">
+              <label class="label text-white">Email </label>
+              <input type="email" placeholder="navn@email.com" class="input-bordered w-full max-w-xs" />
+            </div>
+            <div class="form-control w-full max-w-xs">
+              <label class="label text-white">Emne </label>
+              <input type="text" class="input-bordered w-full max-w-xs" />
+            </div>
+            <label class="label text-white">Skriv her </label>
+            <textarea id="freeform" name="freeform" rows="4" cols="40" placeholder="Type here"> </textarea>
+            <input class="bg-lilla btn-primary btn w-40 cursor-pointer py-3 px-9 text-white mt-10" type="submit" value="Send" />
+          </form>
+        </article>
+      </section>
+    </main>
+
+    <footer class="bg-slate-900 text-white">
+      <div class="l mx-auto flex max-w-screen-xl flex-col place-content-end px-4 py-16 pb-4 sm:px-6 md:grid md:grid-cols-2 lg:gap-8 lg:px-8">
+        <div class="">
+          <div class="flex justify-center md:justify-start">
+            <img src="./assets/LOGO2x-6a3c2dd1.webp" class="mr-5 h-10 w-auto md:h-11" alt="logobillede" />
+          </div>
+
+          <div class="mb-8 mt-2 flex justify-center space-x-6 text-white md:justify-start">
+            <a class="hover:opacity-75" href="https://www.facebook.com/vildskudfestival" target="_blank">
+              <svg class="relative h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+              </svg>
+            </a>
+            <a class="hover:opacity-75" href="https://www.instagram.com/vildskud_festival/" target="_blank" rel="noreferrer">
+              <svg class="relative h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  fillRule="evenodd"
+                  d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-center font-bold text-white md:text-left">Genveje</h3>
+
+          <nav class="grid grid-cols-2 gap-y-2 text-center text-sm md:text-left">
+            <a class="hover:opacity-75" href="program.html"> Program </a>
+            <a class="hover:opacity-75" href="findrundt.html"> Find rundt</a>
+            <a class="hover:opacity-75" href="faq.html"> FAQ </a>
+            <a class="hover:opacity-75" href="frivillig.html"> Frivillig </a>
+            <a class="hover:opacity-75" href="opencall.html"> Open Call </a>
+            <a class="hover:opacity-75" href="omVildskud.html"> Om Vildskud </a>
+            <a class="hover:opacity-75" href="team.html"> Team </a>
+            <a class="hover:opacity-75" href="samarbejdspartnere.html"> Samarbejdspartnere </a>
+            <a class="hover:opacity-75" href="kontakt.html"> Kontakt</a>
+            <a class="hover:opacity-75" href="#"> Cookiepolitik </a>
+            <a class="hover:opacity-75" href="#"> Privatlivspolitik </a>
+            <a class="hover:opacity-75" href="sitemap.html">Sitemap</a>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Nyhedsbrev -->
+
+      <form>
+        <div class="form-control">
+          <label class="label flex flex-col justify-center p-10 py-20">
+            <span class="text-center text-3xl text-white"> Vil du heller ikke gå glip af noget?</span>
+            <span class="label-text text-center text-xl text-white"> Så bliv opdateret om fremtidige events </span>
+            <div class="form-control mt-3 flex w-2/3 flex-row justify-center">
+              <input type="email" placeholder="navn@email.com" class="w-64 rounded-l-lg p-2 text-gray-600" />
+              <button class="cursor-pointer rounded-r-lg bg-indigo-600 py-2 px-5 text-white hover:bg-indigo-800" type="button">Tilmeld</button>
+            </div>
+          </label>
+        </div>
+      </form>
+
+      <div class="linje"></div>
+      <p class="mt-8 text-center text-xs">© 2023 Vildskud</p>
+    </footer>
+    
+  </body>
+</html>
