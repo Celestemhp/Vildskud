@@ -154,10 +154,10 @@
                         </button>
                       </li>
                       <ul class="primaer absolute top-14 right-0 bg-slate-800 px-6 text-white" x-show="submenuopen">
-                        <li class="p-2">
-                          <a href="omVildskud.html" class="">Om Vildskud</a>
+                        <li class="p-2 hover:scale-110 md:hover:text-fuchsia-400">
+                          <a href="omVildskud.html md:hover:text-fuchsia-400 hover:scale-110 " class="">Om Vildskud</a>
                         </li>
-                        <li class="p-2">
+                        <li class="p-2 hover:scale-110 md:hover:text-fuchsia-400">
                           <a href="team.html" class="">Team</a>
                         </li>
                       </ul>
@@ -169,18 +169,19 @@
           </div>
         </header>
   
-    <main class="pt-24">
+    <main class="pt-36">
     <section class="flex flex-col place-items-center justify-center">
-      <h1 >Program</h1>
-      <h2 class="italic">Oversigt over alle forestillinger og events</h2>
+      <h1>Program</h1>
+      <p class="italic text-lg md:text-xl">Oversigt over alle forestillinger og events</p>
     </section>
 
 <!-- filtrering -->
   <section class="my-10 mx-4" id="step" x-data="{ spilledag: 'alledage', kategori: 'allekategori', skjulteforestillinger : 0 }">
-    <form id="filtre" class="flex">
+    <h2 class=" text-center md:text-left pl-9">Forestillinger og events</h2>
+    <div class="flex flex-row justify-center md:justify-start" id="filtre" class="flex">
             
-        <div class="mb-4 mr-4 mx-10">
-        <label for="spilledag">Dato:</label>
+        <form class="mb-4 mr-4 mx-10">
+        <label class="text-white" for="spilledag">Dato:</label>
         <select class="flex text-white m-1 bg-indigo-600 hover:bg-indigo-800 font-medium rounded-lg text-sm px-6 py-2.5 text-center" name="spilledag" id="spilledag" x-model="spilledag" form="filtre" x-on:change="$nextTick(() => { ingenforestillinger() });">
          
           <option value="alledage">Alle dage</option>
@@ -190,17 +191,18 @@
           <option value="fredag">Fredag</option>
           <option value="lordag">Lørdag</option>
         </select> 
-      </div>
+      
+      </form>
 
-      <div>
-      <label for="allekategori">Kategori:</label>
+      <form class="">
+      <label class="text-white" for="allekategori">Kategori:</label>
       <select class="flex text-white m-1 bg-indigo-600 hover:bg-indigo-800 font-medium rounded-lg text-sm px-6 py-2.5 text-center" name="kategori" id="kategori" x-model="kategori" form="filtre" x-on:change="$nextTick(() => { ingenforestillinger() });">
         <option value="allekategori">Alle arrangementer </option>
         <option value="forestilling">Forestillinger</option>
         <option value="event">Events</option>
       </select> 
-    </div>
-        </form>
+    </form>
+  </div>
 
 <!-- forestillinger -->
         <div class="content mb-10 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
